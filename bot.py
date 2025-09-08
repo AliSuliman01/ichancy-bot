@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 # Bot configuration
 TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM')
 # SESSION_FILE = 'ichancy_sessions.json'
-COOKIE_STRING = 'PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=bd652b7e6716d615eba9080694540023; languageCode=en_GB; language=English%20%28UK%29; __cf_bm=D6vWouVdssX.jKB6m1GRE_Cjpp1S2KAJi2WYB8fkFtg-1757271805-1.0.1.1-F9NumzrHfKvsGtIBYu_D_gp5imgdee0J5dBUpsKK9GAGFhLhpikmFrt0TWRma6hup.SMV3tcXH9bCFMEtmTqtUJSBTdXfeA5E_kd2yDO_mM; cf_clearance=IdBzv2tO4J86QVdliVbVlmKeHg2WNqd2iSsLutK51BE-1757272423-1.2.1.1-THo5gpgoAJXXPqn0_nNNJ._1HDnpMq3rEfGE6ggf0YjfEXNaKhgdxtvXgt5tzwI4Zf7W0_gFFbNaZ9ismBMhP.bj3EHGlV47UzSBefd0dke42vtwGd_i53un4dPAtP.zoRJ9tSGXmW87tC834g.LALYIvZpfKi5FnWPSuI_fOBrIXTvD_hb4Aec2reD30hi50BNK1pWCS0zGUvmT8pHBYmrQz1oJlksXCAbBbZGd_x8'
+COOKIE_STRING = 'PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=bd652b7e6716d615eba9080694540023; languageCode=en_GB; language=English%20%28UK%29; __cf_bm=uT4L541q35h7tOaGEsSe8boADjo7jjsMJQuRUUd1rBE-1757326114-1.0.1.1-966UdZ_peu6MLm1syB58WHBqE2IFkzghidGjNJghH7idByy3kAYxzJCqC5s4C1yKLAPm9uZPDrR0pur9cxjJUv.xl16mwODCHv444odp8PI; cf_clearance=ovItEOzpTgCqkZXlvkwFxBZAuXAfiltqEFrf9IG8S_o-1757326127-1.2.1.1-BUAtJtYX4E4smvvQO1MzELJfYaNvmEN7yZfBB8XFvLw.Ntj5ugHFGM1zbuwIxrmcZOr6_lmUrjbg6VDEM1Y9toHisjLERav7tMJVkUQYEm1OdloE5ov4VXiWWzsNck.wPsx2QG2YBE2kg.Khoke3q77y2qsOO.zIlIqrJ07O6RB1uxnEA9yCR_N5teAGaWIHbINiJlcZtj.c48lYBd83Qyt9OKv3REUUt3GchSFhMik'
 # Validate bot token
 
 
@@ -98,69 +98,6 @@ class iChancyAPI:
         
         logger.info("Initialized iChancy API with headers and cookies")
         
-    # def generate_random_username(self):
-    #     return ''.join(random.choices(string.ascii_letters + string.digits, k=10))
-    
-    # def generate_random_password(self):
-    #     """Generate password meeting the requirements: uppercase, lowercase, numeric, min 8 chars"""
-    #     password = [
-    #         random.choice(string.ascii_uppercase),  # At least one uppercase
-    #         random.choice(string.ascii_lowercase),  # At least one lowercase  
-    #         random.choice(string.digits),           # At least one numeric
-    #     ]
-        
-    #     # Fill the rest with random characters (minimum 8 total)
-    #     remaining_length = max(5, random.randint(5, 9))  # 8-12 characters total
-    #     for _ in range(remaining_length):
-    #         password.append(random.choice(string.ascii_letters + string.digits + '!@#$%^&*'))
-        
-    #     # Shuffle to avoid predictable patterns
-    #     random.shuffle(password)
-    #     return ''.join(password)
-    
-    # def generate_random_email(self):
-    #     domains = ['gmail.com', 'yahoo.com', 'outlook.com', 'protonmail.com']
-    #     return f"{''.join(random.choices(string.ascii_lowercase + string.digits, k=8))}@{random.choice(domains)}"
-    
-    # def generate_random_first_name(self):
-    #     """Generate a random first name"""
-    #     first_names = ['Ahmed', 'Fatima', 'Omar', 'Layla', 'Hassan', 'Zara', 'Khalid', 'Amira', 'Yusuf', 'Sara']
-    #     return random.choice(first_names)
-    
-    # def generate_random_last_name(self):
-    #     """Generate a random last name"""
-    #     last_names = ['Al-Ahmad', 'Al-Hassan', 'Al-Omar', 'Al-Zahra', 'Al-Khalil', 'Al-Nouri', 'Al-Mansour', 'Al-Rashid', 'Al-Farid', 'Al-Saeed']
-    #     return random.choice(last_names)
-    
-    # def test_api_connection(self):
-    #     """Test if we can access the API endpoint"""
-    #     try:
-    #         # First try to access the main site to establish session
-    #         logger.info("Testing main site access...")
-    #         main_response = self.session.get("https://agents.ichancy.com/", timeout=10)
-    #         logger.info(f"Main site response status: {main_response.status_code}")
-            
-    #         # Then test the API endpoint
-    #         test_url = "https://agents.ichancy.com/global/api/Player/registerPlayer"
-    #         headers = self.HEADERS.copy()
-    #         headers.update({
-    #             'Content-Type': 'application/json',
-    #         })
-            
-    #         logger.info("Testing API connection...")
-    #         response = self.session.get(test_url, headers=headers, timeout=10)
-    #         logger.info(f"API test response status: {response.status_code}")
-            
-    #         # Check for Cloudflare challenge
-    #         if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
-    #             logger.warning("Cloudflare challenge detected in API test")
-    #             return False
-            
-    #         return response.status_code != 403
-    #     except Exception as e:
-    #         logger.error(f"API connection test failed: {e}")
-    #         return False
-    
     def register_account(self, username=None, password=None, email=None, parent_id="2495754"):
         """
         Register a new account using the iChancy API
@@ -168,15 +105,10 @@ class iChancyAPI:
         logger.info("Starting account registration process")
         
         try:
-            # Test API connection first
-            # if not self.test_api_connection():
-            #     logger.warning("API connection test failed - this may indicate Cloudflare protection or expired cookies")
-                # Continue anyway but warn the user
-            
-            # Generate random credentials if not provided
-            username = username #or self.generate_random_username()
-            password = password #or self.generate_random_password()
-            email = email #or self.generate_random_email()
+
+            username = username
+            password = password
+            email = email 
             
             logger.info(f"Generated credentials - Username: {username}, Email: {email}")
             
@@ -193,15 +125,10 @@ class iChancyAPI:
                 }
             }
             
-            # Update headers for JSON API
-            # headers = self.HEADERS.copy()
-            # headers.update({
-            #     'Content-Type': 'application/json',
-            # })
             
             # Log the request details for debugging
             logger.info(f"Making request to: {register_url}")
-            logger.info(f"Headers: {headers}")
+            # logger.info(f"Headers: {headers}")
             logger.info(f"Payload: {payload}")
         
             # Submit registration
@@ -218,7 +145,10 @@ class iChancyAPI:
                 logger.info(f"Response status: {response.status_code}")
                 logger.info(f"Response headers: {dict(response.headers)}")
                 logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
-                
+                #  response.text = {"status":true,"html":"","result":false,"notification":[{"code":1,"content":"Duplicate login","title":"","autoHideAfter":5000,"list":[],"status":"error"}]}
+                json = response.json()
+                if not json.get("result"):
+                    return {'success': False, 'error':json.get("notification")[0].get("content") }
                 response.raise_for_status()
             except requests.exceptions.HTTPError as e:
                 logger.error(f"HTTP Error: {e}")
@@ -290,30 +220,6 @@ class iChancyAPI:
             logger.error(f"Unexpected error during registration: {e}", exc_info=True)
             return {'success': False, 'error': f'Unexpected error: {str(e)}'}
 
-# Session Management
-# def load_sessions():
-#     print('---------------- load sessions ----------------');
-#     """Load user sessions from file"""
-#     try:
-#         if os.path.exists(SESSION_FILE):
-#             with open(SESSION_FILE, 'r') as f:
-#                 return json.load(f)
-#         return {}
-#     except Exception as e:
-#         logger.error(f"Error loading sessions: {e}")
-#         return {}
-
-# def save_sessions(sessions):
-#     """Save user sessions to file"""
-#     try:
-#         with open(SESSION_FILE, 'w') as f:
-#             json.dump(sessions, f, indent=2)
-#     except Exception as e:
-#         logger.error(f"Error saving sessions: {e}")
-
-# Global session storage
-# user_sessions = load_sessions()
-
 # Telegram Bot Handlers
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Start command handler"""
@@ -373,16 +279,6 @@ async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TY
         result = api.register_account(email=email, username=username, password=password)
         
         if result['success']:
-            # # Store session
-            # user_sessions[user_id] = {
-            #     'username': result['username'],
-            #     'password': result['password'],
-            #     'email': result['email'],
-            #     'parent_id': result.get('parent_id', 'N/A'),
-            #     'cookies': result['cookies'],
-            #     'created_at': time.time()
-            # }
-            # save_sessions(user_sessions)
 
             store.insertUserDetailes(telegram_id = user_id,name = username,password=password,email=email)
             keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
@@ -408,11 +304,14 @@ async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TY
             error_msg = result['error']
             # Remove or escape special characters that break Markdown
             error_msg = error_msg.replace('_', '\\_').replace('*', '\\*').replace('[', '\\[').replace(']', '\\]').replace('(', '\\(').replace(')', '\\)').replace('~', '\\~').replace('`', '\\`').replace('>', '\\>').replace('#', '\\#').replace('+', '\\+').replace('-', '\\-').replace('=', '\\=').replace('|', '\\|').replace('{', '\\{').replace('}', '\\}').replace('.', '\\.').replace('!', '\\!')
-            
+            keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
+            reply_markup = InlineKeyboardMarkup(keyboard)
             await update.message.reply_text(
                 f"❌ **Account Creation Failed**\n\n"
                 f"Error: {error_msg}\n\n"
                 "You can try again or return to the main menu.",
+                reply_markup=reply_markup,
+                parse_mode='Markdown'
                 
             )
     except Exception as e:
