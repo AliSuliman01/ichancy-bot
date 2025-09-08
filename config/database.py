@@ -3,4 +3,4 @@ host = "localhost"
 port = 3306
 username = "root"
 password = ""
-databaseName = "ccipdatabase"
+databaseName = "cicp_bot"

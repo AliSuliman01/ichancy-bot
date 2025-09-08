@@ -27,8 +27,8 @@ def initializeDatabase():
                     password VARCHAR(255),
                     email VARCHAR(255) UNIQUE NULL,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-                    balance INT,
-                    account_balance INT   
+                    balance INT DEFAULT 0,
+                    account_balance INT DEFAULT 0 
                         )""")
 
 
@@ -109,19 +109,18 @@ def getUserById(userId):
     cursor.execute("SELECT * FROM users WHERE id = %s", (userId,))
     return cursor.fetchone()
 
-def checkTelegramIdExists(telegram_id):
+def getUserByTelegramId(telegram_id):
     mydb = getDatabaseConnection()
-    cursor = mydb.cursor()
-    cursor.execute("SELECT telegram_id FROM users WHERE telegram_id = %s", (telegram_id,))
-    telegram_ids = cursor.fetchone()
-    return True if telegram_ids else False
+    cursor = mydb.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM users WHERE telegram_id = %s", (telegram_id,))
+    return cursor.fetchone()
 
 def insertNewUser(telegram_id, telegram_username = None):
 
     mydb = getDatabaseConnection()
     cursor = mydb.cursor()
     
-    if not checkTelegramIdExists(telegram_id):
+    if not getUserByTelegramId(telegram_id):
         sqlInsert = """
                 INSERT INTO users (telegram_id , telegram_username) VALUES (%(telegram_id)s, %(telegram_username)s)
             """
@@ -156,5 +155,5 @@ def insertUserDetailes(telegram_id,name,password,email):
     mydb.commit()
     mydb.close()   
 
-#createTheDatabase()
-#insertUserDetailes(1419197314,"fgfgf","123456","soso@gmail.com")
+initializeDatabase()
+# insertUserDetailes(1419197314,"fgfgf","123456","soso@gmail.com")

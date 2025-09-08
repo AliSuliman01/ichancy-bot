@@ -220,6 +220,21 @@ class iChancyAPI:
             logger.error(f"Unexpected error during registration: {e}", exc_info=True)
             return {'success': False, 'error': f'Unexpected error: {str(e)}'}
 
+async def ichancy(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+
+    logger.info(f"User Click on Ichancy Option")
+
+    keyboard = [
+        [InlineKeyboardButton("إنشاء حساب جديد", callback_data='create_account')],
+        [InlineKeyboardButton("سحب من الحساب", callback_data='start')],
+        [InlineKeyboardButton("شحن حساب", callback_data='start')],
+        [InlineKeyboardButton("القائمة الرئيسية", callback_data='start')],
+    ]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    await update.message.reply_text('', reply_markup=reply_markup)
+
 # Telegram Bot Handlers
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Start command handler"""
@@ -231,7 +246,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     logger.info(f"User {username} ({user_id}) started the bot")
     
     keyboard = [
-        [InlineKeyboardButton("🆕 Create New Account", callback_data='create_account')],
+        [InlineKeyboardButton("🆕 Ichancy", callback_data='ichancy')],
         [InlineKeyboardButton("📊 Check Account Status", callback_data='check_status')],
         [InlineKeyboardButton("❓ Help", callback_data='help')]
     ]
@@ -248,6 +263,16 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     )
     
     await update.message.reply_text(welcome_text, reply_markup=reply_markup, parse_mode='Markdown')
+
+async def balance(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Balance command handler"""
+    user_id = str(update.effective_user.id)
+    user = store.getUserByTelegramId(user_id)
+    if not user:
+        await update.message.reply_text("You don't have any account.")
+        return
+
+    await update.message.reply_text(f"Your balance is {user.get('balance', 0)}\nYour telegram id is {user.get('telegram_id', 'N/A')}")
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Handle inline keyboard button presses"""
@@ -504,6 +529,8 @@ def main() -> None:
         # Add handlers
         application.add_handler(conv_handler)
         application.add_handler(CommandHandler('start', start))
+        application.add_handler(CommandHandler('balance', balance))
+        application.add_handler(CallbackQueryHandler(ichancy))
         application.add_handler(CallbackQueryHandler(button))
         application.add_error_handler(error_handler)
 
