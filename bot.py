@@ -220,20 +220,27 @@ class iChancyAPI:
             logger.error(f"Unexpected error during registration: {e}", exc_info=True)
             return {'success': False, 'error': f'Unexpected error: {str(e)}'}
 
-async def ichancy(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+async def ichancy(update: Update, context: CallbackContext) -> None:
 
     logger.info(f"User Click on Ichancy Option")
 
+    query = update.callback_query
+    await query.answer()
+
     keyboard = [
-        [InlineKeyboardButton("إنشاء حساب جديد", callback_data='create_account')],
-        [InlineKeyboardButton("سحب من الحساب", callback_data='start')],
-        [InlineKeyboardButton("شحن حساب", callback_data='start')],
+        [
+            InlineKeyboardButton("إنشاء حساب جديد", callback_data='create_account')
+        ],
+        [
+            InlineKeyboardButton("سحب من الحساب", callback_data='start'),
+            InlineKeyboardButton("شحن حساب", callback_data='start')
+        ],
         [InlineKeyboardButton("القائمة الرئيسية", callback_data='start')],
     ]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text('', reply_markup=reply_markup)
+    await query.edit_message_text('اختر الخيار المطلوب:', reply_markup=reply_markup)
 
 # Telegram Bot Handlers
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
