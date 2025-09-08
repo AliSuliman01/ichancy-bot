@@ -18,7 +18,6 @@ import string
 import json
 import os
 import time
-import cloudscraper
 import store
 
 # Configure logging
@@ -30,7 +29,7 @@ logger = logging.getLogger(__name__)
 
 # Bot configuration
 TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM')
-SESSION_FILE = 'ichancy_sessions.json'
+# SESSION_FILE = 'ichancy_sessions.json'
 COOKIE_STRING = 'PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=bd652b7e6716d615eba9080694540023; languageCode=en_GB; language=English%20%28UK%29; __cf_bm=D6vWouVdssX.jKB6m1GRE_Cjpp1S2KAJi2WYB8fkFtg-1757271805-1.0.1.1-F9NumzrHfKvsGtIBYu_D_gp5imgdee0J5dBUpsKK9GAGFhLhpikmFrt0TWRma6hup.SMV3tcXH9bCFMEtmTqtUJSBTdXfeA5E_kd2yDO_mM; cf_clearance=IdBzv2tO4J86QVdliVbVlmKeHg2WNqd2iSsLutK51BE-1757272423-1.2.1.1-THo5gpgoAJXXPqn0_nNNJ._1HDnpMq3rEfGE6ggf0YjfEXNaKhgdxtvXgt5tzwI4Zf7W0_gFFbNaZ9ismBMhP.bj3EHGlV47UzSBefd0dke42vtwGd_i53un4dPAtP.zoRJ9tSGXmW87tC834g.LALYIvZpfKi5FnWPSuI_fOBrIXTvD_hb4Aec2reD30hi50BNK1pWCS0zGUvmT8pHBYmrQz1oJlksXCAbBbZGd_x8'
 # Validate bot token
 
@@ -45,7 +44,7 @@ class iChancyAPI:
     # Static headers - update these as needed
     HEADERS = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36',
-
+        'Content-Type': 'application/json',
         'Cookie': COOKIE_STRING,
         'Accept': 'application/json, text/plain, */*',
         'Accept-Language': 'en-US,en;q=0.9',
@@ -61,13 +60,6 @@ class iChancyAPI:
         'X-Requested-With': 'XMLHttpRequest',
         'Origin': 'https://agents.ichancy.com',
         'Referer': 'https://agents.ichancy.com/'
-    }
-    
-    # Static cookies - update these as needed
-    COOKIES = {
-        # Add your cookies here
-        # 'session_id': 'your_session_id',
-        #'csrf_token': 'your_csrf_token',إ
     }
     
     @staticmethod
@@ -99,16 +91,11 @@ class iChancyAPI:
         logger.info(f"Updated cookies: {list(cls.COOKIES.keys())}")
     
     def __init__(self):
-        # # Try cloudscraper first for better Cloudflare bypass
-        try:
-            self.session = cloudscraper.create_scraper()
-            logger.info("Initialized with cloudscraper for Cloudflare bypass")
-        except Exception as e:
-            logger.warning(f"Failed to initialize cloudscraper: {e}, falling back to requests")
+        
         self.session = requests.Session()
         
         self.session.headers.update(self.HEADERS)
-        self.session.cookies.update(self.COOKIES)
+        
         logger.info("Initialized iChancy API with headers and cookies")
         
     # def generate_random_username(self):
@@ -145,34 +132,34 @@ class iChancyAPI:
     #     last_names = ['Al-Ahmad', 'Al-Hassan', 'Al-Omar', 'Al-Zahra', 'Al-Khalil', 'Al-Nouri', 'Al-Mansour', 'Al-Rashid', 'Al-Farid', 'Al-Saeed']
     #     return random.choice(last_names)
     
-    def test_api_connection(self):
-        """Test if we can access the API endpoint"""
-        try:
-            # First try to access the main site to establish session
-            logger.info("Testing main site access...")
-            main_response = self.session.get("https://agents.ichancy.com/", timeout=10)
-            logger.info(f"Main site response status: {main_response.status_code}")
+    # def test_api_connection(self):
+    #     """Test if we can access the API endpoint"""
+    #     try:
+    #         # First try to access the main site to establish session
+    #         logger.info("Testing main site access...")
+    #         main_response = self.session.get("https://agents.ichancy.com/", timeout=10)
+    #         logger.info(f"Main site response status: {main_response.status_code}")
             
-            # Then test the API endpoint
-            test_url = "https://agents.ichancy.com/global/api/Player/registerPlayer"
-            headers = self.HEADERS.copy()
-            headers.update({
-                'Content-Type': 'application/json',
-            })
+    #         # Then test the API endpoint
+    #         test_url = "https://agents.ichancy.com/global/api/Player/registerPlayer"
+    #         headers = self.HEADERS.copy()
+    #         headers.update({
+    #             'Content-Type': 'application/json',
+    #         })
             
-            logger.info("Testing API connection...")
-            response = self.session.get(test_url, headers=headers, timeout=10)
-            logger.info(f"API test response status: {response.status_code}")
+    #         logger.info("Testing API connection...")
+    #         response = self.session.get(test_url, headers=headers, timeout=10)
+    #         logger.info(f"API test response status: {response.status_code}")
             
-            # Check for Cloudflare challenge
-            if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
-                logger.warning("Cloudflare challenge detected in API test")
-                return False
+    #         # Check for Cloudflare challenge
+    #         if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
+    #             logger.warning("Cloudflare challenge detected in API test")
+    #             return False
             
-            return response.status_code != 403
-        except Exception as e:
-            logger.error(f"API connection test failed: {e}")
-            return False
+    #         return response.status_code != 403
+    #     except Exception as e:
+    #         logger.error(f"API connection test failed: {e}")
+    #         return False
     
     def register_account(self, username=None, password=None, email=None, parent_id="2495754"):
         """
@@ -182,8 +169,8 @@ class iChancyAPI:
         
         try:
             # Test API connection first
-            if not self.test_api_connection():
-                logger.warning("API connection test failed - this may indicate Cloudflare protection or expired cookies")
+            # if not self.test_api_connection():
+            #     logger.warning("API connection test failed - this may indicate Cloudflare protection or expired cookies")
                 # Continue anyway but warn the user
             
             # Generate random credentials if not provided
@@ -207,10 +194,10 @@ class iChancyAPI:
             }
             
             # Update headers for JSON API
-            headers = self.HEADERS.copy()
-            headers.update({
-                'Content-Type': 'application/json',
-            })
+            # headers = self.HEADERS.copy()
+            # headers.update({
+            #     'Content-Type': 'application/json',
+            # })
             
             # Log the request details for debugging
             logger.info(f"Making request to: {register_url}")
@@ -223,7 +210,7 @@ class iChancyAPI:
                 response = self.session.post(
                     register_url, 
                     json=payload, 
-                    headers=headers,
+                    # headers=headers,
                     timeout=30
                 )
                 
@@ -304,27 +291,28 @@ class iChancyAPI:
             return {'success': False, 'error': f'Unexpected error: {str(e)}'}
 
 # Session Management
-def load_sessions():
-    """Load user sessions from file"""
-    try:
-        if os.path.exists(SESSION_FILE):
-            with open(SESSION_FILE, 'r') as f:
-                return json.load(f)
-        return {}
-    except Exception as e:
-        logger.error(f"Error loading sessions: {e}")
-        return {}
+# def load_sessions():
+#     print('---------------- load sessions ----------------');
+#     """Load user sessions from file"""
+#     try:
+#         if os.path.exists(SESSION_FILE):
+#             with open(SESSION_FILE, 'r') as f:
+#                 return json.load(f)
+#         return {}
+#     except Exception as e:
+#         logger.error(f"Error loading sessions: {e}")
+#         return {}
 
-def save_sessions(sessions):
-    """Save user sessions to file"""
-    try:
-        with open(SESSION_FILE, 'w') as f:
-            json.dump(sessions, f, indent=2)
-    except Exception as e:
-        logger.error(f"Error saving sessions: {e}")
+# def save_sessions(sessions):
+#     """Save user sessions to file"""
+#     try:
+#         with open(SESSION_FILE, 'w') as f:
+#             json.dump(sessions, f, indent=2)
+#     except Exception as e:
+#         logger.error(f"Error saving sessions: {e}")
 
 # Global session storage
-user_sessions = load_sessions()
+# user_sessions = load_sessions()
 
 # Telegram Bot Handlers
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -363,8 +351,8 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.effective_user.id)
     data = query.data
     
-    # if data == 'create_account':
-    #     await handle_create_account(query, user_id)
+    if data == 'create_account':
+        await handle_create_account(query, user_id)
     if data == 'check_status':
         await handle_check_status(query, user_id)
     elif data == 'help':
@@ -385,16 +373,16 @@ async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TY
         result = api.register_account(email=email, username=username, password=password)
         
         if result['success']:
-            # Store session
-            user_sessions[user_id] = {
-                'username': result['username'],
-                'password': result['password'],
-                'email': result['email'],
-                'parent_id': result.get('parent_id', 'N/A'),
-                'cookies': result['cookies'],
-                'created_at': time.time()
-            }
-            save_sessions(user_sessions)
+            # # Store session
+            # user_sessions[user_id] = {
+            #     'username': result['username'],
+            #     'password': result['password'],
+            #     'email': result['email'],
+            #     'parent_id': result.get('parent_id', 'N/A'),
+            #     'cookies': result['cookies'],
+            #     'created_at': time.time()
+            # }
+            # save_sessions(user_sessions)
 
             store.insertUserDetailes(telegram_id = user_id,name = username,password=password,email=email)
             keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
@@ -457,30 +445,32 @@ async def handle_back_to_menu(query):
 
 async def handle_check_status(query, user_id):
     """Check account status"""
-    if user_id not in user_sessions:
+    
+    user = store.getUserById(user_id)
+
+    if not user:
         keyboard = [[InlineKeyboardButton("🆕 Create Account", callback_data='create_account'),
                     InlineKeyboardButton("🏠 Menu", callback_data='back_to_menu')]]
         reply_markup = InlineKeyboardMarkup(keyboard)
         
         await query.edit_message_text(
-            "❌ **No Active Session**\n\n"
-            "You don't have any saved account sessions.\n"
+            "❌ **No Account Yet**\n\n"
+            "You don't have any account.\n"
             "Please create a new account first.",
             reply_markup=reply_markup,
             parse_mode='Markdown'
         )
         return
     
-    session = user_sessions[user_id]
-    created_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(session['created_at']))
+    created_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(user['created_at']))
     
     keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     
     status_text = (
         "📊 **Account Status**\n\n"
-        f"👤 **Username**: `{session['username']}`\n"
-        f"📧 **Email**: `{session['email']}`\n"
+        f"👤 **Username**: `{user['username']}`\n"
+        f"📧 **Email**: `{user['email']}`\n"
         f"📅 **Created**: {created_time}\n"
         f"🔗 **Status**: Active"
     )
@@ -499,7 +489,7 @@ async def handle_help(query):
         "🔧 **Features:**\n"
         "• Create new iChancy accounts automatically\n"
         "• Check account status\n"
-        "• Session management (saves your account info)\n\n"
+        "• Account management (saves your account info)\n\n"
         "⚠️ **Important Notes:**\n"
         "• This bot is for educational purposes\n"
         "• Respect iChancy's terms of service\n"
@@ -597,8 +587,8 @@ def main() -> None:
     """Main function to start the bot"""
     try:
         # Set cookies from the provided cookie string
-        cookie_string = COOKIE_STRING
-        iChancyAPI.set_cookies_from_string(cookie_string)
+        
+        iChancyAPI.set_cookies_from_string(COOKIE_STRING)
         
         # Create application
         application = Application.builder().token(TOKEN).build()
