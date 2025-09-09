@@ -18,7 +18,8 @@ def getKeyboard():
             InlineKeyboardButton("سحب رصيد 📤", callback_data='withdrawal'),
         ],
         [InlineKeyboardButton("📊 Check Account Status", callback_data='check_status')],
-        [InlineKeyboardButton("❓ Help", callback_data='help')]
+        [InlineKeyboardButton("❓ Help", callback_data='help')],
+        [InlineKeyboardButton("الشروط والأحكام" , callback_data ='conditions')]
     ]
     return keyboard
 
@@ -31,3 +32,12 @@ async def getInfo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = update.effective_user.username or update.effective_user.first_name
     logger.info(f"User {username} ({user_id}) started the bot")
     return user_id , username
+
+def getStatusText(user):
+    status_text = (
+        "https://www.ichancy.com/ar \n\n"
+        f"👤 الدخول: {user['name']}\n"
+        f"📧 الإيميل: {user['email']}\n"
+        f"🔒 كلمة السر: {user['password']} "
+    )
+    return status_text

@@ -2,6 +2,7 @@ import Logger
 import store
 from iChancyAPI import iChancyAPI
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+import helpers
 logger = Logger.getLogger()
 
 def getKeyboard(user_id):
@@ -36,12 +37,7 @@ def getUserInfoText(user_id):
      user_info = 'اختر الخيار الذي تريده'
 
      if user.get('name'):
-        user_info = (
-                       "https://www.ichancy.com/ar \n\n"
-                       f"👤 الدخول: {user['name']}\n"
-                       f"📧 الإيميل: {user['email']}\n"
-                       f"🔒 كلمة السر: {user['password']} "
-                )
+        user_info = helpers.getStatusText(user)
         
      return user_info
 async def handle_ichancy(query , user_id) -> None:

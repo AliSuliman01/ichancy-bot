@@ -1,7 +1,7 @@
 import store
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 import time
-import texts
+import helpers
 
 
 async def handle_check_status(query, user_id):
@@ -29,4 +29,4 @@ async def handle_check_status(query, user_id):
     
 
     
-    await query.edit_message_text(texts.getStatusText(user,created_time), reply_markup=reply_markup, parse_mode='Markdown')
+    await query.edit_message_text(helpers.getStatusText(user), reply_markup=reply_markup)

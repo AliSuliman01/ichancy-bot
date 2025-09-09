@@ -22,11 +22,3 @@ def getHelpText():
     )
         return help_text
 
-def getStatusText(user , created_time):
-    status_text = (
-        "https://www.ichancy.com/ar \n\n"
-        f"👤 الدخول: {user['name']}\n"
-        f"📧 الإيميل: {user['email']}\n"
-        f"🔒 كلمة السر: {user['password']} "
-    )
-    return status_text

@@ -1,4 +1,4 @@
-import handlers.checkStatus , handlers.ichancy , handlers.backToMenu, handlers.help, handlers.withdrawal, handlers.deposit
+import handlers.checkStatus , handlers.ichancy , handlers.backToMenu, handlers.help, handlers.withdrawal, handlers.deposit ,handlers.conditions
 from telegram import Update
 from telegram.ext import ContextTypes
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -28,3 +28,5 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await handlers.withdrawal.handle_withdrawal(query , user_id)
     elif data == 'deposit':
         await handlers.deposit.handle_deposit(query , user_id)
+    elif data == 'conditions':
+        await handlers.conditions.handle_conditions(query)
