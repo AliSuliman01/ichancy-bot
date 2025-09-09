@@ -13,7 +13,7 @@ conditions_text = (
 "⛔️تنبيه:\n"
 "أي محاولة للتّحايل أو مخالفة الشروط ستؤدي إلى إيقاف الحساب وتجميد الأرصدة.\n"
 )
-async def handle_conditions(query):
+async def handle_terms_and_conditions(query):
     keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await query.edit_message_text(conditions_text, reply_markup=reply_markup)
