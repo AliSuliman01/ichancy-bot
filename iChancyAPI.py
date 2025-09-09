@@ -1,0 +1,186 @@
+
+import config.telegram ,config.ichancy
+import Logger
+import requests
+
+logger = Logger.getLogger()
+class iChancyAPI:
+    BASE_URL = 'https://www.ichancy.com'
+    
+    # Static headers - update these as needed
+    HEADERS = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36',
+        'Content-Type': 'application/json',
+        'Cookie': config.telegram.COOKIE_STRING,
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin',
+        'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Windows"',
+        'X-Requested-With': 'XMLHttpRequest',
+        'Origin': 'https://agents.ichancy.com',
+        'Referer': 'https://agents.ichancy.com/'
+    }
+    
+    @staticmethod
+    def parse_cookie_string(cookie_string):
+        """
+        Parse a cookie string and return a dictionary of cookies
+        Example: '__cf_bm=value1; cf_clearance=value2'
+        """
+        cookies = {}
+        if not cookie_string:
+            return cookies
+            
+        # Split by semicolon and process each cookie
+        cookie_pairs = cookie_string.split(';')
+        for pair in cookie_pairs:
+            pair = pair.strip()
+            if '=' in pair:
+                name, value = pair.split('=', 1)
+                cookies[name.strip()] = value.strip()
+        
+        return cookies
+    
+    @classmethod
+    def set_cookies_from_string(cls, cookie_string):
+        """
+        Set cookies from a cookie string
+        """
+        cls.COOKIES = cls.parse_cookie_string(cookie_string)
+        logger.info(f"Updated cookies: {list(cls.COOKIES.keys())}")
+    
+    def __init__(self):
+        
+        self.session = requests.Session()
+        
+        self.session.headers.update(self.HEADERS)
+        
+        logger.info("Initialized iChancy API with headers and cookies")
+        
+    def register_account(self, username=None, password=None, email=None, parent_id=config.ichancy.parent_id):
+        """
+        Register a new account using the iChancy API
+        """
+        logger.info("Starting account registration process")
+        
+        try:
+
+            username = username
+            password = password
+            email = email 
+            
+            logger.info(f"Generated credentials - Username: {username}, Email: {email}")
+            
+            # API endpoint
+            register_url = "https://agents.ichancy.com/global/api/Player/registerPlayer"
+            
+            # Prepare JSON payload
+            payload = {
+                "player": {
+                    "login": username,
+                    "email": email,
+                    "password": password,
+                    "parentId": parent_id
+                }
+            }
+            
+            
+            # Log the request details for debugging
+            logger.info(f"Making request to: {register_url}")
+            # logger.info(f"Headers: {headers}")
+            logger.info(f"Payload: {payload}")
+        
+            # Submit registration
+            logger.info("Submitting registration to API")
+            try:
+                response = self.session.post(
+                    register_url, 
+                    json=payload, 
+                    # headers=headers,
+                    timeout=30
+                )
+                
+                # Log response details for debugging
+                logger.info(f"Response status: {response.status_code}")
+                logger.info(f"Response headers: {dict(response.headers)}")
+                logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
+                json = response.json()
+                if not json.get("result"):
+                    return {'success': False, 'error':json.get("notification")[0].get("content") }
+                response.raise_for_status()
+            except requests.exceptions.HTTPError as e:
+                logger.error(f"HTTP Error: {e}")
+                logger.error(f"Response status: {e.response.status_code}")
+                
+                # Check if it's a Cloudflare challenge
+                if 'cf-mitigated' in e.response.headers and e.response.headers['cf-mitigated'] == 'challenge':
+                    return {'success': False, 'error': 'Cloudflare challenge detected - cookies may be expired or invalid. Please get fresh cookies from your browser and update the COOKIE_STRING variable.'}
+                
+                # Try to decode response text safely
+                try:
+                    response_text = e.response.text[:200]
+                except:
+                    response_text = "Unable to decode response"
+                
+                return {'success': False, 'error': f'HTTP Error {e.response.status_code}: {response_text}'}
+            except Exception as e:
+                logger.error(f"Registration submission failed: {e}")
+                return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
+            
+            # Parse JSON response
+            try:
+                response_data = response.json()
+                logger.info(f"API Response: {response_data}")
+            except Exception as e:
+                logger.error(f"Failed to parse JSON response: {e}")
+                return {'success': False, 'error': 'Failed to parse API response'}
+            
+            # Check for success in API response
+            if response.status_code == 200:
+                # Check for success indicators in the response
+                if isinstance(response_data, dict):
+                    # Look for common success patterns
+                    if response_data.get('success') is True or response_data.get('status') == 'success':
+                        logger.info(f"Registration successful for username: {username}")
+                        return {
+                            'success': True,
+                            'username': username,
+                            'password': password,
+                            'email': email,
+                            'parent_id': parent_id,
+                            'response': response_data,
+                            'cookies': self.session.cookies.get_dict()
+                        }
+                    elif response_data.get('error') or response_data.get('message'):
+                        error_msg = response_data.get('error') or response_data.get('message')
+                        logger.warning(f"Registration failed: {error_msg}")
+                        return {'success': False, 'error': error_msg}
+                
+                    # If response is not a dict or doesn't have clear success/error indicators
+                    logger.info("Registration completed (API returned 200 OK)")
+                    return {
+                        'success': True,
+                        'username': username,
+                        'password': password,
+                        'email': email,
+                        'parent_id': parent_id,
+                        'response': response_data,
+                        'cookies': self.session.cookies.get_dict()
+                    }
+                else:
+                    logger.error(f"Registration failed with status code: {response.status_code}")
+                    return {'success': False, 'error': f'Registration failed with status code {response.status_code}'}
+            else:
+                logger.error(f"Registration failed with status code: {response.status_code}")
+                return {'success': False, 'error': f'Registration failed with status code {response.status_code}'}
+                
+        except Exception as e:
+            logger.error(f"Unexpected error during registration: {e}", exc_info=True)
+            return {'success': False, 'error': f'Unexpected error: {str(e)}'}

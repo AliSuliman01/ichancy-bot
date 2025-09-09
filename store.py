@@ -4,13 +4,7 @@ import config.database
 def initializeDatabase():
 
     try:
-        mydb = mydb = mysql.connector.connect(
-            host = config.database.host,
-            port = config.database.port,
-            username = config.database.username,
-            password = config.database.password,
-        )
-
+        mydb = getDatabaseConnection(initialize=True)
         cursor = mydb.cursor()
     
 
@@ -83,16 +77,26 @@ def initializeDatabase():
         print(f"Failed to connect to the database: {error}")
 
 
-def getDatabaseConnection():
+def getDatabaseConnection(initialize = False):
     try:
-        mydb = mysql.connector.connect(
+        if not initialize:
+            mydb = mysql.connector.connect(
+                host = config.database.host,
+                port = config.database.port,
+                username = config.database.username,
+                password = config.database.password,
+                database = config.database.databaseName
+            )
+            return mydb
+        else:
+        
+            mydb = mysql.connector.connect(
             host = config.database.host,
             port = config.database.port,
             username = config.database.username,
             password = config.database.password,
-            database = config.database.databaseName
-        )
-        return mydb
+            )
+            return mydb
     except(Exception, mysql.connector.Error) as error: 
         print(f"Failed to connect to the database: {error}")
 
@@ -113,6 +117,12 @@ def getUserByTelegramId(telegram_id):
     mydb = getDatabaseConnection()
     cursor = mydb.cursor(dictionary=True)
     cursor.execute("SELECT * FROM users WHERE telegram_id = %s", (telegram_id,))
+    return cursor.fetchone()
+
+def getUserIdByTelegramId(telegram_id):
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor(dictionary=True)
+    cursor.execute("SELECT id FROM users WHERE telegram_id = %s", (telegram_id,))
     return cursor.fetchone()
 
 def insertNewUser(telegram_id, telegram_username = None):
