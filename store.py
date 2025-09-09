@@ -57,8 +57,10 @@ def initializeDatabase():
                 CREATE TABLE IF NOT EXISTS bemo_transactions (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     transfer_num VARCHAR(255),
+                    user_id INT NOT NULL,
                     status VARCHAR(255) NOT NULL,
                     action_type VARCHAR(255) NOT NULL,
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
                     value INT NOT NULL,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
@@ -67,10 +69,12 @@ def initializeDatabase():
                 CREATE TABLE IF NOT EXISTS syriatel_transactions (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     transfer_num VARCHAR(255),
+                    user_id INT NOT NULL,
                     status VARCHAR(255) NOT NULL,
                     action_type VARCHAR(255) NOT NULL,
                     value INT NOT NULL,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
                 )
             """)
 
@@ -141,6 +145,25 @@ def insertNewUser(telegram_id, telegram_username = None):
         }
         cursor.execute(sqlInsert, data)
         mydb.commit()
+    
+    mydb.close()
+
+def insertSyriatelCashTransaction(telegram_id, transfer_num, value):
+
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor(dictionary=True)
+    
+    user_id = getUserIdByTelegramId(telegram_id)
+    sqlInsert = """
+            INSERT INTO syriatel_transactions (user_id , transfer_num, value) VALUES (%(user_id)s, %(transfer_num)s, %(value)s)
+        """
+    data = {
+        'user_id' : user_id,
+        'transfer_num' : transfer_num,
+        'value' : value
+    }
+    cursor.execute(sqlInsert, data)
+    mydb.commit()
     
     mydb.close()
 

@@ -5,21 +5,34 @@ from telegram.ext import ContextTypes
 logger = Logger.getLogger()
 def getTextWelcome(username):
     welcome_text = (
-            f"أهلا {username} \n "
-             "نرحب بك في بوت في بوت Gilbert Ichancy "
+            f"أهلا بك في بوت\n "
+             "Gilbert Ichancy"
         )
     return welcome_text
 
 def getKeyboard():
     keyboard = [
-        [InlineKeyboardButton("🆕 Ichancy", callback_data='ichancy')],
+        [InlineKeyboardButton("⚡️ Ichancy", callback_data='ichancy')],
         [
             InlineKeyboardButton("شحن رصيد 📥", callback_data='deposit'),
             InlineKeyboardButton("سحب رصيد 📤", callback_data='withdrawal'),
         ],
+        [InlineKeyboardButton("نظام الاحالات 💰", callback_data='referral')],
+        [
+            InlineKeyboardButton("اهداء رصيد 🎁", callback_data='gift'),
+            InlineKeyboardButton("كود هدية 🎁", callback_data='gift_code'),
+        ],
+        [
+            InlineKeyboardButton("رسالة للادمن 📨", callback_data='admin_message'),
+            InlineKeyboardButton("تواصل معنا ✉️", callback_data='contact_us'),
+        ],
+        [
+            InlineKeyboardButton("السجل 📜", callback_data='log'),
+            InlineKeyboardButton("الشروحات 📝", callback_data='guides'),
+        ],
+        [InlineKeyboardButton("الشروط والاحكام 📌", callback_data='terms_and_conditions')],
         [InlineKeyboardButton("📊 Check Account Status", callback_data='check_status')],
         [InlineKeyboardButton("❓ Help", callback_data='help')],
-        [InlineKeyboardButton("الشروط والأحكام" , callback_data ='conditions')]
     ]
     return keyboard
 

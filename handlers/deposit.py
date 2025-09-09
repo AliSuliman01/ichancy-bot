@@ -7,8 +7,8 @@ logger = Logger.getLogger()
 def getKeyboard(user_id):
         keyboard = [
             [
+                InlineKeyboardButton("Syriatel Cash 🟢", callback_data='syriatel_cash_deposit'),
                 InlineKeyboardButton("Bemo", callback_data='bemo_deposit'),
-                InlineKeyboardButton("Syriatel Cash 🟢", callback_data='syriatel_cash_deposit')
             ],
             [
                 InlineKeyboardButton("Payeer", callback_data='payeer_deposit'),
