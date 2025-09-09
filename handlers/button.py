@@ -1,7 +1,6 @@
 import handlers.checkStatus , handlers.ichancy , handlers.backToMenu, handlers.help, handlers.withdrawal, handlers.deposit
 from telegram import Update
 from telegram.ext import ContextTypes
-import handlers.command.start
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """Handle inline keyboard button presses"""
     query = update.callback_query
