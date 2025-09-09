@@ -13,6 +13,10 @@ def getTextWelcome(username):
 def getKeyboard():
     keyboard = [
         [InlineKeyboardButton("🆕 Ichancy", callback_data='ichancy')],
+        [
+            InlineKeyboardButton("شحن رصيد 📥", callback_data='deposit'),
+            InlineKeyboardButton("سحب رصيد 📤", callback_data='withdrawal'),
+        ],
         [InlineKeyboardButton("📊 Check Account Status", callback_data='check_status')],
         [InlineKeyboardButton("❓ Help", callback_data='help')]
     ]
