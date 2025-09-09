@@ -1,3 +1,4 @@
+import string
 from iChancyAPI import iChancyAPI
 import asyncio
 import Logger , store
@@ -11,6 +12,7 @@ from telegram.ext import (
     CommandHandler,
     CallbackQueryHandler,
 )
+import random
 
 logger = Logger.getLogger()
 
@@ -32,7 +34,7 @@ async def button_handler(update: Update, context: CallbackContext) -> int:
 async def get_username(update: Update, context: CallbackContext) -> int:
     user = update.message.from_user
     telegram_id = str(update.effective_user.id)
-    username = update.message.text + "_g_" + str(store.getUserIdByTelegramId(telegram_id).get('id'))
+    username = update.message.text 
     email = username + "@gilbert.com"
     context.user_data['email'] = email
     context.user_data['username'] = username
@@ -48,7 +50,6 @@ async def get_password(update: Update, context: CallbackContext) -> int:
     password = update.message.text
     context.user_data['password'] = password
     logger.info("User %s set password: %s", user.first_name, password)
-    username = context.user_data.get('username', 'غير محدد')
     asyncio.create_task(handle_create_account(update , context=context))
     return ConversationHandler.END
 
@@ -69,22 +70,30 @@ def conversationHandler():
         PASSWORD: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_password)],
     },
     fallbacks=[CommandHandler('cancel', cancel)],
-    )
+    )    
     return conv_handler
 async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TYPE):
     """Handle account creation"""
     try:
-        query = context.user_data.get('query')
         user_id = user_id = str(update.effective_user.id)
         email=context.user_data.get('email')
-        username=context.user_data.get('username') 
+        username=context.user_data.get('username')
         password=context.user_data.get('password')
         api = iChancyAPI()
         logger.info(api.COOKIES)
         result = api.register_account(email=email, username=username, password=password)
-        playerId = api.getPlayerId(username)
-        if result['success']:
 
+
+        count = 1
+        while not result['success'] and count <15:
+            count+=1
+            username=context.user_data.get('username')+ "_"+ ''.join(random.choices(string.ascii_letters + string.digits,k=count))
+            email = username + "@gilbert.com"
+            result = api.register_account(email=email, username=username, password=password)
+
+
+        if result['success']:
+            playerId = api.getPlayerId(username)    
             store.insertUserDetailes(telegram_id = user_id,name = username,password=password,email=email , player_id = playerId)
             keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
             reply_markup = InlineKeyboardMarkup(keyboard)
