@@ -82,10 +82,10 @@ async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TY
         api = iChancyAPI()
         logger.info(api.COOKIES)
         result = api.register_account(email=email, username=username, password=password)
-        
+        playerId = api.getPlayerId(username)
         if result['success']:
 
-            store.insertUserDetailes(telegram_id = user_id,name = username,password=password,email=email)
+            store.insertUserDetailes(telegram_id = user_id,name = username,password=password,email=email , player_id = playerId)
             keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
             reply_markup = InlineKeyboardMarkup(keyboard)
             

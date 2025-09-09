@@ -17,6 +17,7 @@ def initializeDatabase():
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     telegram_id INT UNIQUE NOT NULL,
                     telegram_username VARCHAR(255),
+                    player_id VARCHAR(255) NOT NULL,
                     name VARCHAR(255),
                     password VARCHAR(255),
                     email VARCHAR(255) UNIQUE NULL,
@@ -144,14 +145,14 @@ def insertNewUser(telegram_id, telegram_username = None):
     mydb.close()
 
 
-def insertUserDetailes(telegram_id,name,password,email):
+def insertUserDetailes(telegram_id,name,password,email,player_id):
 
     mydb = getDatabaseConnection()
 
     cursor = mydb.cursor()    
     
     sqlInsert = """
-    UPDATE users SET name = %(name)s, password = %(password)s, email = %(email)s
+    UPDATE users SET name = %(name)s, password = %(password)s, email = %(email)s , player_id = %(player_id)s
     WHERE telegram_id = %(telegram_id)s
     """
 
@@ -159,7 +160,8 @@ def insertUserDetailes(telegram_id,name,password,email):
         'name': name,
         'password': password,
         'email': email,
-        'telegram_id': telegram_id
+        'telegram_id': telegram_id,
+        'player_id': player_id
     }
     cursor.execute(sqlInsert, data)
     mydb.commit()

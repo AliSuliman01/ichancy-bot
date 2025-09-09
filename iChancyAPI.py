@@ -71,10 +71,6 @@ class iChancyAPI:
         logger.info("Starting account registration process")
         
         try:
-
-            username = username
-            password = password
-            email = email 
             
             logger.info(f"Generated credentials - Username: {username}, Email: {email}")
             
@@ -103,7 +99,6 @@ class iChancyAPI:
                 response = self.session.post(
                     register_url, 
                     json=payload, 
-                    # headers=headers,
                     timeout=30
                 )
                 
@@ -184,3 +179,42 @@ class iChancyAPI:
         except Exception as e:
             logger.error(f"Unexpected error during registration: {e}", exc_info=True)
             return {'success': False, 'error': f'Unexpected error: {str(e)}'}
+        
+    def getPlayerId(self , telegram_username = None):
+        try:
+            
+            
+            # API endpoint
+            getPlayersUrl = "https://agents.ichancy.com/global/api/Statistics/getPlayersStatisticsPro"
+
+            # Prepare JSON payload
+            payload = {               
+                    "start": 0,
+                    "limit": 10,
+                    "filter": {}      
+            }
+            # Log the request details for debugging
+            logger.info(f"Making request to: {getPlayersUrl}")
+        
+            # Submit registration
+            logger.info("Submitting registration to API")
+            try:
+                response = self.session.post(
+                    getPlayersUrl, 
+                    json=payload, 
+                    timeout=30
+                )
+        
+                # Log response details for debuggin
+                json = response.json()
+                for row in json.get('result').get('records'):
+                 if row['username'] == telegram_username:
+                    return row['playerId']
+                 
+            except requests.exceptions.HTTPError as e:
+                 logger.error(f"HTTP Error: {e}")
+                 logger.error(f"Response status: {e.response.status_code}")
+                
+        except Exception as e:
+                logger.error(f"Registration submission failed: {e}")
+                return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
