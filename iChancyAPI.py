@@ -1,5 +1,5 @@
 
-import config.telegram ,config.ichancy
+import config.telegram ,config.ichancy ,config.device
 import Logger
 import requests
 
@@ -9,8 +9,7 @@ class iChancyAPI:
     
     # Static headers - update these as needed
     HEADERS = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36',
-        'Content-Type': 'application/json',
+        'User-Agent': config.device.USER_AGENT,
         'Cookie': config.telegram.COOKIE_STRING,
         'Accept': 'application/json, text/plain, */*',
         'Accept-Language': 'en-US,en;q=0.9',
@@ -101,7 +100,6 @@ class iChancyAPI:
                     json=payload, 
                     timeout=30
                 )
-                
                 # Log response details for debugging
                 logger.info(f"Response status: {response.status_code}")
                 logger.info(f"Response headers: {dict(response.headers)}")

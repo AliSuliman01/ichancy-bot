@@ -1,5 +1,6 @@
 import handlers.checkStatus , handlers.ichancy 
-import handlers.backToMenu, handlers.help, handlers.withdrawal, handlers.deposit ,handlers.conditions
+import handlers.backToMenu, handlers.help, handlers.withdrawal, handlers.deposit ,handlers.conditions , handlers.problemInBot ,handlers.problemInWebsite
+import handlers.contactUs
 import handlers.guidesHandlers.guides , handlers.guidesHandlers.guidesWhatIchancy
 import handlers.guidesHandlers.guidesHowToCreateNewAccount
 import handlers.guidesHandlers.guidesHowDepositTelegramAccount
@@ -32,6 +33,13 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await handlers.deposit.handle_deposit(query , user_id)
     elif data == 'terms_and_conditions':
         await handlers.conditions.handle_terms_and_conditions(query)
+    elif data == 'contact_us':
+        await handlers.contactUs.handle_contact_us(query)
+    elif data =='problem_in_bot':
+         await handlers.problemInBot.handle_problem_in_bot(query)
+    elif data =='problem_in_website':
+         await handlers.problemInWebsite.handle_problem_in_website(query)
+
 
 async def guidesButton(update: Update, context: ContextTypes.DEFAULT_TYPE , query):
     data = query.data

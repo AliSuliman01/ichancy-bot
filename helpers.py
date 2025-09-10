@@ -19,8 +19,8 @@ def getKeyboard():
         ],
         [InlineKeyboardButton("نظام الاحالات 💰", callback_data='referral')],
         [
-            InlineKeyboardButton("اهداء رصيد 🎁", callback_data='gift'),
-            InlineKeyboardButton("كود هدية 🎁", callback_data='gift_code'),
+            InlineKeyboardButton("اهداء رصيد 🎁", callback_data='send_gift'),
+            InlineKeyboardButton("كود هدية 🎁", callback_data='reseive_gift'),
         ],
         [
             InlineKeyboardButton("رسالة للادمن 📨", callback_data='admin_message'),
