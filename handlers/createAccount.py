@@ -87,7 +87,7 @@ async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TY
         count = 1
         while not result['success'] and count <15:
             count+=1
-            username=context.user_data.get('username')+ "_"+ ''.join(random.choices(string.ascii_letters + string.digits,k=count))
+            username=context.user_data.get('username')+ "_"+ ''.join(random.choices(string.ascii_letters + string.digits,k=4))
             email = username + "@gilbert.com"
             result = api.register_account(email=email, username=username, password=password)
 

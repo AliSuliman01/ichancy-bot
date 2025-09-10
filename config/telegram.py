@@ -1,6 +1,10 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Bot configuration
-TOKEN = os.getenv('TELEGRAM_BOT_TOKEN', '7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM')
+TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 # SESSION_FILE = 'ichancy_sessions.json'
-COOKIE_STRING = 'PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=bd652b7e6716d615eba9080694540023; languageCode=en_GB; language=English%20%28UK%29; __cf_bm=QQprvtDiF13_1FxJoC0ma1Wb92vgQTybg9jXdd._4bc-1757450885-1.0.1.1-TtMyjc5o1_9qvsnGlO7n7PfuvvX4WgUZG23drQjmkwvz62IPHjh1O4pn8nOO5AV5blmF5bqX5ys5mluVmKYkfoEzqfti8CuwdlJuzOiZYOc; cf_clearance=oP4jhlR5fBykf_ZMLo5uudckXDn8mTqtTskaYfABxxY-1757450895-1.2.1.1-URf1qU5qiIn7c76e8O.LB4Iqaei20KT0WpWuuW0jvWNACg4VAWbhwoQ.U3dZyks3zacfswXYejYSulZ8JoA9L6ikPzpuI_K3b25vehoA.6qej8gaQ86csvjHbCErJvITIuxFxdMsAC29Z2FdHokgm6tPIUkzNAqMVIf7nvX_UbczfLYgdxzgoFrzgADcDypCRbW8VAuxWNvW2PT6iMzHfzun99VgD2UFqF9m8UP6NFM'
+COOKIE_STRING = os.getenv('ICHANCY_COOKIE')
 # Validate bot token

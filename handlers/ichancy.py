@@ -32,7 +32,7 @@ def getUserInfoText(user_id):
      user = store.getUserByTelegramId(telegram_id=user_id)
      user_info = 'اختر الخيار الذي تريده'
 
-     if user.get('name'):
+     if user and user.get('name'):
         user_info = helpers.getStatusText(user)
         
      return user_info

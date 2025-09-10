@@ -4,7 +4,7 @@ from iChancyAPI import iChancyAPI
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 logger = Logger.getLogger()
 
-def getKeyboard(user_id):
+def getKeyboard():
         keyboard = [
             [
                 InlineKeyboardButton("Syriatel Cash 🟢", callback_data='syriatel_cash_deposit'),
@@ -24,18 +24,17 @@ def getKeyboard(user_id):
 
         return keyboard
         
-def getReplyMarkup(user_id):
-     keyboard = getKeyboard(user_id)
+def getReplyMarkup():
+     keyboard = getKeyboard()
      reply_markup = InlineKeyboardMarkup(keyboard)
      return reply_markup
 
-def getUserInfoText(user_id):
-     user = store.getUserByTelegramId(telegram_id=user_id)
+def getUserInfoText():
      user_info = 'اختر احد الطرق'
      return user_info
 async def handle_deposit(query , user_id) -> None:
     logger.info(f"User Click on Withdrawal Option")
     await query.answer()
-    await query.edit_message_text(getUserInfoText(user_id), reply_markup=getReplyMarkup(user_id))
+    await query.edit_message_text(getUserInfoText(), reply_markup=getReplyMarkup())
 
 

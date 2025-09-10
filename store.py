@@ -15,7 +15,7 @@ def initializeDatabase():
         cursor.execute("""
                     CREATE TABLE IF NOT EXISTS users (
                     id INT AUTO_INCREMENT PRIMARY KEY,
-                    telegram_id INT UNIQUE NOT NULL,
+                    telegram_id VARCHAR(20) UNIQUE NOT NULL,
                     telegram_username VARCHAR(255),
                     player_id VARCHAR(255) NOT NULL,
                     name VARCHAR(255),
@@ -60,7 +60,7 @@ def initializeDatabase():
                     user_id INT NOT NULL,
                     status VARCHAR(255) NOT NULL,
                     action_type VARCHAR(255) NOT NULL,
-                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
                     value INT NOT NULL,
                     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
@@ -94,7 +94,6 @@ def getDatabaseConnection(initialize = False):
             )
             return mydb
         else:
-        
             mydb = mysql.connector.connect(
             host = config.database.host,
             port = config.database.port,
