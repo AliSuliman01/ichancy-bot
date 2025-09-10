@@ -31,8 +31,8 @@ def getKeyboard():
             InlineKeyboardButton("الشروحات 📝", callback_data='guides'),
         ],
         [InlineKeyboardButton("الشروط والاحكام 📌", callback_data='terms_and_conditions')],
-        [InlineKeyboardButton("📊 Check Account Status", callback_data='check_status')],
-        [InlineKeyboardButton("❓ Help", callback_data='help')],
+        # [InlineKeyboardButton("📊 Check Account Status", callback_data='check_status')],
+        # [InlineKeyboardButton("❓ Help", callback_data='help')],
     ]
     return keyboard
 

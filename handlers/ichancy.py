@@ -8,8 +8,8 @@ logger = Logger.getLogger()
 def getKeyboard(user_id):
         keyboard = [
             [
-                InlineKeyboardButton("سحب من الحساب", callback_data='start'),
-                InlineKeyboardButton("شحن حساب", callback_data='start')
+                InlineKeyboardButton("سحب من الحساب", callback_data='withdrawal_account'),
+                InlineKeyboardButton("شحن حساب", callback_data='deposit_account')
             ],
             [InlineKeyboardButton("القائمة الرئيسية", callback_data='back_to_menu')],
         ]
@@ -18,11 +18,7 @@ def getKeyboard(user_id):
             [
                 InlineKeyboardButton("إنشاء حساب جديد", callback_data='create_account')
             ],
-            [
-                InlineKeyboardButton("سحب من الحساب", callback_data='start'),
-                InlineKeyboardButton("شحن حساب", callback_data='start')
-            ],
-            [InlineKeyboardButton("القائمة الرئيسية", callback_data='back_to_menu')],
+            *keyboard
         ]
 
         return keyboard
