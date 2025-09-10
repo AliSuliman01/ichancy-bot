@@ -17,7 +17,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     data = query.data
     
     if data.find('guide') != -1:
-        await explainationButton(update , context , query)
+        await guidesButton(update , context , query)
     elif data == 'check_status':
         await handlers.checkStatus.handle_check_status(query, user_id)
     elif data == 'help':
@@ -33,7 +33,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     elif data == 'terms_and_conditions':
         await handlers.conditions.handle_terms_and_conditions(query)
 
-async def explainationButton(update: Update, context: ContextTypes.DEFAULT_TYPE , query):
+async def guidesButton(update: Update, context: ContextTypes.DEFAULT_TYPE , query):
     data = query.data
     if data == "guides":
         await handlers.guidesHandlers.guides.handle_guides(query)
