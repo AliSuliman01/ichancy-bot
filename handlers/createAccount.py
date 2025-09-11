@@ -75,7 +75,7 @@ def conversationHandler():
 async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TYPE):
     """Handle account creation"""
     try:
-        user_id = user_id = str(update.effective_user.id)
+        user_id = str(update.effective_user.id)
         email=context.user_data.get('email')
         username=context.user_data.get('username')
         password=context.user_data.get('password')

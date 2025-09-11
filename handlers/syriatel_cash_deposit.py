@@ -1,7 +1,7 @@
 from iChancyAPI import iChancyAPI
 import asyncio
 import Logger , store
-from telegram import Update,ReplyKeyboardRemove
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update,ReplyKeyboardRemove
 from telegram.ext import (
     ContextTypes,
     ConversationHandler,
@@ -11,6 +11,7 @@ from telegram.ext import (
     CommandHandler,
     CallbackQueryHandler,
 )
+from services.transaction_notification_service import transaction_notification_service
 
 logger = Logger.getLogger()
 
@@ -64,13 +65,43 @@ async def cancel(update: Update, context: CallbackContext) -> int:
 
 def conversationHandler():
     conv_handler = ConversationHandler(
-    entry_points=[CallbackQueryHandler(button_handler, pattern='^syriatel_cash_deposit$')],
-    states={
-        transfer_num: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_transfer_num)],
-    },
-    fallbacks=[CommandHandler('cancel', cancel)],
+        entry_points=[CallbackQueryHandler(button_handler, pattern='^syriatel_cash_deposit$')],
+        states={
+            transfer_num: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_transfer_num)],
+            value: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_value)],
+        },
+        fallbacks=[CommandHandler('cancel', cancel)],
     )
     return conv_handler
+
+def getConfirmMarkup():
+    keyboard = [
+        [InlineKeyboardButton("تأكيد", callback_data='confirm_syriatel_cash_deposit')],
+    ]
+    return InlineKeyboardMarkup(keyboard)
+
+async def confirm_deposit(update: Update, context: ContextTypes.DEFAULT_TYPE) -> int:
+    query = update.callback_query
+    await query.answer()
+    
+    syriatelCashTransactionId = context.user_data.get('syriatelCashTransactionId')
+        # Send notification to admin about new transaction
+    if syriatelCashTransactionId:
+        await transaction_notification_service.notify_admin_new_transaction(syriatelCashTransactionId, 'syriatel')
+
+    # Get the current message text and add success message
+    current_text = query.message.text
+    success_text = current_text + "\n✅ تم إرسال طلبك للمراجعة. سيتم إشعارك عند الموافقة أو الرفض."
+    
+    # Edit the message to remove the keyboard and add success message
+    await query.edit_message_text(
+        text=success_text,
+        reply_markup=None,  # This removes the keyboard
+        parse_mode='Markdown'
+    )
+    
+    return ConversationHandler.END
+
 async def handle_create_transaction(update: Update ,context: ContextTypes.DEFAULT_TYPE):
     """Handle account creation"""
     try:
@@ -80,18 +111,21 @@ async def handle_create_transaction(update: Update ,context: ContextTypes.DEFAUL
         api = iChancyAPI()
         logger.info(api.COOKIES)
 
-        syriatelCashTransaction = store.insertSyriatelCashTransaction(telegram_id = telegram_user_id,transfer_num=transfer_num,value=value)
-        
+        syriatelCashTransactionId = store.insertTransaction(telegram_id = telegram_user_id,value=value,action_type='deposit',provider_type='syriatel',transfer_num=transfer_num)
+
+        # Store transaction ID in context for later use
+        context.user_data['syriatelCashTransactionId'] = syriatelCashTransactionId
+
         success_text = (
             "طلب شحن\n"
             "Syriatel Cash 🟢\n"
             "رقم العملية او العنوان: " + str(transfer_num) + "\n\n"
             "المبلغ بالليرة:  " + str(value) + "\n"
             "قيمة الطلب: " + str(value) + "\n"
-            "رقم الطلب: #" + str(syriatelCashTransaction['id']) + "\n"
+            "رقم الطلب: #" + str(syriatelCashTransactionId) + "\n\n"
         )
         
-        await update.message.reply_text(success_text ,parse_mode='Markdown')
+        await update.message.reply_text(success_text,reply_markup=getConfirmMarkup(), parse_mode='Markdown')
 
  
     except Exception as e:

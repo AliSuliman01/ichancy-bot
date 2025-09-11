@@ -123,12 +123,6 @@ def getUserByTelegramId(telegram_id):
     cursor.execute("SELECT * FROM users WHERE telegram_id = %s", (telegram_id,))
     return cursor.fetchone()
 
-def getUserIdByTelegramId(telegram_id):
-    mydb = getDatabaseConnection()
-    cursor = mydb.cursor(dictionary=True)
-    cursor.execute("SELECT id FROM users WHERE telegram_id = %s", (telegram_id,))
-    return cursor.fetchone()
-
 def insertNewUser(telegram_id, telegram_username = None):
 
     mydb = getDatabaseConnection()
@@ -146,26 +140,6 @@ def insertNewUser(telegram_id, telegram_username = None):
         mydb.commit()
     
     mydb.close()
-
-def insertSyriatelCashTransaction(telegram_id, transfer_num, value):
-
-    mydb = getDatabaseConnection()
-    cursor = mydb.cursor(dictionary=True)
-    
-    user_id = getUserIdByTelegramId(telegram_id)
-    sqlInsert = """
-            INSERT INTO syriatel_transactions (user_id , transfer_num, value) VALUES (%(user_id)s, %(transfer_num)s, %(value)s)
-        """
-    data = {
-        'user_id' : user_id,
-        'transfer_num' : transfer_num,
-        'value' : value
-    }
-    cursor.execute(sqlInsert, data)
-    mydb.commit()
-    
-    mydb.close()
-
 
 def insertUserDetailes(telegram_id,name,password,email,player_id):
 
@@ -189,5 +163,169 @@ def insertUserDetailes(telegram_id,name,password,email,player_id):
     mydb.commit()
     mydb.close()   
 
+# Transaction management functions
+def insertTransaction(telegram_id, value, action_type, provider_type=None, transfer_num=None):
+    """Insert a new transaction into the database"""
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor(dictionary=True)
+    
+    user = getUserByTelegramId(telegram_id)
+    user_id = user['id'] if user else None
+
+    if not user_id:
+        mydb.close()
+        return None
+
+    # Determine which table to use based on provider type
+    if provider_type == 'syriatel':
+        sqlInsert = """
+            INSERT INTO syriatel_transactions (user_id, transfer_num, value, status, action_type) 
+            VALUES (%(user_id)s, %(transfer_num)s, %(value)s, %(status)s, %(action_type)s)
+        """
+        data = {
+            'user_id': user_id,
+            'transfer_num': transfer_num,
+            'value': value,
+            'status': 'pending',
+            'action_type': action_type
+        }
+    elif provider_type == 'bemo':
+        sqlInsert = """
+            INSERT INTO bemo_transactions (user_id, transfer_num, value, status, action_type) 
+            VALUES (%(user_id)s, %(transfer_num)s, %(value)s, %(status)s, %(action_type)s)
+        """
+        data = {
+            'user_id': user_id,
+            'transfer_num': transfer_num,
+            'value': value,
+            'status': 'pending',
+            'action_type': action_type
+        }
+    
+    cursor.execute(sqlInsert, data)
+    provider_id = cursor.lastrowid
+    
+    # Use general transactions table
+    sqlInsert = """
+        INSERT INTO transactions (user_id, provider_id, provider_type, value, action_type) 
+        VALUES (%(user_id)s, %(provider_id)s, %(provider_type)s, %(value)s, %(action_type)s)
+    """
+    data = {
+        'user_id': user_id,
+        'provider_id': provider_id,
+        'provider_type': provider_type,
+        'value': value,
+        'action_type': action_type
+    }
+
+    cursor.execute(sqlInsert, data)
+    
+    mydb.commit()
+    mydb.close()
+    
+    return provider_id
+
+def get_transaction_table_name_by_type(transaction_type):
+    match(transaction_type):
+        case 'syriatel':
+            return 'syriatel_transactions';
+        case 'bemo':
+            return 'bemo_transactions';
+        case _:
+            return None
+
+def get_transaction_by_id(transaction_id, transaction_type):
+    """Get transaction by ID from any transaction table"""
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor(dictionary=True)
+
+    table = get_transaction_table_name_by_type(transaction_type)
+    
+    if not table:
+        raise ValueError("Please provide a valid transaction type")
+
+    cursor.execute(f"SELECT * FROM {table} WHERE id = %s", (transaction_id,))
+    result = cursor.fetchone()
+
+    mydb.close()
+    return result
+
+def get_pending_transactions():
+    """Get all pending transactions from all transaction tables"""
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor(dictionary=True)
+    
+    # Get pending transactions from all tables
+    all_transactions = []
+    
+    tables = [
+        ('transactions', 'provider_type'),
+        ('syriatel_transactions', 'transfer_num'),
+        ('bemo_transactions', 'transfer_num'),
+        ('account_transactions', 'action_type')
+    ]
+    
+    for table, extra_field in tables:
+        try:
+            cursor.execute(f"SELECT * FROM {table} WHERE status = 'pending' ORDER BY created_at DESC")
+            results = cursor.fetchall()
+            for result in results:
+                result['table_name'] = table
+                all_transactions.append(result)
+        except:
+            continue
+    
+    mydb.close()
+    return sorted(all_transactions, key=lambda x: x['created_at'], reverse=True)
+
+def update_transaction_status(transaction_id, transaction_type, status):
+    """Update transaction status in the appropriate table"""
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor()
+     
+    table = get_transaction_table_name_by_type(transaction_type)
+    
+    if not table:
+        raise ValueError("Please provide a valid transaction type")
+
+    cursor.execute(f"UPDATE {table} SET status = %s WHERE id = %s", (status, transaction_id))
+
+    if cursor.rowcount > 0:
+        mydb.commit()
+        mydb.close()
+        return True
+
+    mydb.close()
+    return False
+
+def update_user_balance(user_id, amount):
+    """Update user balance (add amount to current balance)"""
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor()
+    
+    try:
+        cursor.execute("UPDATE users SET balance = balance + %s WHERE id = %s", (amount, user_id))
+        mydb.commit()
+        mydb.close()
+        return True
+    except Exception as e:
+        print(f"Error updating user balance: {e}")
+        mydb.close()
+        return False
+
+def get_user_balance(user_id):
+    """Get user current balance"""
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor()
+    
+    try:
+        cursor.execute("SELECT balance FROM users WHERE id = %s", (user_id,))
+        result = cursor.fetchone()
+        mydb.close()
+        return result[0] if result else 0
+    except Exception as e:
+        print(f"Error getting user balance: {e}")
+        mydb.close()
+        return 0
+
 initializeDatabase()
-# insertUserDetailes(1419197314,"fgfgf","123456","soso@gmail.com")

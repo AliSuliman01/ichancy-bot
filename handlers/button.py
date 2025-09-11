@@ -6,6 +6,8 @@ import handlers.guidesHandlers.guidesHowDepositTelegramAccount
 import handlers.guidesHandlers.guidesHowWithdrawTelegramAccount
 import handlers.guidesHandlers.guidesHowDepositIchancyAccount
 import handlers.guidesHandlers.guidesHowWithdrawIchancyAccount
+import handlers.syriatel_cash_deposit
+import handlers.transactions
 from telegram import Update
 from telegram.ext import ContextTypes
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -32,6 +34,14 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await handlers.deposit.handle_deposit(query , user_id)
     elif data == 'terms_and_conditions':
         await handlers.conditions.handle_terms_and_conditions(query)
+    elif data == 'confirm_syriatel_cash_deposit':
+        await handlers.syriatel_cash_deposit.confirm_deposit(update, context)
+    elif data.startswith('approve_'):
+        _, transaction_type, transaction_id = data.split('_')
+        await handlers.transactions.approve_transaction(query, transaction_id,transaction_type)
+    elif data.startswith('reject_'):
+        _, transaction_type, transaction_id = data.split('_')
+        await handlers.transactions.reject_transaction(query, transaction_id, transaction_type)
 
 async def guidesButton(update: Update, context: ContextTypes.DEFAULT_TYPE , query):
     data = query.data

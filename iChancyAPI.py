@@ -61,6 +61,8 @@ class iChancyAPI:
         self.session = requests.Session()
         
         self.session.headers.update(self.HEADERS)
+
+        self.set_cookies_from_string(config.telegram.COOKIE_STRING)
         
         logger.info("Initialized iChancy API with headers and cookies")
         

@@ -7,8 +7,8 @@ logger = Logger.getLogger()
 def getKeyboard(user_id):
         keyboard = [
             [
+                InlineKeyboardButton("Syriatel Cash 🟢", callback_data='syriatel_cash_withdrawal'),
                 InlineKeyboardButton("Bemo", callback_data='bemo_withdrawal'),
-                InlineKeyboardButton("Syriatel Cash 🟢", callback_data='syriatel_cash_withdrawal')
             ],
             [
                 InlineKeyboardButton("Payeer", callback_data='payeer_withdrawal'),
@@ -48,3 +48,6 @@ async def handle_withdrawal(query , user_id) -> None:
     await query.edit_message_text(getUserInfoText(user_id), reply_markup=getReplyMarkup(user_id))
 
 
+
+# ارسل رقم السيرياتيل الذي ترغب في استقبال ارباحك عليه
+# 
