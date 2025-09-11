@@ -318,4 +318,19 @@ def insertMessageToAdmin(telegram_id,message):
     mydb.commit()
     mydb.close()
 
+def insertNewBalance(telegram_id ,newBalance ):
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor()
+    sql = """
+        UPDATE users SET balance = %(balance)s
+        WHERE telegram_id = %(telegram_id)s
+        """
+    data = {
+    'balance': newBalance,
+    'telegram_id': telegram_id
+    }
+    cursor.execute(sql,data)
+    mydb.commit()
+    mydb.close()
+
 initializeDatabase()

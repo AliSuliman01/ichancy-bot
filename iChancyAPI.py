@@ -63,7 +63,7 @@ class iChancyAPI:
         
         logger.info("Initialized iChancy API with headers and cookies")
         
-    def register_account(self, username=None, password=None, email=None, parent_id=config.ichancy.parent_id):
+    def register_account(self, username=None, password=None, email=None, parent_id=config.ichancy.PARENT_ID):
         """
         Register a new account using the iChancy API
         """
@@ -202,8 +202,6 @@ class iChancyAPI:
                     json=payload, 
                     timeout=30
                 )
-        
-                # Log response details for debuggin
                 json = response.json()
                 for row in json.get('result').get('records'):
                  if row['username'] == telegram_username:
@@ -214,5 +212,79 @@ class iChancyAPI:
                  logger.error(f"Response status: {e.response.status_code}")
                 
         except Exception as e:
-                logger.error(f"Registration submission failed: {e}")
+                logger.error(f"Registration submission failed: {e}",exc_info=True)
                 return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
+
+    def getAdminstratorBalance(self):
+        try:
+            
+            
+            # API endpoint
+            getAgentWalletByAgentId = "https://agents.ichancy.com/global/api/Agent/getAgentWalletByAgentId"
+
+            # Prepare JSON payload
+            payload = {               
+                   'affiliateId': config.ichancy.PARENT_ID,
+                   'currencyCode': "NSP"
+
+            }
+            # Log the request details for debugging
+            logger.info(f"Making request to: {getAgentWalletByAgentId}")
+        
+            # Submit registration
+            logger.info("Submitting registration to API")
+            try:
+                response = self.session.post(
+                    getAgentWalletByAgentId, 
+                    json=payload, 
+                    timeout=30
+                )
+                json = response.json()
+                
+                return json.get('result').get('balance')
+            except requests.exceptions.HTTPError as e:
+                 logger.error(f"HTTP Error: {e}",exc_info=True)
+                 logger.error(f"Response status: {e.response.status_code}")
+                
+        except Exception as e:
+                logger.error(f"Registration submission failed: {e}",exc_info=True)
+                return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
+
+    def transfeerMoney(self , player_id = "321405978" , currencyCode = "NSP" , ammount = 1 , comment = None , moneyStatus = 5):
+        try:
+            
+            
+            # API endpoint
+            getTransfeerUrl = "https://agents.ichancy.com/global/api/Player/depositToPlayer"
+
+            # Prepare JSON payload
+            payload = {'amount': ammount,
+                      'comment': None,
+                      'playerId': player_id, 
+                      'currencyCode': currencyCode,
+                      'moneyStatus': moneyStatus}
+
+            # Log the request details for debugging
+            logger.info(f"Making request to: {getTransfeerUrl}")
+        
+            # Submit registration
+            logger.info("Submitting Transfeering money to API")
+            try:
+                response = self.session.post(
+                    getTransfeerUrl, 
+                    json=payload, 
+                    timeout=30
+                )
+
+            
+            except requests.exceptions.HTTPError as e:
+                 logger.error(f"HTTP Error: {e}")
+                 logger.error(f"Response status: {e.response.status_code}")
+                
+        except Exception as e:
+                logger.error(f"Transfeer Money Failed: {e}",exc_info=True)
+                return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
+        
+api = iChancyAPI()
+
+api.getAdminstratorBalance()
