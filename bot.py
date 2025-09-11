@@ -1,7 +1,7 @@
 import Logger
 import config.telegram
 import handlers.createAccount , handlers.error , handlers.button , handlers.syriatel_cash_deposit , handlers.sendGifts ,handlers.reseiveGifts
-import handlers.command.start , handlers.command.balance
+import handlers.command.start , handlers.command.balance , handlers.adminMessage
 from iChancyAPI import iChancyAPI
 from telegram.ext import (
     Application,
@@ -31,6 +31,7 @@ def main() -> None:
         application.add_handler(handlers.syriatel_cash_deposit.conversationHandler())
         application.add_handler(handlers.sendGifts.conversationHandler())
         application.add_handler(handlers.reseiveGifts.conversationHandler())
+        application.add_handler(handlers.adminMessage.conversationHandler())
         application.add_handler(CommandHandler('start', handlers.command.start.start))
         application.add_handler(CommandHandler('balance', handlers.command.balance.balance))
         # application.add_handler(CallbackQueryHandler(ichancy))

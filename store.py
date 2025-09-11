@@ -89,6 +89,16 @@ def initializeDatabase():
                     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
                 )
             """)
+        cursor.execute("""
+                CREATE TABLE IF NOT EXISTS messages_to_admin (
+                       id INT AUTO_INCREMENT PRIMARY KEY,
+                       user_id INT NOT NULL,
+                       message TEXT NOT NULL,
+                       reply TEXT NULL,
+                       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                    )
+            """)
 
     except(Exception, mysql.connector.Error) as error: 
         print(f"Failed to connect to the database: {error}")
@@ -138,7 +148,11 @@ def getUserByTelegramId(telegram_id):
 def getUserIdByTelegramId(telegram_id):
     mydb = getDatabaseConnection()
     cursor = mydb.cursor(dictionary=True)
-    cursor.execute("SELECT id FROM users WHERE telegram_id = %s", (telegram_id,))
+    sql = """SELECT id FROM users WHERE telegram_id = %(telegram_id)s"""
+    data = {
+        'telegram_id' : telegram_id
+    }
+    cursor.execute(sql,data)
     return cursor.fetchone()
 
 def insertGift(telegram_id , giftAmmount , telegram_goal_id , code):
@@ -225,7 +239,6 @@ def getGift(code , telegram_id):
      }     
      cursor.execute(sql,data)
      resault = cursor.fetchone()
-     print('nfbdbvfldvbjkfddfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
      if resault:
          validateRedeemedAt(resault , cursor , mydb)
          insertTheNewBalance(telegram_id , cursor , resault , mydb)
@@ -291,5 +304,18 @@ def insertUserDetailes(telegram_id,name,password,email,player_id):
     cursor.execute(sqlInsert, data)
     mydb.commit()
     mydb.close()   
+
+def insertMessageToAdmin(telegram_id,message):
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor()
+    user_id = getUserIdByTelegramId(telegram_id).get('id')
+    sql = """INSERT INTO messages_to_admin (user_id , message) VALUES (%(user_id)s , %(message)s)  """
+    data = {
+        'user_id': user_id,
+        'message': message
+    }
+    cursor.execute(sql,data)
+    mydb.commit()
+    mydb.close()
 
 initializeDatabase()

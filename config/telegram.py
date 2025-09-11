@@ -8,3 +8,6 @@ TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 # SESSION_FILE = 'ichancy_sessions.json'
 COOKIE_STRING = os.getenv('ICHANCY_COOKIE')
 # Validate bot token
+
+
+ADMIN_ID = os.getenv('ADMIN_ID')
