@@ -313,6 +313,21 @@ def insertNewBalance(telegram_id ,newBalance ):
     mydb.commit()
     mydb.close()
 
+def insertNewAccountBalance(telegram_id ,newBalance ):
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor()
+    sql = """
+        UPDATE users SET account_balance = %(account_balance)s
+        WHERE telegram_id = %(telegram_id)s
+        """
+    data = {
+    'account_balance': newBalance,
+    'telegram_id': telegram_id
+    }
+    cursor.execute(sql,data)
+    mydb.commit()
+    mydb.close()
+
 def insertMessageToAdmin(telegram_id,message):
     mydb = getDatabaseConnection()
     cursor = mydb.cursor()
@@ -482,7 +497,22 @@ def update_user_balance(user_id, amount):
     cursor = mydb.cursor()
     
     try:
-        cursor.execute("UPDATE users SET balance = balance + %s WHERE id = %s", (amount, user_id))
+        cursor.execute("UPDATE users SET balance = %s WHERE id = %s", (amount, user_id))
+        mydb.commit()
+        mydb.close()
+        return True
+    except Exception as e:
+        print(f"Error updating user balance: {e}")
+        mydb.close()
+        return False
+
+def update_user_account_balance(user_id, amount):
+    """Update user balance (add amount to current balance)"""
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor()
+    
+    try:
+        cursor.execute("UPDATE users SET account_balance = %s WHERE id = %s", (amount, user_id))
         mydb.commit()
         mydb.close()
         return True
@@ -505,5 +535,33 @@ def get_user_balance(user_id):
         print(f"Error getting user balance: {e}")
         mydb.close()
         return 0
+
+
+def insertInTransactionAccount(user_id , status , action_type , value):
+    mydb = getDatabaseConnection()
+    cursor = mydb.cursor(dictionary=True)
+    sql = """INSERT INTO account_transactions (user_id , status , action_type , value) VALUES (%(user_id)s , %(status)s , %(action_type)s , %(value)s)"""
+    data = {
+        'user_id': user_id,
+        'status' : status,
+        'action_type': action_type,
+        'value':value
+    }
+    cursor.execute(sql,data)
+    mydb.commit()
+    mydb.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 initializeDatabase()

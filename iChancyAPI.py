@@ -243,7 +243,40 @@ class iChancyAPI:
                 )
                 json = response.json()
                 
-                return json.get('result').get('balance')
+                return int(json.get('result').get('balance'))
+            except requests.exceptions.HTTPError as e:
+                 logger.error(f"HTTP Error: {e}",exc_info=True)
+                 logger.error(f"Response status: {e.response.status_code}")
+                
+        except Exception as e:
+                logger.error(f"Registration submission failed: {e}",exc_info=True)
+                return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
+        
+    def getPlayerBalanceById(self , playerId):
+        try:
+            
+            
+            # API endpoint
+            getPlayerBalanceById = "https://agents.ichancy.com/global/api/Player/getPlayerBalanceById"
+
+            # Prepare JSON payload
+            payload ={'playerId': playerId}
+
+            # Log the request details for debugging
+            logger.info(f"Making request to: {getPlayerBalanceById}")
+        
+            # Submit registration
+            logger.info("Submitting registration to API")
+            try:
+                response = self.session.post(
+                    getPlayerBalanceById, 
+                    json=payload, 
+                    timeout=30
+                )
+                print(playerId)
+                json:list = response.json()
+                balance = int(json.get('result')[0].get('balance'))
+                return balance
             except requests.exceptions.HTTPError as e:
                  logger.error(f"HTTP Error: {e}",exc_info=True)
                  logger.error(f"Response status: {e.response.status_code}")
@@ -287,6 +320,37 @@ class iChancyAPI:
                 logger.error(f"Transfeer Money Failed: {e}",exc_info=True)
                 return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
         
-api = iChancyAPI()
+    def WirhdrawMoney(self , player_id = "321405978" , currencyCode = "NSP" , ammount = 1 , comment = None , moneyStatus = 5):
+        try:
+            
+            
+            # API endpoint
+            getWithdrawUrl = "https://agents.ichancy.com/global/api/Player/withdrawFromPlayer"
 
-api.getAdminstratorBalance()
+            # Prepare JSON payload
+            payload = {'amount': -ammount,
+                      'comment': None,
+                      'playerId': player_id, 
+                      'currencyCode': currencyCode,
+                      'moneyStatus': moneyStatus}
+
+            # Log the request details for debugging
+            logger.info(f"Making request to: {getWithdrawUrl}")
+        
+            # Submit registration
+            logger.info("Submitting Transfeering money to API")
+            try:
+                response = self.session.post(
+                    getWithdrawUrl, 
+                    json=payload, 
+                    timeout=30
+                )
+            
+            except requests.exceptions.HTTPError as e:
+                 logger.error(f"HTTP Error: {e}")
+                 logger.error(f"Response status: {e.response.status_code}")
+                
+        except Exception as e:
+                logger.error(f"Transfeer Money Failed: {e}",exc_info=True)
+                return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
+        
