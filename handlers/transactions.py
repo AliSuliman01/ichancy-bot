@@ -22,8 +22,10 @@ async def approve_transaction(query, transaction_id, transaction_type):
             if transaction:
                 # Update user balance if it's a deposit
                 if transaction['action_type'] == 'deposit':
-                    store.update_user_balance(transaction['user_id'], transaction['value'])
-                
+                    user_balance = store.get_user_balance(transaction['user_id'])
+                    new_balance = user_balance + transaction['value']
+                    store.update_user_balance(transaction['user_id'], new_balance)
+
                 # Notify user about approval
                 await notify_user_transaction_status(transaction, 'approved')
                 
