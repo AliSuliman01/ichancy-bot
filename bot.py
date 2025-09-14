@@ -36,7 +36,7 @@ def main() -> None:
         application.add_handler(handlers.depositAccount.conversationHandler())
         application.add_handler(handlers.withdrawalAccount.conversationHandler())
         application.add_handler(handlers.adminMessage.conversationHandler())
-        application.add_handler(CommandHandler('start', handlers.command.start.start))
+        application.add_handler(flows.startFlow.handler())
         application.add_handler(CommandHandler('balance', handlers.command.balance.balance))
         # application.add_handler(CallbackQueryHandler(ichancy))
         application.add_handler(CallbackQueryHandler(handlers.button.button))
