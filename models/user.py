@@ -4,3 +4,5 @@ class User(Model):
     
     def get_table(self):
         return "users"  
+    
+    

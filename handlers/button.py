@@ -1,20 +1,3 @@
-import handlers.problemInWebsite
-import handlers.syriatel_cash_deposit
-import handlers.transactions
-import flows.backToMenu.handler
-import flows.contactUs.handler
-import flows.ichancy.handler
-import flows.withdrawal.handler
-import flows.deposit.handler
-import flows.terms.handler
-import flows.problemInBot.handler
-import flows.guideHandlers.whatIchancy.handler
-import flows.guideHandlers.guides.handler
-import flows.guideHandlers.HowDepositIchancyAccount.handler
-import flows.guideHandlers.HowDepositTelegramAccount.handler
-import flows.guideHandlers.howWithdrawIchancyAccount.handler
-import flows.guideHandlers.howWithdrawTelegramAccount.handler
-import flows.guideHandlers.HowToCreateNewAccount.handler
 from telegram import Update
 from telegram.ext import ContextTypes
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:

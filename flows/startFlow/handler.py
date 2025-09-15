@@ -9,10 +9,14 @@ def handler():
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     user_id = str(update.effective_user.id)
     username = update.effective_user.username or update.effective_user.first_name
-    User().insert({
-        'telegram_id': user_id,
-        'telegram_username': username
-    })
+    print("###########################################################")
+    print(User().getBy({'telegram_id' : ('=' , user_id)}))
+    print("####################################################")
+    if not User().getBy({'telegram_id' : ('=' , user_id)}):
+        User().insert({
+            'telegram_id': user_id,
+            'telegram_username': username
+        })
     
     reply_text, reply_markup = start_message()
 

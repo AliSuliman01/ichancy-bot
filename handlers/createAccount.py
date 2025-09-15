@@ -12,6 +12,7 @@ from telegram.ext import (
     CommandHandler,
     CallbackQueryHandler,
 )
+from models.user import User
 import random
 
 logger = Logger.getLogger()
@@ -24,7 +25,7 @@ async def button_handler(update: Update, context: CallbackContext) -> int:
 
     if query.data == 'create_account':
         await query.edit_message_text(
-            text="Enter User name"
+            text="ادخل اسم المستخدم"
         )
         return USERNAME
 
@@ -40,7 +41,7 @@ async def get_username(update: Update, context: CallbackContext) -> int:
     context.user_data['username'] = username
     logger.info("User %s chose username: %s", user.first_name, username)
     await update.message.reply_text(
-        f"Enter Password"
+        f"ادخل كلمة المرور"
     )
     return PASSWORD
 
@@ -94,7 +95,8 @@ async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TY
 
         if result['success']:
             playerId = api.getPlayerId(username)    
-            store.insertUserDetailes(telegram_id = user_id,name = username,password=password,email=email , player_id = playerId)
+            # store.insertUserDetailes(telegram_id = user_id,name = username,password=password,email=email , player_id = playerId)
+            User().insert({'telegram_id': user_id , 'name' : username , 'password' : password ,'email':email,'player_id':playerId })
             keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
             reply_markup = InlineKeyboardMarkup(keyboard)
             
@@ -134,6 +136,3 @@ async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TY
             reply_markup=reply_markup,
             parse_mode='Markdown'
         )
-    context.user_data.pop('username', None)
-    context.user_data.pop('password', None)
-    context.user_data.pop('email', None)

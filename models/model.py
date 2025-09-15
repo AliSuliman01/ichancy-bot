@@ -12,38 +12,42 @@ class Model(ABC):
         pass
 
     def getById(self, id: int):
-        cursor = self.db.cursor()
+        cursor = self.db.cursor(dictionary=True)
         cursor.execute(f"SELECT * FROM {self.table} WHERE id = {id}")
         return cursor.fetchone()
 
     def getBy(self, conditions: dict):
-        cursor = self.db.cursor()
-        where_clause = ' AND '.join([f"{k} {op} %s" for k, (op, v) in conditions.items()])
+        cursor = self.db.cursor(dictionary=True)
+        where_clause = ' AND '.join([f"{k} {op}" + " %s "  for k, (op, v) in conditions.items()]) 
         sql = f"SELECT * FROM {self.table} WHERE {where_clause}"
+        print(sql)
         values = [v for k, (op, v) in conditions.items()]
+        print(values)
         cursor.execute(sql, values)
-        return cursor.fetchall()
+        resault = cursor.fetchall()
+        # self.db.close()
+        return resault
 
     def getAll(self):
-        cursor = self.db.cursor()
+        cursor = self.db.cursor(dictionary=True)
         cursor.execute(f"SELECT * FROM {self.table}")
         return cursor.fetchall()
 
     def insert(self, data: dict):
-        cursor = self.db.cursor()
-        print("_____________________________________________________")
-        print(f"INSERT INTO {self.table} ({', '.join(data.keys())} ) VALUES(" + ', '.join(f"'{value}'" if isinstance(value , str) else f"{value}" for value in data.values())+ ")")
-        print("_____________________________________________________")
+        cursor = self.db.cursor(dictionary=True)
         cursor.execute(f"INSERT INTO {self.table} ({', '.join(data.keys())} ) VALUES(" + ', '.join(f"'{value}'" if isinstance(value , str) else f"{value}" for value in data.values() ) + ")")
-        print("oddddddddddddddddddddddddddddddddddddddddddd")
+        self.db.commit()
+        # self.db.close()
     def update(self, conditions: dict, data: dict):
         """
         conditions: dict of {key: (operator, value)}, e.g. {'id': ('=', 5), 'name': ('LIKE', '%foo%')}
         data: dict of {column: value}
         """
-        cursor = self.db.cursor()
+        cursor = self.db.cursor(dictionary=True)
         set_clause = ', '.join([f"{k} = %s" for k in data.keys()])
         where_clause = ' AND '.join([f"{k} {op} %s" for k, (op, v) in conditions.items()])
         sql = f"UPDATE {self.table} SET {set_clause} WHERE {where_clause}"
         values = list(data.values()) + [v for k, (op, v) in conditions.items()]
         cursor.execute(sql, values)
+        self.db.commit()
+        # self.db.close()

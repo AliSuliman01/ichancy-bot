@@ -2,8 +2,13 @@ import mysql.connector
 import config.database
 
 class Database:
+    
     _connection = None
-
+    print("############################################################")
+    print("############################################################")
+    print("############################################################")
+    print("############################################################")
+    print(_connection)
     @staticmethod
     def getConnection():
         

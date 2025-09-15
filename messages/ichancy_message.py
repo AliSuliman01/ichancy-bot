@@ -1,6 +1,6 @@
 import store
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-import helpers
+from models.user import User
 
 def ichancy_message(user_id):
     return reply_text(user_id), reply_markup(user_id)
@@ -15,12 +15,13 @@ def getKeyboard(user_id):
             [InlineKeyboardButton("القائمة الرئيسية", callback_data='back_to_menu')],
         ]
         # if not  store.getUserByTelegramId(telegram_id=user_id).get('name'):
-        keyboard = [
-            [
-                InlineKeyboardButton("إنشاء حساب جديد", callback_data='create_account')
-            ],
-            *keyboard
-        ]
+        if not User().getBy({'player_id' : ('=' , user_id)}): 
+            keyboard = [
+                [
+                    InlineKeyboardButton("إنشاء حساب جديد", callback_data='create_account')
+                ],
+                *keyboard
+            ]
 
         return keyboard
         
