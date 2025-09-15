@@ -2,7 +2,8 @@ import mysql.connector
 import config.database
 
 class Database:
-    
+    _connection = None
+
     @staticmethod
     def getConnection():
         

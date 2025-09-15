@@ -10,8 +10,6 @@ import trans
 logger = Logger.getLogger()
 
 async def approve_transaction(query, transaction_id, transaction_type):
-    print("++++++++++++++++++++++++ approve_transaction +++++++++++++++++++++++++++++++++++++")
-    """Approve a transaction"""
     try:
         # Update transaction status in database
         success = store.update_transaction_status(transaction_id, transaction_type, 'approved')

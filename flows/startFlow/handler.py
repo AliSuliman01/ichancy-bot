@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import CommandHandler, ContextTypes
-from messages import start_message
+from messages.start_message import start_message
 from models.user import User
 
 def handler():  
@@ -11,7 +11,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     username = update.effective_user.username or update.effective_user.first_name
     User().insert({
         'telegram_id': user_id,
-        'username': username
+        'telegram_username': username
     })
     
     reply_text, reply_markup = start_message()

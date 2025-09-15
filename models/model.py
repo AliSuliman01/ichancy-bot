@@ -31,8 +31,11 @@ class Model(ABC):
 
     def insert(self, data: dict):
         cursor = self.db.cursor()
-        cursor.execute(f"INSERT INTO {self.table} ({', '.join(data.keys())}) VALUES ({', '.join(data.values())})")
-
+        print("_____________________________________________________")
+        print(f"INSERT INTO {self.table} ({', '.join(data.keys())} ) VALUES(" + ', '.join(f"'{value}'" if isinstance(value , str) else f"{value}" for value in data.values())+ ")")
+        print("_____________________________________________________")
+        cursor.execute(f"INSERT INTO {self.table} ({', '.join(data.keys())} ) VALUES(" + ', '.join(f"'{value}'" if isinstance(value , str) else f"{value}" for value in data.values() ) + ")")
+        print("oddddddddddddddddddddddddddddddddddddddddddd")
     def update(self, conditions: dict, data: dict):
         """
         conditions: dict of {key: (operator, value)}, e.g. {'id': ('=', 5), 'name': ('LIKE', '%foo%')}

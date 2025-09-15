@@ -131,5 +131,3 @@ async def handle_create_transaction(update: Update ,context: ContextTypes.DEFAUL
     except Exception as e:
         logger.error(f"Error in handle_create_transaction: {e}")
   
-    context.user_data.pop('transfer_num', None)
-    context.user_data.pop('value', None)
