@@ -27,13 +27,12 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     
     ##################################################################
     import executing.executingFactory
-    print("##################################################################")
-    # execute = executing.executingFactory.ExecutingFactury()
+    execute = executing.executingFactory.ExecutingFactury()
 
-    # button = execute.get_execute(data)
+    button = await execute.get_execute(data)
 
-    # if button:
-    #     button.execute(query=query, username=username , user_id=user_id)
+    if button:
+        await button.execute(query=query, username=username , user_id=user_id)
 
 
     ##################################################################

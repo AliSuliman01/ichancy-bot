@@ -1,5 +1,9 @@
+from abc import ABC , abstractmethod
 
-class ExecutingInterface:
-    def __init__(slef):
-        print("fdnvsnfdvsf##################")
+
+
+class ExecutingInterface(ABC):
+     @abstractmethod
+     async def execute(self , query , **kwargs):
+        pass
     

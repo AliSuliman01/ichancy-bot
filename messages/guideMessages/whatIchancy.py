@@ -1,6 +1,6 @@
 from telegram import  InlineKeyboardButton, InlineKeyboardMarkup
 
-async def what_ichancy():
+def what_ichancy():
     return reply_text(),reply_markup()
 
 

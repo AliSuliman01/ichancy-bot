@@ -14,8 +14,8 @@ def getKeyboard(user_id):
             ],
             [InlineKeyboardButton("القائمة الرئيسية", callback_data='back_to_menu')],
         ]
-        if not  store.getUserByTelegramId(telegram_id=user_id).get('name'):
-            keyboard = [
+        # if not  store.getUserByTelegramId(telegram_id=user_id).get('name'):
+        keyboard = [
             [
                 InlineKeyboardButton("إنشاء حساب جديد", callback_data='create_account')
             ],
@@ -33,7 +33,7 @@ def reply_text(user_id):
      user = store.getUserByTelegramId(telegram_id=user_id)
      user_info = 'اختر الخيار الذي تريده'
 
-     if user and user.get('name'):
-        user_info = helpers.getStatusText(user)
+    #  if user and user.get('name'):
+    #     user_info = helpers.getStatusText(user)
         
      return user_info

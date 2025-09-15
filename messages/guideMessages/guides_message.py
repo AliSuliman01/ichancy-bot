@@ -19,7 +19,7 @@ def getKeyboard(query):
     return keyboard
 
 def reply_markup(query):
-    keyboard = getKeyboard()
+    keyboard = getKeyboard(query)
     reply_markup = InlineKeyboardMarkup(keyboard)
     return reply_markup
 

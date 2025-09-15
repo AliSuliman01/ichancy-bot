@@ -1,6 +1,6 @@
 from telegram import  InlineKeyboardButton, InlineKeyboardMarkup
 
-async def how_to_create_new_account():
+def how_to_create_new_account():
     return reply_text(),reply_markup()
 
 

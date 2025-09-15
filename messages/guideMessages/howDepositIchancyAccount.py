@@ -1,6 +1,6 @@
 from telegram import  InlineKeyboardButton, InlineKeyboardMarkup
 
-async def how_deposit_ichancy_account_message():
+def how_deposit_ichancy_account_message():
     return reply_text(),reply_markup()
 
 

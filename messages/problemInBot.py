@@ -8,7 +8,7 @@ def getKeyboard():
     pass
 
 def reply_markup():
-    return ReplyKeyboardRemove
+    return ReplyKeyboardRemove()
 
 def reply_text():
     text = "https://t.me/AbM1MbA"

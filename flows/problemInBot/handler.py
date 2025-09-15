@@ -2,4 +2,5 @@
 import messages.problemInBot
 
 async def handler(query):
-    await query.message.reply_text(messages.problemInBot.problem_in_bot_message())
+    text , reply_markup = messages.problemInBot.problem_in_bot_message()
+    await query.message.reply_text(text , reply_markup = reply_markup)

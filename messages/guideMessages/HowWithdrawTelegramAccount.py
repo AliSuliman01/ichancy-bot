@@ -1,6 +1,6 @@
 from telegram import  InlineKeyboardButton, InlineKeyboardMarkup
 
-async def how_withdrawal_telegram_account():
+def how_withdrawal_telegram_account():
     return reply_text(),reply_markup()
 
 
