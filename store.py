@@ -35,6 +35,7 @@ def initializeDatabase():
                     user_id INT NOT NULL,
                     value INT NOT NULL,
                     action_type VARCHAR(255) NOT NULL,
+                    message_id VARCHAR(255),
                     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
                 )
@@ -56,7 +57,7 @@ def initializeDatabase():
         cursor.execute("""
                 CREATE TABLE IF NOT EXISTS bemo_transactions (
                     id INT AUTO_INCREMENT PRIMARY KEY,
-                    transfer_num VARCHAR(255),
+                    transfeer_num VARCHAR(255),
                     user_id INT NOT NULL,
                     status VARCHAR(255) NOT NULL,
                     action_type VARCHAR(255) NOT NULL,
@@ -68,7 +69,7 @@ def initializeDatabase():
         cursor.execute("""
                 CREATE TABLE IF NOT EXISTS syriatel_transactions (
                     id INT AUTO_INCREMENT PRIMARY KEY,
-                    transfer_num VARCHAR(255),
+                    transfeer_num VARCHAR(255),
                     user_id INT NOT NULL,
                     status VARCHAR(255) NOT NULL,
                     action_type VARCHAR(255) NOT NULL,

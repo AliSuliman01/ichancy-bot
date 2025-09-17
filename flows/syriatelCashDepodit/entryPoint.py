@@ -5,7 +5,7 @@ from telegram.ext import (
     CallbackContext,
     )
 
-TRANSFER_NUM = 1
+transfeer_NUM = 1
 async def button_handler(update: Update, context: CallbackContext) -> int:
     query = update.callback_query
     await query.answer()
@@ -21,6 +21,6 @@ async def button_handler(update: Update, context: CallbackContext) -> int:
                 "ثم ادخل رقم عملية التحويل  👇\n"
             )
         )
-        return TRANSFER_NUM
+        return transfeer_NUM
 
     return ConversationHandler.END

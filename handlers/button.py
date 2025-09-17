@@ -7,16 +7,16 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await query.answer() 
     user_id = str(update.effective_user.id)
     username = update.effective_user.username
-    data = query.data
+    data = update.callback_query.data
+    
     ##################################################################
     import executing.executingFactory
     execute = executing.executingFactory.ExecutingFactury()
-
+    print(data)
     button = await execute.get_execute(data)
-
+    # context.bot.edit_message_text()
     if button:
-        await button.execute(query=query, username=username , user_id=user_id)
-
+        await button.execute(query=query, username=username , user_id=user_id , context = context)
 
     ##################################################################
 #     if data.find('guide') != -1:
@@ -66,3 +66,4 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 #         await flows.guideHandlers.HowDepositIchancyAccount.handler.handler(query)
 #     elif data == "guides_how_withdraw_ichancy_account":
 #         await flows.guideHandlers.howWithdrawIchancyAccount.handler.handler(query)
+

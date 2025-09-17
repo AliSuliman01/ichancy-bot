@@ -15,7 +15,7 @@ from services.transaction_notification_service import transaction_notification_s
 
 logger = Logger.getLogger()
 
-transfer_num, value = range(2)
+transfeer_num, value = range(2)
 # معالجة الضغط على الزر الداخلي
 async def button_handler(update: Update, context: CallbackContext) -> int:
     query = update.callback_query
@@ -32,16 +32,16 @@ async def button_handler(update: Update, context: CallbackContext) -> int:
                 "ثم ادخل رقم عملية التحويل  👇\n"
             )
         )
-        return transfer_num
+        return transfeer_num
 
     return ConversationHandler.END
 
-async def get_transfer_num(update: Update, context: CallbackContext) -> int:
+async def get_transfeer_num(update: Update, context: CallbackContext) -> int:
     user = update.message.from_user
     telegram_user_id = str(update.effective_user.id)
-    transfer_num = update.message.text
-    context.user_data['transfer_num'] = transfer_num
-    logger.info("User %s entered transfer number: %s", user.first_name, transfer_num)
+    transfeer_num = update.message.text
+    context.user_data['transfeer_num'] = transfeer_num
+    logger.info("User %s entered transfeer number: %s", user.first_name, transfeer_num)
     await update.message.reply_text(
         f"ادخل المبلغ الذي ارسلته بالليرة السورية"
     )
@@ -67,7 +67,7 @@ def conversationHandler():
     conv_handler = ConversationHandler(
         entry_points=[CallbackQueryHandler(button_handler, pattern='^syriatel_cash_deposit$')],
         states={
-            transfer_num: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_transfer_num)],
+            transfeer_num: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_transfeer_num)],
             value: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_value)],
         },
         fallbacks=[CommandHandler('cancel', cancel)],
@@ -106,12 +106,12 @@ async def handle_create_transaction(update: Update ,context: ContextTypes.DEFAUL
     """Handle account creation"""
     try:
         telegram_user_id = str(update.effective_user.id)
-        transfer_num=context.user_data.get('transfer_num')
+        transfeer_num=context.user_data.get('transfeer_num')
         value=context.user_data.get('value')
         api = iChancyAPI()
         logger.info(api.COOKIES)
 
-        syriatelCashTransactionId = store.insertTransaction(telegram_id = telegram_user_id,value=value,action_type='deposit',provider_type='syriatel',transfer_num=transfer_num)
+        syriatelCashTransactionId = store.insertTransaction(telegram_id = telegram_user_id,value=value,action_type='deposit',provider_type='syriatel',transfeer_num=transfeer_num)
 
         # Store transaction ID in context for later use
         context.user_data['syriatelCashTransactionId'] = syriatelCashTransactionId
@@ -119,7 +119,7 @@ async def handle_create_transaction(update: Update ,context: ContextTypes.DEFAUL
         success_text = (
             "طلب شحن\n"
             "Syriatel Cash 🟢\n"
-            "رقم العملية او العنوان: " + str(transfer_num) + "\n\n"
+            "رقم العملية او العنوان: " + str(transfeer_num) + "\n\n"
             "المبلغ بالليرة:  " + str(value) + "\n"
             "قيمة الطلب: " + str(value) + "\n"
             "رقم الطلب: #" + str(syriatelCashTransactionId) + "\n\n"
