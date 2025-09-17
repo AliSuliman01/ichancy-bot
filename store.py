@@ -72,7 +72,7 @@ def initializeDatabase():
                     user_id INT NOT NULL,
                     status VARCHAR(255) NOT NULL,
                     action_type VARCHAR(255) NOT NULL,
-                    value INT NOT NULL,
+                    value INT NULL,
                     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
                 )
@@ -94,6 +94,7 @@ def initializeDatabase():
                        id INT AUTO_INCREMENT PRIMARY KEY,
                        user_id INT NOT NULL,
                        message TEXT NOT NULL,
+                       photo TEXT NULL,
                        reply TEXT NULL,
                        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                        FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE

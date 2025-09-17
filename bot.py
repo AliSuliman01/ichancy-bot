@@ -1,10 +1,8 @@
 import Logger
 import config.telegram
 import handlers.createAccount , handlers.error , handlers.button , handlers.syriatel_cash_deposit
-import handlers.command.balance 
 from telegram.ext import (
     Application,
-    CommandHandler,
     CallbackQueryHandler,
 )
 import flows.startFlow.handler
@@ -13,6 +11,10 @@ import flows.withdrawalAccount.handler
 import flows.resieveGifts.handler
 import flows.sendGifts.handler
 import flows.depositAccount.handler
+import flows.balanceCommand.handler
+import flows.error.handler
+import flows.createAccount.handler
+import flows.syriatelCashDepodit.handler
 logger = Logger.getLogger()
 
 try:
@@ -31,18 +33,18 @@ def main() -> None:
         # Add conversations
 
         # Add handlers
-        application.add_handler(handlers.createAccount.conversationHandler())
-        application.add_handler(handlers.syriatel_cash_deposit.conversationHandler())
+        application.add_handler(flows.createAccount.handler.conversationHandler())
+        application.add_handler(flows.syriatelCashDepodit.handler.conversationHandler())
         application.add_handler(flows.sendGifts.handler.conversationHandler())
         application.add_handler(flows.resieveGifts.handler.conversationHandler())
         application.add_handler(flows.depositAccount.handler.conversationHandler())
         application.add_handler(flows.withdrawalAccount.handler.conversationHandler())
         application.add_handler(flows.messageToAdmin.handler.handler())
         application.add_handler(flows.startFlow.handler.handler())
-        application.add_handler(CommandHandler('balance', handlers.command.balance.balance))
+        application.add_handler(flows.balanceCommand.handler.handler())
         # application.add_handler(CallbackQueryHandler(ichancy))
         application.add_handler(CallbackQueryHandler(handlers.button.button))
-        application.add_error_handler(handlers.error.error_handler)
+        application.add_error_handler(flows.error.handler.error_handler)
 
         # application.add_handler(CallbackQueryHandler(handlers.transactions_handlers.handle_transaction_callback))
         # application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handlers.transactions_handlers.handle_message))

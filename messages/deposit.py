@@ -1,7 +1,7 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
-def deposit_message(user_id):
-    return reply_text(user_id), reply_markup(user_id)
+def deposit_message():
+    return reply_text(), reply_markup()
 
 def getKeyboard():
         keyboard = [

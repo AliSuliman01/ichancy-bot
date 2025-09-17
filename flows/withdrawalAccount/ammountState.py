@@ -4,7 +4,7 @@ from models.user import User
 from models.accountTransaction import AccountTransaction
 from iChancyAPI import iChancyAPI
 import config.ichancy
-from flows.withdrawalAccount.validations import accountBalanceSuficient
+from flows.withdrawalAccount.validations import accountBalanceSuficient , isDigit
 
 
 async def get_withdraw_ammount(update:Update , context: CallbackContext):
@@ -17,11 +17,15 @@ async def get_withdraw_ammount(update:Update , context: CallbackContext):
 
     api = iChancyAPI()
     accountBalance = api.getPlayerBalanceById(playerId)
-    ammountToWithdraw = int(update.message.text)
-
+    ammountToWithdraw = update.message.text
+    if not isDigit.isDigit(ammountToWithdraw):
+         await update.message.reply_text("يرجى إدخال رقم صحيح !")
+         return ConversationHandler.END
+    ammountToWithdraw = int(ammountToWithdraw)
     if not accountBalanceSuficient.validate(accountBalance , ammountToWithdraw):
         await update.message.reply_text("عذرا ليس لديك الرصيد الكافي ")
         return ConversationHandler.END
+    
     
     api.WirhdrawMoney(playerId ,ammount=ammountToWithdraw)
 
