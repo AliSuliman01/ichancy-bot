@@ -4,7 +4,6 @@ from database import Database
 
 class Model(ABC):
     def __init__(self):
-        self.db = Database.getConnection()
         self.table = self.get_table()
 
     @abstractmethod
@@ -12,37 +11,46 @@ class Model(ABC):
         pass
 
     def getById(self, id: int):
+        self.db = Database.getConnection()
         cursor = self.db.cursor(dictionary=True)
         cursor.execute(f"SELECT * FROM {self.table} WHERE id = {id}")
-        return cursor.fetchone()
+        items = cursor.fetchone()
+        self.db.close()
+        return items
 
     def getBy(self, conditions: dict):
+        self.db = Database.getConnection()
+        print(self.db)
         cursor = self.db.cursor(dictionary=True)
         where_clause = ' AND '.join([f"{k} {op}" + " %s "  for k, (op, v) in conditions.items()]) 
         sql = f"SELECT * FROM {self.table} WHERE {where_clause}"
-        print(sql)
         values = [v for k, (op, v) in conditions.items()]
-        print(values)
         cursor.execute(sql, values)
-        resault = cursor.fetchall()
-        # self.db.close()
-        return resault
+        items = cursor.fetchall()
+        self.db.close()
+        return items
 
     def getAll(self):
+        self.db = Database.getConnection()
         cursor = self.db.cursor(dictionary=True)
         cursor.execute(f"SELECT * FROM {self.table}")
-        return cursor.fetchall()
+        items = cursor.fetchall()
+        self.db.close()
+        return items
 
     def insert(self, data: dict):
+        self.db = Database.getConnection()
         cursor = self.db.cursor(dictionary=True)
+        print(f"INSERT INTO {self.table} ({', '.join(data.keys())} ) VALUES(" + ', '.join(f"'{value}'" if isinstance(value , str) else f"{value}" for value in data.values() ) + ")")
         cursor.execute(f"INSERT INTO {self.table} ({', '.join(data.keys())} ) VALUES(" + ', '.join(f"'{value}'" if isinstance(value , str) else f"{value}" for value in data.values() ) + ")")
         self.db.commit()
-        # self.db.close()
+        self.db.close()
     def update(self, conditions: dict, data: dict):
         """
         conditions: dict of {key: (operator, value)}, e.g. {'id': ('=', 5), 'name': ('LIKE', '%foo%')}
         data: dict of {column: value}
         """
+        self.db = Database.getConnection()
         cursor = self.db.cursor(dictionary=True)
         set_clause = ', '.join([f"{k} = %s" for k in data.keys()])
         where_clause = ' AND '.join([f"{k} {op} %s" for k, (op, v) in conditions.items()])
@@ -50,4 +58,4 @@ class Model(ABC):
         values = list(data.values()) + [v for k, (op, v) in conditions.items()]
         cursor.execute(sql, values)
         self.db.commit()
-        # self.db.close()
+        self.db.close()

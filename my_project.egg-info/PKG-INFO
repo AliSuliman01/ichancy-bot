@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: my-project
+Version: 0.1.0
+Summary: **
+Requires-Dist: requests>=2.25.0
+Requires-Dist: numpy>=1.20.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"

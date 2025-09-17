@@ -1,6 +1,4 @@
 import Logger
-import store
-from iChancyAPI import iChancyAPI
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 logger = Logger.getLogger()
 

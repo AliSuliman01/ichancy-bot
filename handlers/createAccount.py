@@ -96,7 +96,7 @@ async def handle_create_account(update: Update ,context: ContextTypes.DEFAULT_TY
         if result['success']:
             playerId = api.getPlayerId(username)    
             # store.insertUserDetailes(telegram_id = user_id,name = username,password=password,email=email , player_id = playerId)
-            User().insert({'telegram_id': user_id , 'name' : username , 'password' : password ,'email':email,'player_id':playerId })
+            User().update({'telegram_id':("=" , user_id)},{'password' : password ,'email':email,'player_id':playerId ,'name':username})
             keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
             reply_markup = InlineKeyboardMarkup(keyboard)
             

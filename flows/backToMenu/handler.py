@@ -1,13 +1,11 @@
 import Logger
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-import helpers
+from messages.start_message import start_message
 logger = Logger.getLogger()
 
 async def handler(query , username):
     """Return to main menu"""
-    
-    reply_markup = helpers.getReplyMarkup()
-    text_welcome = helpers.getTextWelcome(username)
+    text_welcome , reply_markup = start_message()
     await query.edit_message_text(
         text_welcome,
         reply_markup=reply_markup,

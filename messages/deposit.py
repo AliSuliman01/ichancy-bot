@@ -1,6 +1,3 @@
-import Logger
-import store
-from iChancyAPI import iChancyAPI
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 def deposit_message(user_id):

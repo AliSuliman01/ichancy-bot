@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-project"
+version = "0.1.0"
+description = "**"
+
+dependencies = [
+    "requests>=2.25.0",
+    "numpy>=1.20.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "black>=22.0.0",
+]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["flows.ichancy.validations"]

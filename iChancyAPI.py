@@ -266,14 +266,13 @@ class iChancyAPI:
             logger.info(f"Making request to: {getPlayerBalanceById}")
         
             # Submit registration
-            logger.info("Submitting registration to API")
+            logger.info("get balance from player id to API")
             try:
                 response = self.session.post(
                     getPlayerBalanceById, 
                     json=payload, 
                     timeout=30
                 )
-                print(playerId)
                 json:list = response.json()
                 balance = int(json.get('result')[0].get('balance'))
                 return balance

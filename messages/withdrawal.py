@@ -1,12 +1,11 @@
 import Logger
-import store
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 logger = Logger.getLogger()
 
 
 
 def withdrawal_message(user_id):
-    return reply_text(user_id), reply_markup(user_id)
+    return reply_text(), reply_markup(user_id)
 
 
 
@@ -44,7 +43,6 @@ def reply_markup():
      reply_markup = InlineKeyboardMarkup(keyboard)
      return reply_markup
 
-def reply_text(user_id):
-     user = store.getUserByTelegramId(telegram_id=user_id)
+def reply_text():
      user_info = 'اختر احد الطرق'
      return user_info

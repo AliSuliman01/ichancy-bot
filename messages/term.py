@@ -1,5 +1,4 @@
 import Logger
-import store
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 logger = Logger.getLogger()
 
