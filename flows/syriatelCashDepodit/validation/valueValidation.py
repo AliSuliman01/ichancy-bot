@@ -1,8 +1,8 @@
-from config.telegram import TRANSFEER_AMMOUNT
+from config.syriatel import MINIMUM_DEPOSITE
 
 
 def validate(value):
     if  str.isdigit(value):
-        if int(value) > TRANSFEER_AMMOUNT:
+        if int(value) > MINIMUM_DEPOSITE:
             return True
     return False

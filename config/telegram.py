@@ -2,7 +2,6 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-TRANSFEER_AMMOUNT = 25000
 # Bot configuration
 TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
 TRANSACTIONS_BOT_TOKEN = os.getenv('TRANSACTIONS_TELEGRAM_BOT_TOKEN')

@@ -1,7 +1,7 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from config.telegram import ADMIN_ID
-def deposit_message(transfeer_id ,transfeer_function ,telegram_id , telegram_username ,value , transfeer_date ,transaction_id):
-    return {'text':reply_text(transfeer_id ,transfeer_function ,telegram_id , telegram_username ,value , transfeer_date),'parse_mode':parse_mode(), 'reply_markup':reply_markup(transaction_id),'chat_id':chat_id()}
+def deposit_message(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date ,transaction_id):
+    return {'text':reply_text(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date),'parse_mode':parse_mode(), 'reply_markup':reply_markup(transaction_id),'chat_id':chat_id()}
 
 def getKeyboard(transaction_id):
         keyboard = [
@@ -25,12 +25,12 @@ def reply_markup(transaction_id):
      reply_markup = InlineKeyboardMarkup(keyboard)
      return reply_markup
 
-def reply_text(transfeer_id ,transfeer_function ,telegram_id , telegram_username ,value , transfeer_date):
+def reply_text(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date):
 
       text =  f"""
         🆕 :طلب شحن جديد
         🆔 رقم الطلب: #{transfeer_id}
-        📌 طريقة التحويل: {transfeer_function}
+        📌 طريقة التحويل: {provider_type}
         👤 العضو: <a href="tg://user?id={telegram_id}">{telegram_username}</a>
         💰 المبلغ: {value} SYP
         📅 تاريخ الإنشاء: {transfeer_date}

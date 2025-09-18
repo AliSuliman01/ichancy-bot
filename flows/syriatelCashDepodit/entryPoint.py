@@ -1,4 +1,5 @@
 from telegram import  Update
+from config.syriatel import SYRIATEL_ACCOUNT ,MINIMUM_DEPOSITE
 from telegram.ext import (
 
     ConversationHandler,
@@ -14,10 +15,9 @@ async def button_handler(update: Update, context: CallbackContext) -> int:
         await query.edit_message_text(
             text=(
                 "ارسل الى احد الارقام التالية بطريقة التحويل اليدوي\n"
-                "83935571\n"
-                "00229271\n\n"
-                "اقل قيمة للشحن هي 25,000\n"
-                "وأي قيمة أقل من 25,000 لا يمكن شحنها او استرجاعها\n"
+                f"{SYRIATEL_ACCOUNT}\n\n"
+                f"اقل قيمة للشحن هي {MINIMUM_DEPOSITE}\n"
+                f"وأي قيمة أقل من {MINIMUM_DEPOSITE} لا يمكن شحنها او استرجاعها\n"
                 "ثم ادخل رقم عملية التحويل  👇\n"
             )
         )

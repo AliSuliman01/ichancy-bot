@@ -1,6 +1,6 @@
 import Logger
 import config.telegram
-import handlers.createAccount , handlers.error , handlers.button , handlers.syriatel_cash_deposit
+import  button
 from telegram.ext import (
     Application,
     CallbackQueryHandler,
@@ -15,6 +15,7 @@ import flows.balanceCommand.handler
 import flows.error.handler
 import flows.createAccount.handler
 import flows.syriatelCashDepodit.handler
+import flows.bemoCashDepodit.handler
 import flows.editDepositFromAdmin.handler
 logger = Logger.getLogger()
 
@@ -36,6 +37,7 @@ def main() -> None:
         # Add handlers
         application.add_handler(flows.createAccount.handler.conversationHandler())
         application.add_handler(flows.syriatelCashDepodit.handler.conversationHandler())
+        application.add_handler(flows.bemoCashDepodit.handler.conversationHandler())
         application.add_handler(flows.sendGifts.handler.conversationHandler())
         application.add_handler(flows.resieveGifts.handler.conversationHandler())
         application.add_handler(flows.depositAccount.handler.conversationHandler())
@@ -45,7 +47,7 @@ def main() -> None:
         application.add_handler(flows.startFlow.handler.handler())
         application.add_handler(flows.balanceCommand.handler.handler())
         # application.add_handler(CallbackQueryHandler(ichancy))
-        application.add_handler(CallbackQueryHandler(handlers.button.button))
+        application.add_handler(CallbackQueryHandler(button.button))
         application.add_error_handler(flows.error.handler.error_handler)
 
         # application.add_handler(CallbackQueryHandler(handlers.transactions_handlers.handle_transaction_callback))
