@@ -5,14 +5,13 @@ from models.syriatelTransaction import SyriatelTransaction
 from models.user import User
 from models.transaction import Transaction
 from messages.depositMessageToAdmin import deposit_message
-from flows.syriatelCashDepodit.valueValidation import validate
 logger = Logger.getLogger()
 
 async def get_value(update: Update, context: CallbackContext) -> int:
     user = update.message.from_user
     value = update.message.text
 
-    if validate(value):
+    if str.isdigit(value):
         transfeer_num = context.user_data['transfeer_num']
         telegram_id = update.message.from_user.id
         user = User().getBy({'telegram_id':('=', telegram_id)})[0]

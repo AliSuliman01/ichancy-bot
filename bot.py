@@ -15,6 +15,7 @@ import flows.balanceCommand.handler
 import flows.error.handler
 import flows.createAccount.handler
 import flows.syriatelCashDepodit.handler
+import flows.editDepositFromAdmin.handler
 logger = Logger.getLogger()
 
 try:
@@ -39,6 +40,7 @@ def main() -> None:
         application.add_handler(flows.resieveGifts.handler.conversationHandler())
         application.add_handler(flows.depositAccount.handler.conversationHandler())
         application.add_handler(flows.withdrawalAccount.handler.conversationHandler())
+        application.add_handler(flows.editDepositFromAdmin.handler.conversationHandler())
         application.add_handler(flows.messageToAdmin.handler.handler())
         application.add_handler(flows.startFlow.handler.handler())
         application.add_handler(flows.balanceCommand.handler.handler())

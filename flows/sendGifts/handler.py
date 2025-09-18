@@ -11,7 +11,6 @@ from flows.sendGifts.entryPoint import button_send_gifts_handler
 from flows.sendGifts.cancel import cancel
 telegramIdGoal , ammount = [1,2]
 def conversationHandler():
-    print("________________________________________________________")
     conv_handler = ConversationHandler(
     entry_points=[CallbackQueryHandler(button_send_gifts_handler, pattern='^send_gift$')],
     states={

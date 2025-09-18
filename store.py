@@ -35,7 +35,7 @@ def initializeDatabase():
                     user_id INT NOT NULL,
                     value INT NOT NULL,
                     action_type VARCHAR(255) NOT NULL,
-                    message_id VARCHAR(255),
+                    status VARCHAR(255) NOT NULL,
                     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
                 )
