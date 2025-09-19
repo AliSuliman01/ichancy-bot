@@ -6,6 +6,7 @@ from models.syriatelTransaction import SyriatelTransaction
 from config.telegram import ADMIN_ID
 from models.user import User
 from models.bemoTransaction import BemoTransaction
+from models.shamCashTransaction import ShamCashTransaction
 import time
 from flows.editDepositFromAdmin.validation import validationEditAmmount ,messageWasNotEditedYet
 
@@ -64,6 +65,8 @@ def getProviderModel(provider_type):
                 provider_model = SyriatelTransaction()
             case "bemo" :
                 provider_model = BemoTransaction()
+            case "shamCash":
+                provider_model = ShamCashTransaction()
 
     return provider_model
 

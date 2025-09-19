@@ -17,6 +17,7 @@ import flows.createAccount.handler
 import flows.syriatelCashDepodit.handler
 import flows.bemoCashDepodit.handler
 import flows.editDepositFromAdmin.handler
+import flows.shamCashDepodit.handler
 logger = Logger.getLogger()
 
 try:
@@ -38,6 +39,7 @@ def main() -> None:
         application.add_handler(flows.createAccount.handler.conversationHandler())
         application.add_handler(flows.syriatelCashDepodit.handler.conversationHandler())
         application.add_handler(flows.bemoCashDepodit.handler.conversationHandler())
+        application.add_handler(flows.shamCashDepodit.handler.conversationHandler())
         application.add_handler(flows.sendGifts.handler.conversationHandler())
         application.add_handler(flows.resieveGifts.handler.conversationHandler())
         application.add_handler(flows.depositAccount.handler.conversationHandler())

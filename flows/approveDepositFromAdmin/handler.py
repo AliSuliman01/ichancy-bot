@@ -3,6 +3,7 @@ from models.user import User
 from models.transaction import Transaction
 from models.syriatelTransaction import SyriatelTransaction
 from models.bemoTransaction import BemoTransaction
+from models.shamCashTransaction import ShamCashTransaction
 async def handler(query ,context ):
     text = deposit_message()[0] +'\n'+ query.message.text
     await query.edit_message_text(text)
@@ -41,6 +42,8 @@ def getProviderModel(provider_type):
                 provider_model = SyriatelTransaction()
             case "bemo" :
                 provider_model = BemoTransaction()
+            case "shamCash":
+                provider_model = ShamCashTransaction()
 
     return provider_model
 

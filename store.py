@@ -78,6 +78,18 @@ def initializeDatabase():
                 )
             """)
         cursor.execute("""
+                CREATE TABLE IF NOT EXISTS sham_cash_transactions (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    transfeer_num VARCHAR(255),
+                    user_id INT NOT NULL,
+                    status VARCHAR(255) NOT NULL,
+                    action_type VARCHAR(255) NOT NULL,
+                    value INT NULL,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                )
+            """)
+        cursor.execute("""
                 CREATE TABLE IF NOT EXISTS gifts (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     telegram_goal_id VARCHAR(20) NOT NULL,

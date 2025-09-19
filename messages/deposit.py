@@ -16,7 +16,7 @@ def getKeyboard():
                 InlineKeyboardButton("عملات ومحافظ رقمية (USDT)", callback_data='crypto_deposit')
             ],
             [
-                InlineKeyboardButton("Sham Cash Auto ⚡️ (USD, SYP)", callback_data='sham_cash_auto_deposit')
+                InlineKeyboardButton("Sham Cash Auto ⚡️ (USD, SYP)", callback_data='sham_cash_deposit')
             ],
             [InlineKeyboardButton("القائمة الرئيسية", callback_data='back_to_menu')],
         ]

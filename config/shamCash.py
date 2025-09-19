@@ -1,0 +1,1 @@
+SHAM_CASH_ACCOUNT = "739ceb70ab4a17ecc3317cb4ee46edc5"
