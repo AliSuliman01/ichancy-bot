@@ -1,6 +1,6 @@
 from telegram import ReplyKeyboardRemove
 
-def deposit_message():
+def message():
     return reply_text(), reply_markup()
 
 def reply_markup():

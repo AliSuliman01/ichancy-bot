@@ -4,15 +4,15 @@ logger = Logger.getLogger()
 
 
 
-def withdrawal_message(user_id):
-    return reply_text(), reply_markup(user_id)
+def withdrawal_message():
+    return reply_text(), reply_markup()
 
 
 
 def getKeyboard():
     keyboard = [
         [
-            InlineKeyboardButton("Syriatel Cash 🟢", callback_data='syriatel_cash_withdrawal'),
+            InlineKeyboardButton("Syriatel Cash 🟢", callback_data='syriatel_cash_withdraw'),
             InlineKeyboardButton("Bemo", callback_data='bemo_withdrawal'),
         ],
         [

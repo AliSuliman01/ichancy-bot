@@ -6,10 +6,10 @@ def deposit_message(transfeer_id ,provider_type ,telegram_id , telegram_username
 def getKeyboard(transaction_id):
         keyboard = [
             [
-                InlineKeyboardButton("تعديل القيمة" , callback_data=f"edit {transaction_id}")
+                InlineKeyboardButton("تعديل القيمة" , callback_data=f"edit_deposit {transaction_id}")
             ],
             [
-                InlineKeyboardButton("تأكيد", callback_data=f"approve {transaction_id}"),
+                InlineKeyboardButton("تأكيد", callback_data=f"approve_deposit {transaction_id}"),
                 InlineKeyboardButton("رفض", callback_data=f"reject {transaction_id}"),
             ]
                 ]

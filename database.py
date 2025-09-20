@@ -5,6 +5,7 @@ class Database:
     
     _connection = None
     print(_connection)
+
     @staticmethod
     # def getConnection():
         
@@ -35,5 +36,6 @@ class Database:
                 database = config.database.databaseName
             )
             return Database._connection
+        
         except(Exception, mysql.connector.Error) as error: 
             print(f"Failed to connect to the database: {error}")

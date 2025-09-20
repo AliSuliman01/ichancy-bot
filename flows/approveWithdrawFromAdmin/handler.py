@@ -30,7 +30,7 @@ def getDataFromTransaction(transaction:dict):
 
 def updateUserBalance(user_id ,value):
     balance = User().getBy({'telegram_id' : ('=' , user_id)})[0].get('balance')
-    newBalance = balance + value
+    newBalance = balance - value
     User().update({'telegram_id':('=' , user_id)},{'balance':newBalance})
 
 

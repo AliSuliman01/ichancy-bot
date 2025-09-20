@@ -5,7 +5,7 @@ from models.bemoTransaction import BemoTransaction
 from models.user import User
 from models.transaction import Transaction
 from messages.depositMessageToAdmin import deposit_message
-from flows.bemoCashDepodit.validation.valueValidation import validate
+from flows.bemoDepodit.validation.valueValidation import validate
 logger = Logger.getLogger()
 
 async def get_value(update: Update, context: CallbackContext) -> int:

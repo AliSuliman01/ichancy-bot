@@ -5,15 +5,14 @@ from telegram.ext import (
     CommandHandler,
     CallbackQueryHandler,
 )
-from flows.editDepositFromAdmin.entryPoint import button_handler
-from flows.editDepositFromAdmin.cancel import cancel
-from flows.editDepositFromAdmin.getEditAmmount import get_edit_ammount
-import re
+from flows.editWithdrawFromAdmin.entryPoint import button_handler
+from flows.editWithdrawFromAdmin.cancel import cancel
+from flows.editWithdrawFromAdmin.getEditAmmount import get_edit_ammount
 EDIT = 1
 def conversationHandler():
 
     conv_handler = ConversationHandler(
-    entry_points=[CallbackQueryHandler(button_handler, pattern=r'^edit_deposit')],
+    entry_points=[CallbackQueryHandler(button_handler, pattern=r'^edit_withdraw')],
     states={
         EDIT: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_edit_ammount)],
     },

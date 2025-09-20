@@ -35,8 +35,9 @@ class ExecutingFactury:
             'guides_how_withdraw_telegram_account' : flows.guideHandlers.howWithdrawTelegramAccount.execute.HowWithdrawTelegramAccountExecute(),
             'guides_how_deposit_ichancy_account' : flows.guideHandlers.HowDepositIchancyAccount.execute.HowDepositIchancyAccountExecute(),
             'guides_how_withdraw_ichancy_account' : flows.guideHandlers.howWithdrawIchancyAccount.execute.HowWithdrawIchancyAccountExecute(),
-            'approve' : flows.approveDepositFromAdmin.execute.ApproveDepositeFromAdmin(),
+            'approve_deposit' : flows.approveDepositFromAdmin.execute.ApproveDepositeFromAdmin(),
             'reject' : flows.rejectDepositFromAdmin.execute.RejectDepositeFromAdmin(),
+            'approve_withdraw' : flows.approveDepositFromAdmin.execute.ApproveDepositeFromAdmin(),
         }
         
 

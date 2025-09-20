@@ -15,9 +15,11 @@ import flows.balanceCommand.handler
 import flows.error.handler
 import flows.createAccount.handler
 import flows.syriatelCashDepodit.handler
-import flows.bemoCashDepodit.handler
+import flows.bemoDepodit.handler
 import flows.editDepositFromAdmin.handler
+import flows.editWithdrawFromAdmin.handler
 import flows.shamCashDepodit.handler
+import flows.syriatelCashWithdrawal.handler
 logger = Logger.getLogger()
 
 try:
@@ -38,13 +40,15 @@ def main() -> None:
         # Add handlers
         application.add_handler(flows.createAccount.handler.conversationHandler())
         application.add_handler(flows.syriatelCashDepodit.handler.conversationHandler())
-        application.add_handler(flows.bemoCashDepodit.handler.conversationHandler())
+        application.add_handler(flows.syriatelCashWithdrawal.handler.conversationHandler())
+        application.add_handler(flows.bemoDepodit.handler.conversationHandler())
         application.add_handler(flows.shamCashDepodit.handler.conversationHandler())
         application.add_handler(flows.sendGifts.handler.conversationHandler())
         application.add_handler(flows.resieveGifts.handler.conversationHandler())
         application.add_handler(flows.depositAccount.handler.conversationHandler())
         application.add_handler(flows.withdrawalAccount.handler.conversationHandler())
         application.add_handler(flows.editDepositFromAdmin.handler.conversationHandler())
+        application.add_handler(flows.editWithdrawFromAdmin.handler.conversationHandler())
         application.add_handler(flows.messageToAdmin.handler.handler())
         application.add_handler(flows.startFlow.handler.handler())
         application.add_handler(flows.balanceCommand.handler.handler())

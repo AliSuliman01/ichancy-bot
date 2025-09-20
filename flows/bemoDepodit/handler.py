@@ -5,10 +5,10 @@ from telegram.ext import (
     CommandHandler,
     CallbackQueryHandler,
 )
-from flows.bemoCashDepodit.entryPoint import button_handler
-from flows.bemoCashDepodit.cancel import cancel
-from flows.bemoCashDepodit.transfeerNumState import get_transfeer_num
-from flows.bemoCashDepodit.valueState import get_value
+from flows.bemoDepodit.entryPoint import button_handler
+from flows.bemoDepodit.cancel import cancel
+from flows.bemoDepodit.transfeerNumState import get_transfeer_num
+from flows.bemoDepodit.valueState import get_value
 transfeer_NUM ,VALUE = [1,2]
 def conversationHandler():
     conv_handler = ConversationHandler(

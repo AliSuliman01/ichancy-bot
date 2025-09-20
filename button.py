@@ -7,6 +7,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await query.answer() 
     user_id = str(update.effective_user.id)
     username = update.effective_user.username
+    data = "."
     data = update.callback_query.data.split(" ")[0]
     ##################################################################
     import executing.executingFactory
