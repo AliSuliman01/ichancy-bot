@@ -24,7 +24,7 @@ def getKeyboard():
             InlineKeyboardButton("سحب رصيد 📤", callback_data='withdrawal'),
         ],
         [
-            InlineKeyboardButton("نظام الاحالات 💰", callback_data='referral')
+            InlineKeyboardButton("نظام الاحالات 💰", callback_data='referal')
         ],
         [
             InlineKeyboardButton("اهداء رصيد 🎁", callback_data='send_gift'),

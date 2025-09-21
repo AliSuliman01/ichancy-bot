@@ -1,10 +1,14 @@
 import Logger
 import config.telegram
+import config.referal
 import  button
 from telegram.ext import (
     Application,
     CallbackQueryHandler,
 )
+from threading import Thread
+import time
+from datetime import datetime , timedelta
 import flows.startFlow.handler
 import flows.messageToAdmin.handler
 import flows.withdrawalAccount.handler
@@ -20,6 +24,7 @@ import flows.editDepositFromAdmin.handler
 import flows.editWithdrawFromAdmin.handler
 import flows.shamCashDepodit.handler
 import flows.syriatelCashWithdrawal.handler
+from referalHandler import referalThread
 logger = Logger.getLogger()
 
 try:
@@ -30,9 +35,11 @@ except ValueError as e:
 
 
 def main() -> None:
+  
     """Main function to start the bot"""
+    
     try:
-                
+        
         # Create application
         application = Application.builder().token(config.telegram.TOKEN).build()
         # Add conversations
@@ -87,8 +94,11 @@ if __name__ == '__main__':
         sys.exit(1)
     
     try:
-        main()
+         referal = referalThread()
+         referal.start()
+         main()
     except KeyboardInterrupt:
         logger.info("Bot stopped by user")
     except Exception as e:
         logger.error(f"Bot crashed: {e}", exc_info=True)
+

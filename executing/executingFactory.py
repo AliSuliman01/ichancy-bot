@@ -16,6 +16,9 @@ import flows.guideHandlers.HowToCreateNewAccount.execute
 import executing.executingInterface
 import flows.approveDepositFromAdmin.execute
 import flows.rejectDepositFromAdmin.execute
+import flows.referal.execute
+import flows.referalDetails.execute
+import Logger
 class ExecutingFactury:
     
     def __init__(self):
@@ -38,9 +41,13 @@ class ExecutingFactury:
             'approve_deposit' : flows.approveDepositFromAdmin.execute.ApproveDepositeFromAdmin(),
             'reject' : flows.rejectDepositFromAdmin.execute.RejectDepositeFromAdmin(),
             'approve_withdraw' : flows.approveDepositFromAdmin.execute.ApproveDepositeFromAdmin(),
+            'referal' : flows.referal.execute.ReferalExecute(),
+            'referal_details' :flows.referalDetails.execute.ReferalDetailsExecute()
         }
         
-
+    
     async def get_execute(self , execute_name) -> executing.executingInterface.ExecutingInterface: 
+        logger = Logger.getLogger()
+        logger.info(f"initialization of {execute_name} Class")        
         return  self.executes.get(execute_name)
     

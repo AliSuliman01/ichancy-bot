@@ -20,9 +20,12 @@ def initializeDatabase():
                     name VARCHAR(255),
                     password VARCHAR(255),
                     email VARCHAR(255) UNIQUE NULL,
+                    referal_code VARCHAR(255) UNIQUE NOT NULL,
+                    referal_id INT,
                     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
                     balance INT DEFAULT 0,
-                    account_balance INT DEFAULT 0 
+                    account_balance INT DEFAULT 0 ,
+                    FOREIGN KEY (referal_id) REFERENCES users(id) ON DELETE CASCADE
                         )""")
 
 

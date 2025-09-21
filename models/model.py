@@ -20,12 +20,12 @@ class Model(ABC):
 
     def getBy(self, conditions: dict):
         self.db = Database.getConnection()
-        print(self.db)
         cursor = self.db.cursor(dictionary=True)
         where_clause = ' AND '.join([f"{k} {op}" + " %s "  for k, (op, v) in conditions.items()]) 
         sql = f"SELECT * FROM {self.table} WHERE {where_clause}"
         values = [v for k, (op, v) in conditions.items()]
         cursor.execute(sql, values)
+        
         items = cursor.fetchall()
         self.db.close()
         return items
@@ -41,7 +41,6 @@ class Model(ABC):
     def insert(self, data: dict):
         self.db = Database.getConnection()
         cursor = self.db.cursor(dictionary=True)
-        print(f"INSERT INTO {self.table} ({', '.join(data.keys())} ) VALUES(" + ', '.join(f"'{value}'" if isinstance(value , str) else f"{value}" for value in data.values() ) + ")")
         cursor.execute(f"INSERT INTO {self.table} ({', '.join(data.keys())} ) VALUES(" + ', '.join(f"'{value}'" if isinstance(value , str) else f"{value}" for value in data.values() ) + ")")
         self.db.commit()
         self.db.close()
