@@ -41,20 +41,11 @@ class referalThread(Thread):
             for child_id in parent_child_ides[parent_id]:           
                 transactions = Transaction().getBy({'user_id':('=' , child_id) ,'created_at' : (">" , config.referal.REFERAL_DATE - timedelta(**config.referal.ROLL_TIME))
                                                                     , 'status':('=' , 'approved')})  
-                print(len(transactions))
-                print(config.referal.REFERAL_DATE - timedelta(**config.referal.ROLL_TIME))
-
-                print(transactions)
                 for transaction in transactions:
                     value+= abs(transaction.get('value'))
             parent_user = User().getById(parent_id)
             oldBalance = parent_user.get('balance')
             newBalance = oldBalance + value*config.referal.REFERAL_PERCENT
-            print(parent_child_ides)
-            print(value)
-            print(oldBalance)
-            print(newBalance)
-            print(parent_id)
             User().update({'id' :('=',parent_id)},{'balance' : newBalance})
         
         

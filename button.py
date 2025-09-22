@@ -12,7 +12,6 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     ##################################################################
     import executing.executingFactory
     execute = executing.executingFactory.ExecutingFactury()
-    
     button = await execute.get_execute(data)
     # context.bot.edit_message_text()
     if button:

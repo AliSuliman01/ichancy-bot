@@ -18,6 +18,10 @@ import flows.approveDepositFromAdmin.execute
 import flows.rejectDepositFromAdmin.execute
 import flows.referal.execute
 import flows.referalDetails.execute
+import flows.log.execute
+import flows.depositLog.execute
+import flows.withdrawLog.execute
+
 import Logger
 class ExecutingFactury:
     
@@ -42,7 +46,10 @@ class ExecutingFactury:
             'reject' : flows.rejectDepositFromAdmin.execute.RejectDepositeFromAdmin(),
             'approve_withdraw' : flows.approveDepositFromAdmin.execute.ApproveDepositeFromAdmin(),
             'referal' : flows.referal.execute.ReferalExecute(),
-            'referal_details' :flows.referalDetails.execute.ReferalDetailsExecute()
+            'referal_details' :flows.referalDetails.execute.ReferalDetailsExecute(),
+            'log' : flows.log.execute.LogExecute(),
+            'deposit_log' : flows.depositLog.execute.DepositLogExecute(),
+            'withdraw_log' : flows.withdrawLog.execute.WithdrawLogExecute(),
         }
         
     
