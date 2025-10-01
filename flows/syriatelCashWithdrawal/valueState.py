@@ -27,6 +27,7 @@ async def get_value(update: Update, context: CallbackContext) -> int:
                SyriatelTransaction(cursor).insert({'transfeer_num' : withdraw_number , 'user_id': user_id , 'status':'pending','action_type':'withdraw' , 'value' : -value})
                transfeer = SyriatelTransaction(cursor).getBy({'transfeer_num' : ('=', withdraw_number)})[0]
                transfeer_id = transfeer.get('id')
+               transfeer_num = transfeer.get('transfeer_num')
                provider_type = "syriatel"
                transfeer_date = transfeer['created_at']
                telegram_username = user.get('telegram_username')
@@ -34,25 +35,22 @@ async def get_value(update: Update, context: CallbackContext) -> int:
                transaction_id = Transaction(cursor).getBy({'provider_id':('=' ,transfeer_id) ,'provider_type':('=' , provider_type)})[0].get('id')
                context.user_data["withdraw_number"] = withdraw_number
 
-               message = (
-                    "تم استلام طلبك وسيتم إعلامك عند معالجته\n\n"
-                    f"""
-                    🆕 :طلب سحب جديد
-                    🆔 رقم الطلب: #{transfeer_id}
-                    📌 طريقة التحويل: {provider_type}
-                    📌 الرقم: {withdraw_number}
-                    👤 العضو: <a href="tg://user?id={telegram_id}">{telegram_username}</a>
-                    💰المبلغ: {value}
-                    💰النسبة المئوية للاقتطاع: {TAX*100}%
-                    💰المبلغ المقتطع: {value*TAX}
-                    💰 المبلغ المستحق بعد الاقتطاع: {value - value*TAX} SYP
-                    📅 تاريخ الإنشاء: {transfeer_date}
-                    """
-                         )
+               message =("تم استلام طلبك وسيتم إعلامك عند معالجته\n"
+               "🆕 :طلب سحب جديد\n"
+               f"   🆔 رقم الطلب: {transfeer_id}\n"
+               f"   📌 طريقة التحويل: {provider_type}\n"
+               f"   📌 الرقم: {withdraw_number}\n"
+               f"   👤 العضو: <a href='tg://user?id={telegram_id}'>{telegram_username}</a>\n"
+               f"   💰المبلغ: {value}\n"
+               f"   💰النسبة المئوية للاقتطاع: {TAX*100}%\n"
+               f"   💰المبلغ المقتطع: {value*TAX}\n"
+               f"   💰 المبلغ المستحق بعد الاقتطاع: {value - value*TAX} SYP\n"
+               f"   📅 تاريخ الإنشاء: {transfeer_date}\n"
+               )
                
                await update.message.reply_text(message , parse_mode="HTML")
           
-               await context.bot.send_message(** withdraw_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , TAX = TAX,withdraw_number=withdraw_number))  
+               await context.bot.send_message(** withdraw_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , TAX = TAX,withdraw_number=withdraw_number , transfeer_num = transfeer_num))  
           else:
                await update.message.reply_text("ليس لديك رصيد كافٍ")
      else:

@@ -47,5 +47,8 @@ def reply_text(transactions , page):
             text=""
     if len(text)>0:
         texts.append(text)
-    return texts[page]
+    if len(texts)>0:
+        return texts[page] 
+    else: 
+        return "\nلا يوجد عمليات سحب\n"
 

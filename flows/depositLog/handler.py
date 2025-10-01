@@ -22,8 +22,6 @@ async def handler(query , context):
         page = int(query.data.split(" ")[1]) +1
     text , reply_markup = deposit_log_message(transactions , page)
     logger.info("passed get deposit log message successfully")
-    if text:
-             print(query.data)
-             await context.bot.send_message(chat_id = telegram_id , text = text, reply_markup= reply_markup)  
-    else:
-         await context.bot.send_message(chat_id = telegram_id , text = "لا يوجد عمليات شحن" , reply_markup= reply_markup)
+
+    await context.bot.send_message(chat_id = telegram_id , text = text, reply_markup= reply_markup)  
+    db.close()

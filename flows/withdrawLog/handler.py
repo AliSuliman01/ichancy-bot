@@ -19,14 +19,15 @@ async def handler(query , context):
 
     if len(query.data.split(" "))==1:
         page = 0
+        print(page)
     else: 
         page = int(query.data.split(" ")[1]) +1
+        print(page)
+        print("from else")
     text , reply_markup = withdraw_log_message(transactions , page)
     logger.info("passed get withdraw log message successfully")
-    if text:
-         await context.bot.send_message(chat_id = telegram_id , text = text , reply_markup= reply_markup)  
-    else:
-         await context.bot.send_message(chat_id = telegram_id , text = "لا يوجد عمليات سحب" , reply_markup= reply_markup)
+    
+    await context.bot.send_message(chat_id = telegram_id , text = text , reply_markup= reply_markup)  
 
     db.close()
 

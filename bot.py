@@ -61,13 +61,13 @@ def main() -> None:
 
     try:
         application = Application.builder().token(config.telegram.TOKEN).build()
-
-        job_queue = application.job_queue
-        job_queue.run_repeating(
-        sendCookieNotification,
-        interval=10, 
-        first=5      
-        )
+        if config.telegram.ACTIVE_REFRESHING_COOKIE:
+            job_queue = application.job_queue
+            job_queue.run_repeating(
+            sendCookieNotification,
+            interval=10, 
+            first=5      
+            )
 
         application.add_handler(flows.createAccount.handler.conversationHandler())
         application.add_handler(flows.syriatelCashDepodit.handler.conversationHandler())
@@ -117,8 +117,9 @@ if __name__ == '__main__':
     try:
          referal = referalThread()
          referal.start()
-         refreshingCookie = RefreshingCookieThread()
-         refreshingCookie.start()
+         if config.telegram.ACTIVE_REFRESHING_COOKIE:
+             refreshingCookie = RefreshingCookieThread()
+             refreshingCookie.start()
          main()
     except KeyboardInterrupt:
         logger.info("Bot stopped by user")

@@ -30,7 +30,7 @@ async def get_value(update: Update, context: CallbackContext) -> int:
         provider_type = "bemo"
         transfeer_date = transfeer['created_at']
         telegram_username = user.get('telegram_username')
-        
+        transfeer_num = transfeer.get('transfeer_num')
         
         Transaction(cursor).insert({'provider_id':transfeer_id ,'provider_type':provider_type,'user_id':user_id ,'value':value , 'action_type':'deposit' , 'status':'pending'})
         transaction_id = Transaction(cursor).getBy({'provider_id':('=' ,transfeer_id) ,'provider_type':('=' , provider_type)})[0].get('id')
@@ -42,12 +42,13 @@ async def get_value(update: Update, context: CallbackContext) -> int:
             🆔 رقم الطلب: #{transfeer_id}
             📌 طريقة التحويل: {provider_type}
             💰 المبلغ: {value} SYP
+            🆔 الكود: {transfeer_num}
             📅 تاريخ الإنشاء: {transfeer_date}
             """
             )
         await update.message.reply_text(message)
         
-        await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id))  
+        await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , transfeer_num = transfeer_num))  
         db.commit()
     else:
          await update.message.reply_text("يرجى إدخال قيمة صحيحة")
