@@ -20,4 +20,4 @@ def validate_tokens():
     if not ADMIN_TELEGRAM_ID and not ADMIN_CHAT_ID:
         raise ValueError("Please set ADMIN_TELEGRAM_ID or ADMIN_CHAT_ID environment variable")
     
-BOT_NAME = 'ClashJustForMeBot'
+BOT_NAME = 'IchancyCicpBot'

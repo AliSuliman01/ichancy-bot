@@ -24,7 +24,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 })
             parent_referal = update.message.text.replace('/start',"").lstrip()
             if parent_referal:
-                print(parent_referal)
                 parent = User().getBy({'referal_code':('=',parent_referal)})[0]
                 parent_id = parent.get('id')
                 User().update({'telegram_id':('=' , user_id)},{'referal_id': parent_id})

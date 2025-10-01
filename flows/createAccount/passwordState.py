@@ -20,9 +20,6 @@ async def get_password(update: Update, context: CallbackContext) -> int:
         user_id = str(user.id)
         email=context.user_data.get('email')
         username=context.user_data.get('username')
-        print("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
-        print(context.user_data)
-        print("TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT")
         api = iChancyAPI()
 
         logger.info(api.COOKIES)
