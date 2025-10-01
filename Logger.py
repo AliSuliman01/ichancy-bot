@@ -4,6 +4,7 @@ def initializeLogger():
     logging.basicConfig(
         format='%(asctime)s - %(name)s - %(levelname)s -[Line:%(lineno)d] - %(message)s ',
         level=logging.INFO
+
     )
 
 def getLogger():

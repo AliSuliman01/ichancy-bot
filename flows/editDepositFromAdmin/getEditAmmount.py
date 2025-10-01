@@ -9,33 +9,42 @@ from models.bemoTransaction import BemoTransaction
 from models.shamCashTransaction import ShamCashTransaction
 import time
 from flows.editDepositFromAdmin.validation import validationEditAmmount ,messageWasNotEditedYet
-
+from database import Database
 
 
 
 async def get_edit_ammount(update: Update, context: CallbackContext) -> int:
+   db = Database.getConnection()
+   try:
+    db.start_transaction()
+    cursor = db.cursor(dictionary = True)
     edit_ammount = update.message.text
     if not validationEditAmmount.validate(edit_ammount):
         await update.message.reply_text(text="يرجى إدخال قيمة صحيحية")
+        db.close()
         return ConversationHandler.END
     
     transaction_id = int(context.user_data["transaction_id"])
-    transaction = Transaction().getById(transaction_id)
+    transaction = Transaction(cursor).getById(transaction_id)
     provider_type , provider_id = getDataFromTransaction(transaction)
    
   
     message = context.user_data["message"]
-    user = User().getById(transaction.get('user_id'))
+    user = User(cursor).getById(transaction.get('user_id'))
     edited_message = getEditedMessage(message , transaction ,user , edit_ammount)
 
-    provider_model = getProviderModel(provider_type)
-    updateTransactionsTables(provider_model , provider_id ,edit_ammount ,transaction_id)
+    provider_model = getProviderModel(provider_type , cursor)
+    updateTransactionsTables(provider_model , provider_id ,edit_ammount ,transaction_id , cursor)
     
     
     await context.bot.edit_message_text(message_id=context.user_data["message_id"],chat_id=ADMIN_ID ,text = edited_message, reply_markup = context.user_data["reply_markup"],parse_mode = 'HTML')
     await removeMessages(update , context)
+    db.commit()
+    db.close()
     return ConversationHandler.END
-
+   except Exception as e:
+       print (e)
+       db.rollback()
 
 
 
@@ -58,15 +67,15 @@ def getEditedMessage(message ,transaction , user , edit_ammount):
     return edited_message
 
 
-def getProviderModel(provider_type):
+def getProviderModel(provider_type , cursor):
     provider_model = None
     match(provider_type):
             case "syriatel" :
-                provider_model = SyriatelTransaction()
+                provider_model = SyriatelTransaction(cursor)
             case "bemo" :
-                provider_model = BemoTransaction()
+                provider_model = BemoTransaction(cursor)
             case "shamCash":
-                provider_model = ShamCashTransaction()
+                provider_model = ShamCashTransaction(cursor)
 
     return provider_model
 
@@ -77,6 +86,6 @@ def getDataFromTransaction(transaction:dict):
     return provider_type , provider_id 
 
 
-def updateTransactionsTables(provider_model , provider_id  , edit_ammount , transaction_id):
-    Transaction().update({'id': ('=',transaction_id)},{'value':edit_ammount})
+def updateTransactionsTables(provider_model , provider_id  , edit_ammount , transaction_id ,cursor):
+    Transaction(cursor).update({'id': ('=',transaction_id)},{'value':edit_ammount})
     provider_model.update({'id':('=' ,provider_id)} , {'value':edit_ammount})

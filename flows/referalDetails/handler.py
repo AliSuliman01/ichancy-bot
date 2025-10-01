@@ -5,19 +5,22 @@ import Logger
 from datetime import datetime , timedelta
 import config.referal
 from models.transaction import Transaction
+from database import Database
 logger = Logger.getLogger()
 async def handler(query):
+     db = Database.getConnection()
+     cursor = db.cursor(dictionary = True)
      num_of_activate_referal_child = 0
      value_from_referals = 0
      logger.info("in referal details handler")
      telegram_id = query.from_user.id
-     user_id = User().getBy({'telegram_id':('=' , telegram_id)})[0].get('id')
-     referal_child = User().getBy({'referal_id':('=',user_id)})
+     user_id = User(cursor).getBy({'telegram_id':('=' , telegram_id)})[0].get('id')
+     referal_child = User(cursor).getBy({'referal_id':('=',user_id)})
      num_of_referal_child = len(referal_child)  
      logger.info(f"get num of referal child in referal/handler {num_of_referal_child}")
      for child in referal_child:
           child_id = child.get('id')
-          child_transactions = Transaction().getBy({'user_id':('=' , child_id) ,'created_at' : (">" , config.referal.REFERAL_DATE - timedelta(**config.referal.ROLL_TIME)) 
+          child_transactions = Transaction(cursor).getBy({'user_id':('=' , child_id) ,'created_at' : (">" , config.referal.REFERAL_DATE - timedelta(**config.referal.ROLL_TIME)) 
                                                                     , 'status':('=' , 'approved')})  
 
           if child_transactions:
@@ -29,7 +32,7 @@ async def handler(query):
           value_from_referals = 0
      logger.info(f"get all referal value from transactions {value_from_referals}")
 
-     referal_code = User().getBy({'telegram_id':('=', telegram_id)})[0].get('referal_code')
+     referal_code = User(cursor).getBy({'telegram_id':('=', telegram_id)})[0].get('referal_code')
      logger.info(f"get num of referal code in referal/handler {referal_code}")
      print(config.referal.REFERAL_DATE)
      logger.info(f"get referal time : {config.referal.REFERAL_DATE} in referal/info")
@@ -38,6 +41,6 @@ async def handler(query):
 
      text , reply_markup  = messages.referal_details.referal_message(num_of_activate_referal_child , referal_code , referal_time_needed,value_from_referals)
      await query.message.reply_text(text , reply_markup = reply_markup)
-
+     db.close()
 
 

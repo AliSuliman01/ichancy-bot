@@ -5,6 +5,13 @@ from flows.createAccount.cancel import cancel
 from flows.createAccount.entryPoint import button_handler
 from flows.createAccount.passwordState import get_password
 from flows.createAccount.userNameState import get_username
+from iChancyAPI import iChancyAPI
+import asyncio
+import config.telegram
+import string
+import random
+from models.user import User
+from database import Database
 logger = Logger.getLogger()
 
 USERNAME, PASSWORD = [1,2]
@@ -19,3 +26,50 @@ def conversationHandler():
     fallbacks=[CommandHandler('cancel', cancel)],
     )    
     return conv_handler
+
+
+
+async def finishingHandler(update:Update , context):
+   db = Database.getConnection()
+   try:
+    db.start_transaction()
+    cursor = db.cursor(dictionary = True)
+    user = update.message.from_user
+    password = update.message.text
+    user_id = str(user.id)
+    username=context.user_data.get('username')
+    logger.info("User %s set password: %s", user.first_name, password)
+    counter = 0
+    while True:
+        counter+=1
+        if(config.telegram.COOKIE_STATUS):
+            api = iChancyAPI()
+            username=context.user_data.get('username')+ "_"+ ''.join(random.choices(string.ascii_letters + string.digits,k=5))
+            email = username + "@gilbert.com"
+            result = await api.register_account(email=email, username=username, password=password)
+            if result['success']:
+                await asyncio.sleep(0.2)             
+                playerIdInfo = await api.getPlayerId(username)
+                if playerIdInfo['success'] :  
+                    playerId = playerIdInfo['data']  
+                    User(cursor).update({'telegram_id':("=" , user_id)},{'password' : password ,'email':email,'player_id':playerId ,'name':username})
+                    success_text = (
+                    f"✅ **تم إنشاءالحساب بجاح !** \n\n"
+                    f"🆔 **الدخول**: `{result['username']}`\n"
+                    f"🔒 **كلمة المرور**: `{result['password']}`\n"
+                    f"📧 **الإيميل**: `{result['email']}`\n"
+                    )
+                    await context.bot.delete_message(message_id = update.message.id+1 , chat_id = update.message.from_user.id)
+                    await update.message.reply_text(success_text ,parse_mode='Markdown')
+                    db.commit()
+                    db.close()
+                    break
+        if counter > 40:
+            await context.bot.delete_message(message_id = update.message.id+1 , chat_id = update.message.from_user.id)
+            await update.message.reply_text("خطأ بالموقع وسيعود للعمل قريبا")
+            db.close()
+            return
+        await asyncio.sleep(5)
+   except Exception as e:
+       print (e)
+       db.rollback()

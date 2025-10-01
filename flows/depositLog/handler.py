@@ -2,16 +2,19 @@ import Logger
 from models.transaction import Transaction
 from models.user import User
 from messages.depositLog import deposit_log_message
+from database import Database
 logger = Logger.getLogger()
 
 async def handler(query , context):
+    db = Database.getConnection()
+    cursor = db.cursor(dictionary = True)
     logger.info("from deposit log handler")
 
     telegram_id = query.from_user.id
     print(telegram_id)
-    user = User().getBy({'telegram_id' : ('=', telegram_id)})[0]
+    user = User(cursor).getBy({'telegram_id' : ('=', telegram_id)})[0]
     user_id = user.get('id')
-    transactions = Transaction().getBy({'user_id' : ('=' , user_id) , 'action_type' :('=' , "deposit")})
+    transactions = Transaction(cursor).getBy({'user_id' : ('=' , user_id) , 'action_type' :('=' , "deposit")})
     
     if len(query.data.split(" "))==1:
         page = 0

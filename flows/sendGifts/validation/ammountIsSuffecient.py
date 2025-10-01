@@ -1,5 +1,3 @@
-from models.user import User
-
 
 def ammountIsSuffecient(balance , giftAmmount):
     

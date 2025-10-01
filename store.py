@@ -4,7 +4,7 @@ def initializeDatabase():
 
     try:
         mydb = getDatabaseConnection(initialize=True)
-        cursor = mydb.cursor()
+        cursor = mydb.cursor(dictionary=True)
     
 
         cursor.execute(f"CREATE DATABASE IF NOT EXISTS {config.database.databaseName}")

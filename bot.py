@@ -1,14 +1,18 @@
+import time
 import Logger
 import config.telegram
 import config.referal
 import  button
+from telegram import Update
 from telegram.ext import (
     Application,
     CallbackQueryHandler,
+    MessageHandler,
+    filters,
+    ContextTypes,
+    CallbackContext
 )
-from threading import Thread
-import time
-from datetime import datetime , timedelta
+
 import flows.startFlow.handler
 import flows.messageToAdmin.handler
 import flows.withdrawalAccount.handler
@@ -25,6 +29,7 @@ import flows.editWithdrawFromAdmin.handler
 import flows.shamCashDepodit.handler
 import flows.syriatelCashWithdrawal.handler
 from referalHandler import referalThread
+from refreshingCookie import RefreshingCookieThread
 logger = Logger.getLogger()
 
 try:
@@ -33,18 +38,37 @@ except ValueError as e:
     logger.error(str(e))
     exit(1)
 
+async def cookieHandler(update:Update , context: ContextTypes.DEFAULT_TYPE):
+    newCookieId = int(update.message.from_user.id)
+    print(update.message.text)
+    if newCookieId - int(config.telegram.ADMIN_ID)== 0 and update.message.text.find('PHPSESSID') !=-1:
+        newCookieString = update.message.text.split("\n")[0].replace("ع","_")
+        config.telegram.COOKIE_STRING = newCookieString
+        config.telegram.UPDATE_COOKIE_DATE = float(update.message.text.split("\n")[1])
+        logger.info(f"OUR NEW COOKIE IS {config.telegram.COOKIE_STRING}")
+        logger.info(f"the date the cookie become new is : {config.telegram.UPDATE_COOKIE_DATE}")
+        config.telegram.COOKIE_STATUS = True
+    if newCookieId - int(config.telegram.ADMIN_ID)== 0 and update.message.text.find('OK') !=-1:
+        config.telegram.COOKIE_MESSAGE_SENT = True
 
-def main() -> None:
-  
-    """Main function to start the bot"""
+async def sendCookieNotification(context:CallbackContext):
     
-    try:
-        
-        # Create application
-        application = Application.builder().token(config.telegram.TOKEN).build()
-        # Add conversations
+    if not config.telegram.COOKIE_STATUS and not config.telegram.COOKIE_MESSAGE_SENT:
+        await context.bot.send_message(
+            chat_id=config.telegram.ADMIN_ID,
+            text="NEED COOKIE")
+def main() -> None:
 
-        # Add handlers
+    try:
+        application = Application.builder().token(config.telegram.TOKEN).build()
+
+        job_queue = application.job_queue
+        job_queue.run_repeating(
+        sendCookieNotification,
+        interval=10, 
+        first=5      
+        )
+
         application.add_handler(flows.createAccount.handler.conversationHandler())
         application.add_handler(flows.syriatelCashDepodit.handler.conversationHandler())
         application.add_handler(flows.syriatelCashWithdrawal.handler.conversationHandler())
@@ -59,14 +83,11 @@ def main() -> None:
         application.add_handler(flows.messageToAdmin.handler.handler())
         application.add_handler(flows.startFlow.handler.handler())
         application.add_handler(flows.balanceCommand.handler.handler())
-        # application.add_handler(CallbackQueryHandler(ichancy))
         application.add_handler(CallbackQueryHandler(button.button))
         application.add_error_handler(flows.error.handler.error_handler)
+        application.add_handler(MessageHandler(filters.TEXT  & ~filters.COMMAND , cookieHandler))
+      
 
-        # application.add_handler(CallbackQueryHandler(handlers.transactions_handlers.handle_transaction_callback))
-        # application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handlers.transactions_handlers.handle_message))
-        
-        # Start the bot
         logger.info("Starting iChancy Account Manager Bot...")
         logger.info("Bot is running. Press Ctrl+C to stop.")
         
@@ -96,9 +117,12 @@ if __name__ == '__main__':
     try:
          referal = referalThread()
          referal.start()
+         refreshingCookie = RefreshingCookieThread()
+         refreshingCookie.start()
          main()
     except KeyboardInterrupt:
         logger.info("Bot stopped by user")
     except Exception as e:
         logger.error(f"Bot crashed: {e}", exc_info=True)
+
 

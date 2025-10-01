@@ -1,8 +1,6 @@
 from telegram import  Update
 from telegram.ext import CallbackContext
 import Logger
-from models.syriatelTransaction import SyriatelTransaction
-from models.user import User
 logger = Logger.getLogger()
 VALUE = 2
 

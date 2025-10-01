@@ -3,9 +3,12 @@ from telegram import Update
 import config.telegram
 from models.messageToAdmin import MessageToAdmin
 from models.user import User
+from database import Database
 async def get_message(update : Update , context:ContextTypes.DEFAULT_TYPE):
+    db = Database.getConnection()
+    cursor =db.cursor(dictionary = True)
     telegram_id = update.message.from_user.id
-    user = User().getBy({'telegram_id' : ('=' , telegram_id)})[0]
+    user = User(cursor).getBy({'telegram_id' : ('=' , telegram_id)})[0]
     user_id = user.get('id')
     
     media = update.message.photo
@@ -14,10 +17,10 @@ async def get_message(update : Update , context:ContextTypes.DEFAULT_TYPE):
     if media:
         photo = update.message.photo[0].file_id
         message = update.message.caption or " "
-        MessageToAdmin().insert({'user_id' : user_id , 'message': message , 'photo' : photo})
+        MessageToAdmin(cursor).insert({'user_id' : user_id , 'message': message , 'photo' : photo})
     else:
         message = update.message.text
-        MessageToAdmin().insert({'user_id' : user_id , 'message': message})
+        MessageToAdmin(cursor).insert({'user_id' : user_id , 'message': message})
 
     
 
@@ -26,5 +29,6 @@ async def get_message(update : Update , context:ContextTypes.DEFAULT_TYPE):
         await context.bot.send_photo(chat_id=config.telegram.ADMIN_ID, caption=message ,photo=photo)
     else:
         await context.bot.send_message(chat_id=config.telegram.ADMIN_ID, text=message)  
-
+    db.commit()
+    db.close()
     return ConversationHandler.END

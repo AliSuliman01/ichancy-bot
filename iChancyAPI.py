@@ -1,14 +1,45 @@
 
+import time
 import config.telegram ,config.ichancy ,config.device
 import Logger
 import requests
-
+import asyncio
 logger = Logger.getLogger()
 class iChancyAPI:
     BASE_URL = 'https://www.ichancy.com'
-    
     # Static headers - update these as needed
-    HEADERS = {
+    
+    
+    @staticmethod
+    def parse_cookie_string(cookie_string):
+        """
+        Parse a cookie string and return a dictionary of cookies
+        Example: '__cf_bm=value1; cf_clearance=value2'
+        """
+        # cookies = {}
+        # if not cookie_string:
+        #     return cookies
+            
+        # # Split by semicolon and process each cookie
+        # cookie_pairs = cookie_string.split(';')
+        # for pair in cookie_pairs:
+        #     pair = pair.strip()
+        #     if '=' in pair:
+        #         name, value = pair.split('=', 1)
+        #         cookies[name.strip()] = value.strip()
+        
+        # return cookies
+    
+    # @classmethod
+    # def set_cookies_from_string(cls, cookie_string):
+    #     """
+    #     Set cookies from a cookie string
+    #     """
+    #     cls.COOKIES = cls.parse_cookie_string(cookie_string)
+    #     logger.info(f"Updated cookies: {}")
+    
+    def __init__(self):
+        self.HEADERS = {
         'User-Agent': config.device.USER_AGENT,
         'Cookie': config.telegram.COOKIE_STRING,
         'Accept': 'application/json, text/plain, */*',
@@ -26,46 +57,16 @@ class iChancyAPI:
         'Origin': 'https://agents.ichancy.com',
         'Referer': 'https://agents.ichancy.com/'
     }
-    
-    @staticmethod
-    def parse_cookie_string(cookie_string):
-        """
-        Parse a cookie string and return a dictionary of cookies
-        Example: '__cf_bm=value1; cf_clearance=value2'
-        """
-        cookies = {}
-        if not cookie_string:
-            return cookies
-            
-        # Split by semicolon and process each cookie
-        cookie_pairs = cookie_string.split(';')
-        for pair in cookie_pairs:
-            pair = pair.strip()
-            if '=' in pair:
-                name, value = pair.split('=', 1)
-                cookies[name.strip()] = value.strip()
-        
-        return cookies
-    
-    @classmethod
-    def set_cookies_from_string(cls, cookie_string):
-        """
-        Set cookies from a cookie string
-        """
-        cls.COOKIES = cls.parse_cookie_string(cookie_string)
-        logger.info(f"Updated cookies: {list(cls.COOKIES.keys())}")
-    
-    def __init__(self):
-        
         self.session = requests.Session()
         
         self.session.headers.update(self.HEADERS)
-
-        self.set_cookies_from_string(config.telegram.COOKIE_STRING)
+        logger.info("OUR HEADER IS :" )
+        logger.info(self.HEADERS)
+        # self.set_cookies_from_string(config.telegram.COOKIE_STRING)
         
         logger.info("Initialized iChancy API with headers and cookies")
         
-    def register_account(self, username=None, password=None, email=None, parent_id=config.ichancy.PARENT_ID):
+    async def register_account(self, username=None, password=None, email=None, parent_id=config.ichancy.PARENT_ID):
         """
         Register a new account using the iChancy API
         """
@@ -106,27 +107,32 @@ class iChancyAPI:
                 logger.info(f"Response status: {response.status_code}")
                 logger.info(f"Response headers: {dict(response.headers)}")
                 logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
+                if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
+                    config.telegram.COOKIE_STATUS = False
+                    return {'success': False, 'error': 'عملية صيانة دورية للبوت وسيتم إعادة تشغيله خلال بضع دقائق'}
+                
                 json = response.json()
                 if not json.get("result"):
                     return {'success': False, 'error':json.get("notification")[0].get("content") }
+                
                 response.raise_for_status()
             except requests.exceptions.HTTPError as e:
                 logger.error(f"HTTP Error: {e}")
                 logger.error(f"Response status: {e.response.status_code}")
+
                 
                 # Check if it's a Cloudflare challenge
-                if 'cf-mitigated' in e.response.headers and e.response.headers['cf-mitigated'] == 'challenge':
-                    return {'success': False, 'error': 'Cloudflare challenge detected - cookies may be expired or invalid. Please get fresh cookies from your browser and update the COOKIE_STRING variable.'}
                 
                 # Try to decode response text safely
                 try:
                     response_text = e.response.text[:200]
-                except:
+                except Exception as e:
                     response_text = "Unable to decode response"
                 
                 return {'success': False, 'error': f'HTTP Error {e.response.status_code}: {response_text}'}
             except Exception as e:
                 logger.error(f"Registration submission failed: {e}")
+
                 return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
             
             # Parse JSON response
@@ -180,17 +186,17 @@ class iChancyAPI:
             logger.error(f"Unexpected error during registration: {e}", exc_info=True)
             return {'success': False, 'error': f'Unexpected error: {str(e)}'}
         
-    def getPlayerId(self , telegram_username = None):
+    async def getPlayerId(self , username = None):
         try:
             
-            
+            print(username)
             # API endpoint
             getPlayersUrl = "https://agents.ichancy.com/global/api/Statistics/getPlayersStatisticsPro"
 
             # Prepare JSON payload
             payload = {               
                     "start": 0,
-                    "limit": 10,
+                    "limit": 500,
                     "filter": {}      
             }
             # Log the request details for debugging
@@ -204,20 +210,28 @@ class iChancyAPI:
                     json=payload, 
                     timeout=30
                 )
+                logger.info(f"Response status: {response.status_code}")
+                logger.info(f"Response headers: {dict(response.headers)}")
+                logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
+                if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
+                    config.telegram.COOKIE_STATUS = False
+                    return {'success': False, 'error': 'عملية صيانة دورية للبوت وسيتم إعادة تشغيله خلال بضع دقائق'}
                 json = response.json()
+                
                 for row in json.get('result').get('records'):
-                 if row['username'] == telegram_username:
-                    return row['playerId']
+                 if row['username'] == username:
+                    print(row['playerId'])
+                    return {'success': True , 'error' : 'no error' , 'data' : row['playerId']}
                  
             except requests.exceptions.HTTPError as e:
                  logger.error(f"HTTP Error: {e}")
                  logger.error(f"Response status: {e.response.status_code}")
-                
+                 return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
         except Exception as e:
                 logger.error(f"Registration submission failed: {e}",exc_info=True)
                 return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
 
-    def getAdminstratorBalance(self):
+    async def getAdminstratorBalance(self):
         try:
             
             
@@ -241,18 +255,25 @@ class iChancyAPI:
                     json=payload, 
                     timeout=30
                 )
+                logger.info(f"Response status: {response.status_code}")
+                logger.info(f"Response headers: {dict(response.headers)}")
+                logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
+                if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
+                    config.telegram.COOKIE_STATUS = False
+                    return {'success': False, 'error':  'عملية صيانة دورية للبوت وسيتم إعادة تشغيله خلال بضع دقائق'}
+                
                 json = response.json()
                 
-                return int(json.get('result').get('balance'))
+                return {'success': True , 'data' : int(json.get('result').get('balance'))}
             except requests.exceptions.HTTPError as e:
                  logger.error(f"HTTP Error: {e}",exc_info=True)
                  logger.error(f"Response status: {e.response.status_code}")
-                
+                 return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
         except Exception as e:
                 logger.error(f"Registration submission failed: {e}",exc_info=True)
                 return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
         
-    def getPlayerBalanceById(self , playerId):
+    async def getPlayerBalanceById(self , playerId):
         try:
             
             
@@ -273,18 +294,28 @@ class iChancyAPI:
                     json=payload, 
                     timeout=30
                 )
-                json:list = response.json()
+                # logger.info(f"Response status: {response.status_code}")
+                # logger.info(f"Response headers: {dict(response.headers)}")
+                # logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
+                if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
+                     config.telegram.COOKIE_STATUS = False
+                     return {'success': False, 'error': 'Cloudflare challenge detected - cookies may be expired or invalid. Please get fresh cookies from your browser and update the COOKIE_STRING variable.'}
+                
+                   
+                
+                json= response.json()
+                print(json)
                 balance = int(json.get('result')[0].get('balance'))
-                return balance
+                return {'success' : True ,'data' : balance}
             except requests.exceptions.HTTPError as e:
                  logger.error(f"HTTP Error: {e}",exc_info=True)
                  logger.error(f"Response status: {e.response.status_code}")
-                
+                 return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
         except Exception as e:
                 logger.error(f"Registration submission failed: {e}",exc_info=True)
                 return {'success': False, 'error': f'Registration submission failed: {str(e)}'}
 
-    def transfeerMoney(self , player_id = "321405978" , currencyCode = "NSP" , ammount = 1 , comment = None , moneyStatus = 5):
+    async def transfeerMoney(self , player_id = "321405978" , currencyCode = "NSP" , ammount = 1 , comment = None , moneyStatus = 5):
         try:
             
             
@@ -297,7 +328,8 @@ class iChancyAPI:
                       'playerId': player_id, 
                       'currencyCode': currencyCode,
                       'moneyStatus': moneyStatus}
-
+            
+            
             # Log the request details for debugging
             logger.info(f"Making request to: {getTransfeerUrl}")
         
@@ -309,17 +341,22 @@ class iChancyAPI:
                     json=payload, 
                     timeout=30
                 )
-
-            
+                logger.info(f"Response status: {response.status_code}")
+                logger.info(f"Response headers: {dict(response.headers)}")
+                logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
+                if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
+                    config.telegram.COOKIE_STATUS = False
+                    return {'success': False, 'error': 'Cloudflare challenge detected - cookies may be expired or invalid. Please get fresh cookies from your browser and update the COOKIE_STRING variable.'}
+                
             except requests.exceptions.HTTPError as e:
                  logger.error(f"HTTP Error: {e}")
                  logger.error(f"Response status: {e.response.status_code}")
-                
+                 return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
         except Exception as e:
                 logger.error(f"Transfeer Money Failed: {e}",exc_info=True)
                 return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
         
-    def WirhdrawMoney(self , player_id = "321405978" , currencyCode = "NSP" , ammount = 1 , comment = None , moneyStatus = 5):
+    async def WirhdrawMoney(self , player_id = "321405978" , currencyCode = "NSP" , ammount = 1 , comment = None , moneyStatus = 5):
         try:
             
             
@@ -332,7 +369,7 @@ class iChancyAPI:
                       'playerId': player_id, 
                       'currencyCode': currencyCode,
                       'moneyStatus': moneyStatus}
-
+           
             # Log the request details for debugging
             logger.info(f"Making request to: {getWithdrawUrl}")
         
@@ -344,12 +381,47 @@ class iChancyAPI:
                     json=payload, 
                     timeout=30
                 )
-            
+                logger.info(f"Response status: {response.status_code}")
+                logger.info(f"Response headers: {dict(response.headers)}")
+                logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
+                if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
+                    config.telegram.COOKIE_STATUS = False
+                    return {'success': False, 'error': 'Cloudflare challenge detected - cookies may be expired or invalid. Please get fresh cookies from your browser and update the COOKIE_STRING variable.'}
+                if response.status_code == 200:
+                    return {'success':True}
             except requests.exceptions.HTTPError as e:
                  logger.error(f"HTTP Error: {e}")
                  logger.error(f"Response status: {e.response.status_code}")
-                
+                 return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
         except Exception as e:
                 logger.error(f"Transfeer Money Failed: {e}",exc_info=True)
                 return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
         
+
+    def checkCookieIsWork(self):
+        try:
+            check = "https://agents.ichancy.com/"
+            try:
+                response = self.session.get(
+                    check, 
+                    timeout=2
+                )
+                logger.info(f"Response status: {response.status_code}")
+                logger.info(f"Response headers: {dict(response.headers)}")
+                logger.info(f"Response text: {response.text[:500]}...")
+                if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
+                   config.telegram.COOKIE_STATUS = False
+                   return {'success': False, 'error': 'Cloudflare challenge detected - cookies may be expired or invalid. Please get fresh cookies from your browser and update the COOKIE_STRING variable.'}
+                else:
+                   return{'success' : True , 'error' : 'No error'}
+            except requests.exceptions.HTTPError as e:
+                    logger.error(f"HTTP Error: {e}")
+                    logger.error(f"Response status: {e.response.status_code}")
+                    return {'success': False, 'error': f'Check Cookie failed: {str(e)}'}
+        
+
+        except Exception as e:
+                logger.error(f"Check Cookie Failed: {e}",exc_info=True)
+                return {'success': False, 'error': f'Check Cookie failed: {str(e)}'}
+    
+
