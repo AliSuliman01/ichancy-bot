@@ -44,12 +44,13 @@ async def get_value(update: Update, context: CallbackContext) -> int:
             📌 طريقة التحويل: {provider_type}
             🆔 الكود: {transfeer_num}
             💰 المبلغ: {value} SYP
+            👤 العضو: <a href='tg://user?id={telegram_id}'>{telegram_username}</a>
             📅 تاريخ الإنشاء: {transfeer_date}
             """
             )
-        await update.message.reply_text(message)
+        await update.message.reply_text(message , parse_mode='HTML')
         
-        await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , transfeer_num=transfeer_num))  
+        await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , transfeer_num=transfeer_num , text = message))  
 
     else:
          await update.message.reply_text("يرجى إدخال قيمة صحيحة")

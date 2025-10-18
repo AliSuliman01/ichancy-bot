@@ -93,6 +93,36 @@ def initializeDatabase():
                 )
             """)
         cursor.execute("""
+                CREATE TABLE IF NOT EXISTS order_money_transactions (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    company_name VARCHAR(50),
+                    name VARCHAR(255),
+                    city_name VARCHAR(50),
+                    phone_number VARCHAR(50),                       
+                    user_id INT NOT NULL,
+                    status VARCHAR(255) NOT NULL,
+                    action_type VARCHAR(255) NOT NULL,
+                    value INT NULL,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                )
+            """)
+        cursor.execute("""
+                CREATE TABLE IF NOT EXISTS crypto_transactions (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    transfeer_num VARCHAR(255),
+                    currency_name VARCHAR(50),
+                    network_name VARCHAR(50), 
+                    SYP_for_unit VARCHAR(150),                 
+                    user_id INT NOT NULL,
+                    status VARCHAR(255) NOT NULL,
+                    action_type VARCHAR(255) NOT NULL,
+                    value INT NULL,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+                    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+                )
+            """)
+        cursor.execute("""
                 CREATE TABLE IF NOT EXISTS gifts (
                     id INT AUTO_INCREMENT PRIMARY KEY,
                     telegram_goal_id VARCHAR(20) NOT NULL,

@@ -4,6 +4,7 @@ from models.transaction import Transaction
 from models.syriatelTransaction import SyriatelTransaction
 from models.bemoTransaction import BemoTransaction
 from models.shamCashTransaction import ShamCashTransaction
+from models.orderMoney import OrderMoneyTransaction
 from database import Database
 async def handler(query ,context ):
    db = Database.getConnection()
@@ -15,6 +16,7 @@ async def handler(query ,context ):
 
     transaction_id = query.data.split(" ")[1]
     transaction = Transaction(cursor).getById(transaction_id)
+    print(transaction)
 
     provider_type, provider_id , value=  getDataFromTransaction(transaction)
     user_id =  query.message.entities[0].user.id
@@ -34,7 +36,10 @@ async def handler(query ,context ):
 def getDataFromTransaction(transaction:dict):
     provider_type = transaction.get('provider_type')
     provider_id = int(transaction.get('provider_id'))
-    value = int(transaction.get('value'))
+    value = abs(int(transaction.get('value')))
+    print(provider_type)
+    print(provider_id)
+    print(value)
     return provider_type , provider_id ,value
 
 def updateUserBalance(user_id ,value ,cursor):
@@ -51,8 +56,10 @@ def getProviderModel(provider_type , cursor):
                 provider_model = SyriatelTransaction(cursor)
             case "bemo" :
                 provider_model = BemoTransaction(cursor)
-            case "shamCash":
+            case "sham cash":
                 provider_model = ShamCashTransaction(cursor)
+            case "order money":
+                provider_model = OrderMoneyTransaction(cursor)
 
     return provider_model
 

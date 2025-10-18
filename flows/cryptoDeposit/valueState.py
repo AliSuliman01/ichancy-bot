@@ -1,11 +1,12 @@
 import Logger
 from telegram import   Update
 from telegram.ext import ConversationHandler,CallbackContext
-from models.bemoTransaction import BemoTransaction
+from models.cryptoTransaction import CryptoTransaction
 from models.user import User
 from models.transaction import Transaction
 from messages.depositMessageToAdmin import deposit_message
-from flows.bemoDepodit.validation.valueValidation import validate
+from flows.cryptoDeposit.validation.valueValidation import validate
+import config.crypto
 from database import Database
 logger = Logger.getLogger()
 
@@ -16,23 +17,24 @@ async def get_value(update: Update, context: CallbackContext) -> int:
     cursor = db.cursor(dictionary=True)
     user = update.message.from_user
     value = update.message.text
-
+    value = value.replace('دولار','').replace('Dollar','').replace('dollar','').replace(' ','').replace('أمريكي','').replace('امريكي','').replace('USDT','')
     if validate(value):
         transfeer_num = context.user_data['transfeer_num']
+        wallet_type = context.user_data['wallet_type']
+        currency_name , network_name = wallet_type.split("-")
         telegram_id = update.message.from_user.id
         user = User(cursor).getBy({'telegram_id':('=', telegram_id)})[0]
         user_id = user.get('id')
-        BemoTransaction(cursor).insert({'transfeer_num' : transfeer_num , 'user_id': user_id , 'status':'pending','action_type':'deposit' , 'value' : value})
-       
-       
-        transfeer = BemoTransaction(cursor).getBy({'transfeer_num' : ('=', transfeer_num)})[0]
+        # value = float(value)*float(config.crypto.SYP_for_unit[currency])
+        CryptoTransaction(cursor).insert({'transfeer_num' : transfeer_num , 'user_id': user_id , 'status':'pending','action_type':'deposit' , 'value' : float(value)*float(config.crypto.SYP_for_unit[currency_name]) , 'currency_name' : currency_name , 'network_name' : network_name , 'SYP_for_unit' : config.crypto.SYP_for_unit[currency_name]})
+        transfeer = CryptoTransaction(cursor).getBy({'transfeer_num' : ('=', transfeer_num)})[0]
         transfeer_id = transfeer.get('id')
-        provider_type = "bemo"
+        provider_type = "crypto"
         transfeer_date = transfeer['created_at']
         telegram_username = user.get('telegram_username')
         transfeer_num = transfeer.get('transfeer_num')
         
-        Transaction(cursor).insert({'provider_id':transfeer_id ,'provider_type':provider_type,'user_id':user_id ,'value':value , 'action_type':'deposit' , 'status':'pending'})
+        Transaction(cursor).insert({'provider_id':transfeer_id ,'provider_type':provider_type,'user_id':user_id ,'value':float(value)*float(config.crypto.SYP_for_unit[currency_name]) , 'action_type':'deposit' , 'status':'pending'})
         transaction_id = Transaction(cursor).getBy({'provider_id':('=' ,transfeer_id) ,'provider_type':('=' , provider_type)})[0].get('id')
         context.user_data["transfeer_num"] = transfeer_num
 
@@ -41,19 +43,20 @@ async def get_value(update: Update, context: CallbackContext) -> int:
             f"""🆕 :طلب شحن جديد
             🆔 رقم الطلب: #{transfeer_id}
             📌 طريقة التحويل: {provider_type}
-            💰 المبلغ: {value} SYP
+            📌 العملة: {currency_name}
+            📌 الشبكة: {network_name}
+            💰 المبلغ: {value} 
             🆔 الكود: {transfeer_num}
-            👤 العضو: <a href='tg://user?id={telegram_id}'>{telegram_username}</a>
+            👤 العضو: <a href="tg://user?id={telegram_id}">{telegram_username}</a>
             📅 تاريخ الإنشاء: {transfeer_date}
             """
             )
-        await update.message.reply_text(message ,parse_mode='HTML')
+        await update.message.reply_text(message , parse_mode='HTML')
         
-        await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , transfeer_num = transfeer_num ,text = message))  
+        await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , transfeer_num = transfeer_num , text = message ,currency=currency_name))  
         db.commit()
     else:
          await update.message.reply_text("يرجى إدخال قيمة صحيحة")
-    
     db.close()
     return ConversationHandler.END
    except Exception as e:

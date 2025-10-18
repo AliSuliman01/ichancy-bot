@@ -1,7 +1,8 @@
 import time
 import Logger
 import config.telegram
-import config.referal
+from cryptoPrices import CryptoPrices
+
 import  button
 from telegram import Update
 from telegram.ext import (
@@ -24,10 +25,14 @@ import flows.error.handler
 import flows.createAccount.handler
 import flows.syriatelCashDepodit.handler
 import flows.bemoDepodit.handler
+import flows.bemoWithdrawal.handler
 import flows.editDepositFromAdmin.handler
 import flows.editWithdrawFromAdmin.handler
 import flows.shamCashDepodit.handler
 import flows.syriatelCashWithdrawal.handler
+import flows.shamCashWithdrawal.handler
+import flows.moneyOrderWithdrawal.handler
+import flows.cryptoDeposit.handler
 from referalHandler import referalThread
 from refreshingCookie import RefreshingCookieThread
 logger = Logger.getLogger()
@@ -73,16 +78,21 @@ def main() -> None:
         application.add_handler(flows.syriatelCashDepodit.handler.conversationHandler())
         application.add_handler(flows.syriatelCashWithdrawal.handler.conversationHandler())
         application.add_handler(flows.bemoDepodit.handler.conversationHandler())
+        application.add_handler(flows.bemoWithdrawal.handler.conversationHandler())
         application.add_handler(flows.shamCashDepodit.handler.conversationHandler())
+        application.add_handler(flows.shamCashWithdrawal.handler.conversationHandler())
         application.add_handler(flows.sendGifts.handler.conversationHandler())
         application.add_handler(flows.resieveGifts.handler.conversationHandler())
         application.add_handler(flows.depositAccount.handler.conversationHandler())
         application.add_handler(flows.withdrawalAccount.handler.conversationHandler())
         application.add_handler(flows.editDepositFromAdmin.handler.conversationHandler())
         application.add_handler(flows.editWithdrawFromAdmin.handler.conversationHandler())
+        application.add_handler(flows.moneyOrderWithdrawal.handler.conversationHandler())
+        application.add_handler(flows.cryptoDeposit.handler.conversationHandler())
         application.add_handler(flows.messageToAdmin.handler.handler())
         application.add_handler(flows.startFlow.handler.handler())
         application.add_handler(flows.balanceCommand.handler.handler())
+        application.add_handler(flows.cryptoDepos6it.handler.conversationHandler())
         application.add_handler(CallbackQueryHandler(button.button))
         application.add_error_handler(flows.error.handler.error_handler)
         application.add_handler(MessageHandler(filters.TEXT  & ~filters.COMMAND , cookieHandler))
@@ -117,6 +127,8 @@ if __name__ == '__main__':
     try:
          referal = referalThread()
          referal.start()
+         cryptoPrices = CryptoPrices()
+         cryptoPrices.start()
          if config.telegram.ACTIVE_REFRESHING_COOKIE:
              refreshingCookie = RefreshingCookieThread()
              refreshingCookie.start()

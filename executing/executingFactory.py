@@ -15,6 +15,7 @@ import flows.guideHandlers.howWithdrawTelegramAccount.execute
 import flows.guideHandlers.HowToCreateNewAccount.execute
 import executing.executingInterface
 import flows.approveDepositFromAdmin.execute
+import flows.approveWithdrawFromAdmin.execute
 import flows.rejectDepositFromAdmin.execute
 import flows.referal.execute
 import flows.referalDetails.execute
@@ -44,7 +45,7 @@ class ExecutingFactury:
             'guides_how_withdraw_ichancy_account' : flows.guideHandlers.howWithdrawIchancyAccount.execute.HowWithdrawIchancyAccountExecute(),
             'approve_deposit' : flows.approveDepositFromAdmin.execute.ApproveDepositeFromAdmin(),
             'reject' : flows.rejectDepositFromAdmin.execute.RejectDepositeFromAdmin(),
-            'approve_withdraw' : flows.approveDepositFromAdmin.execute.ApproveDepositeFromAdmin(),
+            'approve_withdraw' : flows.approveWithdrawFromAdmin.execute.ApproveWithdrawFromAdmin(),
             'referal' : flows.referal.execute.ReferalExecute(),
             'referal_details' :flows.referalDetails.execute.ReferalDetailsExecute(),
             'log' : flows.log.execute.LogExecute(),

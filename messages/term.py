@@ -10,7 +10,7 @@ def term_message():
 
 
 def getKeyboard():
-    keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu')]]
+    keyboard = [[InlineKeyboardButton("🏠 Back to Menu", callback_data='back_to_menu' ,)]]
 
     return keyboard
         

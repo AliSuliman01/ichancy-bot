@@ -1,0 +1,25 @@
+from telegram.ext import (
+    ConversationHandler,
+    MessageHandler,
+    filters,
+    CommandHandler,
+    CallbackQueryHandler,
+)
+import config.crypto
+from flows.cryptoDeposit.entryPoint import button_handler
+from flows.cryptoDeposit.cancel import cancel
+from flows.cryptoDeposit.walletTypeState import get_wallet_type
+from flows.cryptoDeposit.valueState import get_value
+from flows.cryptoDeposit.transfeerNumState import get_transfeer_num
+WALLET_TYPE , TRANSFEER_NUM , VALUE  = [1 , 2 , 3]
+def conversationHandler():
+    conv_handler = ConversationHandler(
+        entry_points=[CallbackQueryHandler(button_handler, pattern='^crypto_deposit$')],
+        states={
+            WALLET_TYPE: [CallbackQueryHandler(get_wallet_type , pattern=config.crypto.WALLET_TYPE)],
+            TRANSFEER_NUM: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_transfeer_num)],
+            VALUE:[MessageHandler(filters.TEXT & ~filters.COMMAND , get_value)]
+        },
+        fallbacks=[CommandHandler('cancel', cancel)],
+    )
+    return conv_handler

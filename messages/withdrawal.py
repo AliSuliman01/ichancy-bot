@@ -17,13 +17,10 @@ def getKeyboard():
         ],
         [
             InlineKeyboardButton("Payeer", callback_data='payeer_withdrawal'),
-            InlineKeyboardButton("حوالة", callback_data='hawala_withdrawal')
+            InlineKeyboardButton("حوالة", callback_data='order_money_withdrawal')
         ],
         [
-            InlineKeyboardButton("Sham Cash (SYP) 🇸🇾", callback_data='sham_cash_syp_withdrawal')
-        ],
-        [
-            InlineKeyboardButton("Sham Cash (USD) 💲", callback_data='sham_cash_usd_withdrawal')
+            InlineKeyboardButton("Sham Cash (SYP) 🇸🇾", callback_data='sham_cash_withdrawal')
         ],
         [
             InlineKeyboardButton("Coinex", callback_data='coinex_withdrawal'),
