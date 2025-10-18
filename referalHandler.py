@@ -14,7 +14,7 @@ class referalThread(Thread):
     def run(self):
 
         while True:
-            self.logger.info("TRY UPDATE REFERAL DATE")
+            # self.logger.info("TRY UPDATE REFERAL DATE")
             if config.referal.REFERAL_DATE < datetime.now(): 
                 config.referal.REFERAL_DATE = datetime.now()  
                 self.addBalanceForParent()  
