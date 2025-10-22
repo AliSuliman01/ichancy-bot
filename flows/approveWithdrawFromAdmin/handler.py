@@ -9,28 +9,33 @@ from database import Database
 async def handler(query ,context ):
    db = Database.getConnection()
    try:
-    db.start_transaction()
-    cursor = db.cursor(dictionary=True)
-    text = message()[0] +'\n'+ query.message.text
-    await query.edit_message_text(text)
+    if db:
+        db.start_transaction()
+        cursor = db.cursor(dictionary=True)
+        text = message()[0] +'\n'+ query.message.text
+        await query.edit_message_text(text)
 
-    transaction_id = query.data.split(" ")[1]
-    transaction = Transaction(cursor).getById(transaction_id)
-    print(transaction)
+        transaction_id = query.data.split(" ")[1]
+        transaction = Transaction(cursor).getById(transaction_id)
+        print(transaction)
 
-    provider_type, provider_id , value=  getDataFromTransaction(transaction)
-    user_id =  query.message.entities[0].user.id
+        provider_type, provider_id , value=  getDataFromTransaction(transaction)
+        user_id =  query.message.entities[0].user.id
 
-    updateUserBalance(user_id , value ,cursor)
-    provider_model = getProviderModel(provider_type , cursor)
-    updateTransactionsTables(provider_model ,provider_id ,provider_type, cursor)
-    
-    await context.bot.send_message(chat_id=user_id, text=text)  
-    db.commit()
-    db.close()
+        updateUserBalance(user_id , value ,cursor)
+        provider_model = getProviderModel(provider_type , cursor)
+        updateTransactionsTables(provider_model ,provider_id ,provider_type, cursor)
+        
+        await context.bot.send_message(chat_id=user_id, text=text)  
+        db.commit()
    except Exception as e:
        print (e)
        db.rollback()
+
+   finally:
+       if db:
+          db.close()
+
 
 
 def getDataFromTransaction(transaction:dict):

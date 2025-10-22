@@ -1,4 +1,3 @@
-import time
 import Logger
 import config.telegram
 from cryptoPrices import CryptoPrices
@@ -92,7 +91,7 @@ def main() -> None:
         application.add_handler(flows.messageToAdmin.handler.handler())
         application.add_handler(flows.startFlow.handler.handler())
         application.add_handler(flows.balanceCommand.handler.handler())
-        application.add_handler(flows.cryptoDepos6it.handler.conversationHandler())
+        application.add_handler(flows.cryptoDeposit.handler.conversationHandler())
         application.add_handler(CallbackQueryHandler(button.button))
         application.add_error_handler(flows.error.handler.error_handler)
         application.add_handler(MessageHandler(filters.TEXT  & ~filters.COMMAND , cookieHandler))

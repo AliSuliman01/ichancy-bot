@@ -37,26 +37,27 @@ class referalThread(Thread):
     def addBalanceForParent(self):
       db = Database.getConnection()
       try:
-        db.start_transaction()
-        cursor = db.cursor(dictionary=True) 
-        parent_child_ides = self.getParentReferalIDes(cursor)
-        for parent_id in parent_child_ides.keys():
-            if len(parent_child_ides[parent_id])< config.referal.MIN_NUM_OF_REFERALS:            
-                db.close()
-                return False
-            value = 0
-            for child_id in parent_child_ides[parent_id]:           
-                transactions = Transaction(cursor).getBy({'user_id':('=' , child_id) ,'created_at' : (">" , config.referal.REFERAL_DATE - timedelta(**config.referal.ROLL_TIME))
-                                                                    , 'status':('=' , 'approved')})  
-                for transaction in transactions:
-                    value+= abs(transaction.get('value'))
-            parent_user = User(cursor).getById(parent_id)
-            oldBalance = parent_user.get('balance')
-            newBalance = oldBalance + value*config.referal.REFERAL_PERCENT
-            User(cursor).update({'id' :('=',parent_id)},{'balance' : newBalance})
-            db.commit()
-            db.close()
+        if db:
+            db.start_transaction()
+            cursor = db.cursor(dictionary=True) 
+            parent_child_ides = self.getParentReferalIDes(cursor)
+            for parent_id in parent_child_ides.keys():
+                if len(parent_child_ides[parent_id])< config.referal.MIN_NUM_OF_REFERALS:            
+                    return False
+                value = 0
+                for child_id in parent_child_ides[parent_id]:           
+                    transactions = Transaction(cursor).getBy({'user_id':('=' , child_id) ,'created_at' : (">" , config.referal.REFERAL_DATE - timedelta(**config.referal.ROLL_TIME))
+                                                                        , 'status':('=' , 'approved')})  
+                    for transaction in transactions:
+                        value+= abs(transaction.get('value'))
+                parent_user = User(cursor).getById(parent_id)
+                oldBalance = parent_user.get('balance')
+                newBalance = oldBalance + value*config.referal.REFERAL_PERCENT
+                User(cursor).update({'id' :('=',parent_id)},{'balance' : newBalance})
+                db.commit()
       except Exception as e:
           print (e)
           db.rollback()
-        
+      finally:
+          db.close()
+          

@@ -19,38 +19,39 @@ from database import Database
 async def get_edit_ammount(update: Update, context: CallbackContext) -> int:
    db = Database.getConnection()
    try:
-    db.start_transaction()
-    cursor = db.cursor(dictionary = True)
-    edit_ammount = update.message.text
-   
-    if not validationEditAmmount.validate(edit_ammount):
-        await update.message.reply_text(text="يرجى إدخال قيمة صحيحية")
-        db.close()
-        return ConversationHandler.END
-    currency = context.user_data["currency"]
-    realValue = context.user_data["realValue"]
-    transaction_id = int(context.user_data["transaction_id"])
-    transaction = Transaction(cursor).getById(transaction_id)
-    provider_type , provider_id = getDataFromTransaction(transaction)
-   
-  
-    message = context.user_data["message"]
-    user = User(cursor).getById(transaction.get('user_id'))
-    edited_message = getEditedMessage(message , transaction ,user , edit_ammount ,realValue)
+    if db:
+        db.start_transaction()
+        cursor = db.cursor(dictionary = True)
+        edit_ammount = update.message.text
+    
+        if not validationEditAmmount.validate(edit_ammount):
+            await update.message.reply_text(text="يرجى إدخال قيمة صحيحية")
+            return ConversationHandler.END
+        currency = context.user_data["currency"]
+        realValue = context.user_data["realValue"]
+        transaction_id = int(context.user_data["transaction_id"])
+        transaction = Transaction(cursor).getById(transaction_id)
+        provider_type , provider_id = getDataFromTransaction(transaction)
+    
+    
+        message = context.user_data["message"]
+        user = User(cursor).getById(transaction.get('user_id'))
+        edited_message = getEditedMessage(message , transaction ,user , edit_ammount ,realValue)
 
-    provider_model = getProviderModel(provider_type , cursor)
-    updateTransactionsTables(provider_model , provider_id ,edit_ammount ,transaction_id , cursor ,currency)
-    
-    
-    await context.bot.edit_message_text(message_id=context.user_data["message_id"],chat_id=ADMIN_ID ,text = edited_message, reply_markup = context.user_data["reply_markup"],parse_mode = 'HTML')
-    await removeMessages(update , context)
-    db.commit()
-    db.close()
-    return ConversationHandler.END
+        provider_model = getProviderModel(provider_type , cursor)
+        updateTransactionsTables(provider_model , provider_id ,edit_ammount ,transaction_id , cursor ,currency)
+        
+        
+        await context.bot.edit_message_text(message_id=context.user_data["message_id"],chat_id=ADMIN_ID ,text = edited_message, reply_markup = context.user_data["reply_markup"],parse_mode = 'HTML')
+        await removeMessages(update , context)
+        db.commit()
+        return ConversationHandler.END
    except Exception as e:
        print (e)
        db.rollback()
-
+   finally:
+       if db:
+           db.close()
 
 
 

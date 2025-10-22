@@ -13,51 +13,55 @@ async def get_value(update: Update, context: CallbackContext) -> int:
   
   db = Database.getConnection()
   try:
-    db.start_transaction()
-    cursor = db.cursor(dictionary=True)
-    user = update.message.from_user
-    value = update.message.text
+    if db:
+        db.start_transaction()
+        cursor = db.cursor(dictionary=True)
+        user = update.message.from_user
+        value = update.message.text
 
-    if validate(value):
-        transfeer_num = context.user_data['transfeer_num']
-        telegram_id = update.message.from_user.id
-        user = User(cursor).getBy({'telegram_id':('=', telegram_id)})[0]
-        user_id = user.get('id')
-        SyriatelTransaction(cursor).insert({'transfeer_num' : transfeer_num , 'user_id': user_id , 'status':'pending','action_type':'deposit' , 'value' : value})
-       
-       
-        transfeer = SyriatelTransaction(cursor).getBy({'transfeer_num' : ('=', transfeer_num)})[0]
-        transfeer_id = transfeer.get('id')
-        provider_type = "syriatel"
-        transfeer_date = transfeer['created_at']
-        telegram_username = user.get('telegram_username')
-        transfeer_num = transfeer['transfeer_num']
-        
-        Transaction(cursor).insert({'provider_id':transfeer_id ,'provider_type':provider_type,'user_id':user_id ,'value':value , 'action_type':'deposit' , 'status':'pending'})
-        transaction_id = Transaction(cursor).getBy({'provider_id':('=' ,transfeer_id) ,'provider_type':('=' , provider_type)})[0].get('id')
-        context.user_data["transfeer_num"] = transfeer_num
+        if validate(value):
+            transfeer_num = context.user_data['transfeer_num']
+            telegram_id = update.message.from_user.id
+            user = User(cursor).getBy({'telegram_id':('=', telegram_id)})[0]
+            user_id = user.get('id')
+            SyriatelTransaction(cursor).insert({'transfeer_num' : transfeer_num , 'user_id': user_id , 'status':'pending','action_type':'deposit' , 'value' : value})
+          
+          
+            transfeer = SyriatelTransaction(cursor).getBy({'transfeer_num' : ('=', transfeer_num)})[0]
+            transfeer_id = transfeer.get('id')
+            provider_type = "syriatel"
+            transfeer_date = transfeer['created_at']
+            telegram_username = user.get('telegram_username')
+            transfeer_num = transfeer['transfeer_num']
+            
+            Transaction(cursor).insert({'provider_id':transfeer_id ,'provider_type':provider_type,'user_id':user_id ,'value':value , 'action_type':'deposit' , 'status':'pending'})
+            transaction_id = Transaction(cursor).getBy({'provider_id':('=' ,transfeer_id) ,'provider_type':('=' , provider_type)})[0].get('id')
+            context.user_data["transfeer_num"] = transfeer_num
 
-        message = (
-            "تم استلام طلبك وسيتم إعلامك عند معالجته\n\n"
-            f"""🆕 :طلب شحن جديد
-            🆔 رقم الطلب: #{transfeer_id}
-            📌 طريقة التحويل: {provider_type}
-            🆔 الكود: {transfeer_num}
-            💰 المبلغ: {value} SYP
-            👤 العضو: <a href='tg://user?id={telegram_id}'>{telegram_username}</a>
-            📅 تاريخ الإنشاء: {transfeer_date}
-            """
-            )
-        await update.message.reply_text(message , parse_mode='HTML')
-        
-        await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , transfeer_num=transfeer_num , text = message))  
+            message = (
+                "تم استلام طلبك وسيتم إعلامك عند معالجته\n\n"
+                f"""🆕 :طلب شحن جديد
+                🆔 رقم الطلب: #{transfeer_id}
+                📌 طريقة التحويل: {provider_type}
+                🆔 الكود: {transfeer_num}
+                💰 المبلغ: {value} SYP
+                👤 العضو: <a href='tg://user?id={telegram_id}'>{telegram_username}</a>
+                📅 تاريخ الإنشاء: {transfeer_date}
+                """
+                )
+            await update.message.reply_text(message , parse_mode='HTML')
+            
+            await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , transfeer_num=transfeer_num , text = message))  
 
-    else:
-         await update.message.reply_text("يرجى إدخال قيمة صحيحة")
-    db.commit()
-    db.close()
-    return ConversationHandler.END
+        else:
+            await update.message.reply_text("يرجى إدخال قيمة صحيحة")
+        db.commit()
+        return ConversationHandler.END
   except Exception as e:
     print (e)
     db.rollback()
+  
 
+  finally:
+    if db:
+       db.close()
