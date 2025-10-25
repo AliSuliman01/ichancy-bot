@@ -16,14 +16,16 @@ class RefreshingCookieFromFileThread(Thread):
             try:
                 with open ("cookie.txt" , 'r') as f:
                     cookie = f.readline().replace("\n","").strip()
-                    config.telegram.COOKIE_STRING = cookie
+                    if config.telegram.COOKIE_STRING != cookie:
+                        config.telegram.COOKIE_STRING = cookie
+                    
                     print(cookie)
                     print("###################################")
                     print(config.telegram.COOKIE_STRING)
             except:
                 self.logger.info("there is an error in refreshing cookie from file")
                 print("there is an error in refreshing cookie from file")
-            time.sleep(5)
+            time.sleep(10)
         api = iChancyAPI()
         result = api.checkCookieIsWork()
         self.logger.info(f"API FOR REFRESH COOKIE WITH RESULT {result.get('success')}" + "    " + f"{result.get('error')}")     
