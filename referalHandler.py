@@ -59,5 +59,6 @@ class referalThread(Thread):
           print (e)
           db.rollback()
       finally:
-          db.close()
+          if db:
+              db.close()
           

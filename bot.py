@@ -34,6 +34,7 @@ import flows.moneyOrderWithdrawal.handler
 import flows.cryptoDeposit.handler
 from referalHandler import referalThread
 from refreshingCookie import RefreshingCookieThread
+from refreshingCookieFromFile import RefreshingCookieFromFileThread
 logger = Logger.getLogger()
 
 try:
@@ -131,6 +132,9 @@ if __name__ == '__main__':
          if config.telegram.ACTIVE_REFRESHING_COOKIE:
              refreshingCookie = RefreshingCookieThread()
              refreshingCookie.start()
+         if config.telegram.ACTIVE_REFRESHING_COOKIE_FROM_FILE:
+             refreshingCookieFromFile = RefreshingCookieFromFileThread()
+             refreshingCookieFromFile.start()
          main()
     except KeyboardInterrupt:
         logger.info("Bot stopped by user")
