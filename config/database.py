@@ -2,8 +2,8 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-host = os.getenv("HOST")
-port =  os.getenv("PORT")
-username =  os.getenv("USERNAME")
-password =  os.getenv("PASSWORD")
-databaseName =  os.getenv("DATABASENAME")
+host = os.getenv("DB_HOST")
+port =  os.getenv("DB_PORT")
+username =  os.getenv("DB_USERNAME")
+password =  os.getenv("DB_PASSWORD")
+databaseName =  os.getenv("DB_NAME")
