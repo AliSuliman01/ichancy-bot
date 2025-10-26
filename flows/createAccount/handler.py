@@ -67,7 +67,7 @@ async def finishingHandler(update:Update , context):
                         break
             if counter > 40:
                 await context.bot.delete_message(message_id = update.message.id+1 , chat_id = update.message.from_user.id)
-                await update.message.reply_text("خطأ بالموقع وسيعود للعمل قريبا")
+                await update.message.reply_text("هذه الخدمة في حالة الصيانة \n\n الوقت المتوقع لتعود متاحة 5 دقائق")
                 return
             await asyncio.sleep(5)
    except Exception as e:
