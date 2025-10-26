@@ -7,8 +7,3 @@ port =  os.getenv("PORT")
 username =  os.getenv("USERNAME")
 password =  os.getenv("PASSWORD")
 databaseName =  os.getenv("DATABASENAME")
-
-
-
-
-
