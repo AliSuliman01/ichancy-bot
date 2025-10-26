@@ -4,3 +4,4 @@ config/__pycache__/
 handlers/__pycache__/
 handlers/command/__pycache__/
 .env
+cookie.txt
