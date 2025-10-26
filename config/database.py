@@ -1,6 +1,14 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-host = "localhost"
-port = 3306
-username = "root"
-password = ""
-databaseName = "cicp_bot"
+host = os.getenv("HOST")
+port =  os.getenv("PORT")
+username =  os.getenv("USERNAME")
+password =  os.getenv("PASSWORD")
+databaseName =  os.getenv("DATABASENAME")
+
+
+
+
+
