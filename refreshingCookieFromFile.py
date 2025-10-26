@@ -18,6 +18,7 @@ class RefreshingCookieFromFileThread(Thread):
                     cookie = f.readline().replace("\n","").strip()
                     if config.telegram.COOKIE_STRING != cookie:
                         config.telegram.COOKIE_STRING = cookie
+                        config.telegram.COOKIE_STATUS= True
             except:
                 self.logger.info("there is an error in refreshing cookie from file")
                 print("there is an error in refreshing cookie from file")

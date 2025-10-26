@@ -33,7 +33,7 @@ async def finishingHandler(update:Update , context):
    db = Database.getConnection()
    try:
     if db:
-
+        logger.info("in handler for create cookie")
         db.start_transaction()
         cursor = db.cursor(dictionary = True)
         user = update.message.from_user
@@ -43,6 +43,7 @@ async def finishingHandler(update:Update , context):
         logger.info("User %s set password: %s", user.first_name, password)
         counter = 0
         while True:
+            logger.info("in ////while////handler for create cookie")
             counter+=1
             if(config.telegram.COOKIE_STATUS):
                 api = iChancyAPI()
