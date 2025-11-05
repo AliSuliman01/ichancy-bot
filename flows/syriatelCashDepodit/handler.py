@@ -7,6 +7,7 @@ from telegram.ext import (
 )
 from flows.syriatelCashDepodit.entryPoint import button_handler
 from flows.syriatelCashDepodit.cancel import cancel
+from flows.startFlow.handler import start
 from flows.syriatelCashDepodit.transfeerNumState import get_transfeer_num
 from flows.syriatelCashDepodit.valueState import get_value
 transfeer_NUM ,VALUE = [1,2]
@@ -17,6 +18,6 @@ def conversationHandler():
             transfeer_NUM: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_transfeer_num)],
             VALUE: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_value)],
         },
-        fallbacks=[CommandHandler('cancel', cancel)],
+        fallbacks=[CommandHandler('start',start)],
     )
     return conv_handler

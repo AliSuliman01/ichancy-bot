@@ -9,6 +9,7 @@ from flows.sendGifts.telegramIdGoalState import get_telegram_id_goal
 from flows.sendGifts.ammountState import get_gift_ammount
 from flows.sendGifts.entryPoint import button_send_gifts_handler
 from flows.sendGifts.cancel import cancel
+from flows.startFlow.handler import start
 telegramIdGoal , ammount = [1,2]
 def conversationHandler():
     conv_handler = ConversationHandler(
@@ -17,6 +18,6 @@ def conversationHandler():
         telegramIdGoal: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_telegram_id_goal)],
         ammount: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_gift_ammount)],
     },
-    fallbacks=[CommandHandler('cancel', cancel)],
+    fallbacks=[CommandHandler('start',start)],
     )    
     return conv_handler

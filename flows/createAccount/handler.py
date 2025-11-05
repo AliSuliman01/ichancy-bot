@@ -2,6 +2,7 @@ import Logger
 from telegram import Update
 from telegram.ext import (ContextTypes,ConversationHandler,MessageHandler,filters,CommandHandler,CallbackQueryHandler)
 from flows.createAccount.cancel import cancel
+from flows.startFlow.handler import start
 from flows.createAccount.entryPoint import button_handler
 from flows.createAccount.passwordState import get_password
 from flows.createAccount.userNameState import get_username
@@ -23,7 +24,7 @@ def conversationHandler():
         USERNAME: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_username)],
         PASSWORD: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_password)],
     },
-    fallbacks=[CommandHandler('cancel', cancel)],
+    fallbacks=[CommandHandler('start',start)],
     )    
     return conv_handler
 

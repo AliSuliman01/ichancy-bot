@@ -1,5 +1,6 @@
 from telegram.ext import ConversationHandler , MessageHandler , filters , CallbackQueryHandler ,CommandHandler
 from flows.messageToAdmin.cancel import cancel
+from flows.startFlow.handler import start
 from flows.messageToAdmin.entryPoint import button_admin_message_handler
 from flows.messageToAdmin.messageState import get_message
 MESSAGE = 1
@@ -12,7 +13,7 @@ def handler():
         states={
             MESSAGE :[MessageHandler(filters.PHOTO |filters.TEXT & ~filters.COMMAND, get_message)]
         },
-        fallbacks=[CommandHandler('cancel', cancel)],
+        fallbacks=[CommandHandler('start',start)],
         
     )
 

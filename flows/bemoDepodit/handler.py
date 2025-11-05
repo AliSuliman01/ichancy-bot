@@ -5,8 +5,10 @@ from telegram.ext import (
     CommandHandler,
     CallbackQueryHandler,
 )
+from flows.startFlow.handler import start
 from flows.bemoDepodit.entryPoint import button_handler
 from flows.bemoDepodit.cancel import cancel
+from flows.startFlow.handler import start
 from flows.bemoDepodit.transfeerNumState import get_transfeer_num
 from flows.bemoDepodit.valueState import get_value
 transfeer_NUM ,VALUE = [1,2]
@@ -17,6 +19,6 @@ def conversationHandler():
             transfeer_NUM: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_transfeer_num)],
             VALUE: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_value)],
         },
-        fallbacks=[CommandHandler('cancel', cancel)],
+        fallbacks=[CommandHandler('start', start)],
     )
     return conv_handler

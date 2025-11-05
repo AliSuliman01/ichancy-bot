@@ -102,7 +102,7 @@ def main() -> None:
         logger.info("Bot is running. Press Ctrl+C to stop.")
         
         application.run_polling(
-            poll_interval=2.0,
+            poll_interval=1.0,
             timeout=30,
             drop_pending_updates=True
         )

@@ -4,6 +4,7 @@ from iChancyAPI import iChancyAPI
 import config.ichancy
 import flows.withdrawalAccount.entryPoint as entryPoint
 import flows.withdrawalAccount.ammountState as ammountState
+from flows.startFlow.handler import start
 import flows.withdrawalAccount.cancel as cancel
 AMMOUNT = 1
 
@@ -13,6 +14,6 @@ def conversationHandler():
         states={
             AMMOUNT : [MessageHandler(filters.TEXT & ~filters.COMMAND , ammountState.get_withdraw_ammount) ]
         },
-        fallbacks=[CommandHandler('cancel' , cancel.cancel)]
+        fallbacks=[CommandHandler('start',start)]
     )
     return conv_handler

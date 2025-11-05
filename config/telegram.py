@@ -26,3 +26,5 @@ def validate_tokens():
     
 BOT_NAME = os.getenv('BOT_NAME') 
 
+TELEGRAM_CHANNELS = os.getenv('TELEGRAM_CHANNELS').split(',')
+TELEGRAM_GROUPS = os.getenv('TELEGRAM_GROUPS').split(',') 

@@ -2,6 +2,7 @@ import asyncio
 from telegram.ext import ConversationHandler , MessageHandler ,filters ,CallbackQueryHandler ,CommandHandler
 from telegram import Update
 from flows.depositAccount.cancel import cancel
+from flows.startFlow.handler import start
 from flows.depositAccount.entryPoint import button_deposit_account_handler
 from flows.depositAccount.ammountState import get_ammount_for_deposit
 from models.user import User
@@ -18,7 +19,7 @@ def conversationHandler():
         states={
             AMMOUNT :[MessageHandler(filters.TEXT & ~filters.COMMAND , get_ammount_for_deposit)]
         },
-        fallbacks=[CommandHandler('cancel', cancel)],
+        fallbacks=[CommandHandler('start',start)],
     )
     return conv_handler
 

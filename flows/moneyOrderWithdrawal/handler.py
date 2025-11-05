@@ -7,6 +7,7 @@ from telegram.ext import (
 )
 from flows.moneyOrderWithdrawal.entryPoint import button_handler
 from flows.moneyOrderWithdrawal.cancel import cancel
+from flows.startFlow.handler import start
 from flows.moneyOrderWithdrawal.companyNameState import get_company_name
 from flows.moneyOrderWithdrawal.valueState import get_value
 from flows.moneyOrderWithdrawal.nameState import get_name
@@ -25,6 +26,6 @@ def conversationHandler():
             PHONE_NUMBER:[MessageHandler(filters.TEXT & ~filters.COMMAND, get_phone_number)],
             VALUE:[MessageHandler(filters.TEXT & ~filters.COMMAND, get_value)],
         },
-        fallbacks=[CommandHandler('cancel', cancel)],
+        fallbacks=[CommandHandler('start',start)],
     )
     return conv_handler

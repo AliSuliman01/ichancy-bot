@@ -8,6 +8,7 @@ from telegram.ext import (
 import config.crypto
 from flows.cryptoDeposit.entryPoint import button_handler
 from flows.cryptoDeposit.cancel import cancel
+from flows.startFlow.handler import start
 from flows.cryptoDeposit.walletTypeState import get_wallet_type
 from flows.cryptoDeposit.valueState import get_value
 from flows.cryptoDeposit.transfeerNumState import get_transfeer_num
@@ -20,6 +21,6 @@ def conversationHandler():
             TRANSFEER_NUM: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_transfeer_num)],
             VALUE:[MessageHandler(filters.TEXT & ~filters.COMMAND , get_value)]
         },
-        fallbacks=[CommandHandler('cancel', cancel)],
+        fallbacks=[CommandHandler('start',start)],
     )
     return conv_handler

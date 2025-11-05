@@ -7,6 +7,7 @@ from telegram.ext import (
 )
 from flows.editDepositFromAdmin.entryPoint import button_handler
 from flows.editDepositFromAdmin.cancel import cancel
+from flows.startFlow.handler import start
 from flows.editDepositFromAdmin.getEditAmmount import get_edit_ammount
 import re
 EDIT = 1
@@ -17,6 +18,6 @@ def conversationHandler():
     states={
         EDIT: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_edit_ammount)],
     },
-    fallbacks=[CommandHandler('cancel', cancel)],
+    fallbacks=[CommandHandler('start',start)],
     )    
     return conv_handler
