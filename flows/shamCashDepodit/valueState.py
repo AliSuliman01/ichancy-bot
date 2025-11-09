@@ -7,6 +7,7 @@ from models.transaction import Transaction
 from messages.depositMessageToAdmin import deposit_message
 from flows.shamCashDepodit.validation.valueValidation import validate
 from database import Database
+from config.shamCash import SHAMCASH_DEPOSIT_GROUP
 logger = Logger.getLogger()
 
 async def get_value(update: Update, context: CallbackContext) -> int:
@@ -24,10 +25,10 @@ async def get_value(update: Update, context: CallbackContext) -> int:
             user = User(cursor).getBy({'telegram_id':('=', telegram_id)})[0]
             user_id = user.get('id')
             ShamCashTransaction(cursor).insert({'transfeer_num' : transfeer_num , 'user_id': user_id , 'status':'pending','action_type':'deposit' , 'value' : value})
-        
+            chat_id = SHAMCASH_DEPOSIT_GROUP
             transfeer = ShamCashTransaction(cursor).getBy({'transfeer_num' : ('=', transfeer_num)})[0]
             transfeer_id = transfeer.get('id')
-            provider_type = "shamCash"
+            provider_type = "sham cash"
             transfeer_date = transfeer['created_at']
             telegram_username = user.get('telegram_username')
             
@@ -49,7 +50,7 @@ async def get_value(update: Update, context: CallbackContext) -> int:
                 )
             await update.message.reply_text(message , parse_mode='HTML')
             
-            await context.bot.send_message(** deposit_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , transfeer_num = transfeer_num , text = message))  
+            await context.bot.send_message(** deposit_message(value=value , transaction_id = transaction_id , text = message , chat_id= chat_id))
 
         else:
             await update.message.reply_text("يرجى إدخال قيمة صحيحة")

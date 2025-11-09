@@ -1,16 +1,16 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from config.telegram import ADMIN_ID
-def withdraw_message(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date ,transaction_id , TAX , withdraw_number , transfeer_num ,text):
-    return {'text':reply_text(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date , TAX,withdraw_number , transfeer_num ,text),'parse_mode':parse_mode(), 'reply_markup':reply_markup(transaction_id ,TAX),'chat_id':chat_id()}
+def withdraw_message(transaction_id , TAX , chat_id ,text):
+    return {'text':reply_text(text),'parse_mode':parse_mode(), 'reply_markup':reply_markup(transaction_id ,TAX,chat_id),'chat_id':chat__id(chat_id)}
 
-def getKeyboard(transaction_id , TAX):
+def getKeyboard(transaction_id , TAX , chat_id):
         keyboard = [
             [
-                InlineKeyboardButton("تعديل القيمة" , callback_data=f"edit_withdraw {transaction_id} {TAX}")
+                InlineKeyboardButton("تعديل القيمة" , callback_data=f"edit_withdraw {transaction_id} {TAX} {chat_id}")
             ],
             [
-                InlineKeyboardButton("تأكيد", callback_data=f"approve_withdraw {transaction_id}"),
-                InlineKeyboardButton("رفض", callback_data=f"reject {transaction_id}"),
+                InlineKeyboardButton("تأكيد", callback_data=f"approve_withdraw {transaction_id} {TAX} {chat_id}"),
+                InlineKeyboardButton("رفض", callback_data=f"reject {transaction_id} {TAX} {chat_id}"),
             ]
                 ]
 
@@ -18,14 +18,14 @@ def getKeyboard(transaction_id , TAX):
 def parse_mode():
       return 'HTML'   
 
-def chat_id():
-      return ADMIN_ID
-def reply_markup(transaction_id , TAX):
-     keyboard = getKeyboard(transaction_id ,TAX)
+def chat__id(chat_id):
+      return chat_id
+def reply_markup(transaction_id , TAX , chat_id):
+     keyboard = getKeyboard(transaction_id ,TAX ,chat_id)
      reply_markup = InlineKeyboardMarkup(keyboard)
      return reply_markup
 
-def reply_text(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date ,TAX,withdraw_number,transfeer_num , text:str):
+def reply_text(text:str):
 
     #   text =  f"""🆕 :طلب سحب جديد
     #     🆔 رقم الطلب: #{transfeer_id}

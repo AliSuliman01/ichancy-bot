@@ -6,7 +6,7 @@ from models.user import User
 from models.transaction import Transaction
 from messages.withdrawMessageToAdmin import withdraw_message
 from flows.shamCashWithdrawal.validation.valueValidation import balanceValidate , vlueValidate
-from config.shamCash import TAX
+from config.shamCash import TAX , SHAMCASH_WITHDRAW_GROUP
 from database import Database
 logger = Logger.getLogger()
 
@@ -25,15 +25,18 @@ async def get_value(update: Update, context: CallbackContext) -> int:
                if balanceValidate(value , balance):
                     user_id = user.get('id') 
                     withdraw_number = context.user_data['withdraw_number']
+                    print(withdraw_number)
                     ShamCashTransaction(cursor).insert({'transfeer_num' : withdraw_number , 'user_id': user_id , 'status':'pending','action_type':'withdraw' , 'value' : -value})
-                    transfeer = ShamCashTransaction(cursor).getBy({'transfeer_num' : ('=', withdraw_number)})[0]
-                    transfeer_id = transfeer.get('id')
-                    transfeer_num = transfeer.get('transfeer_num')
+                    transfeer_id = cursor.lastrowid
+                    print(transfeer_id)
+                    transfeer = ShamCashTransaction(cursor).getById(transfeer_id)
+                    print(transfeer.get('transfeer_num'))
+                    chat_id = SHAMCASH_WITHDRAW_GROUP
                     provider_type = "sham cash"
                     transfeer_date = transfeer['created_at']
                     telegram_username = user.get('telegram_username')
                     Transaction(cursor).insert({'provider_id':transfeer_id ,'provider_type':provider_type,'user_id':user_id ,'value':-value , 'action_type':'withdraw' , 'status':'pending'})
-                    transaction_id = Transaction(cursor).getBy({'provider_id':('=' ,transfeer_id) ,'provider_type':('=' , provider_type)})[0].get('id')
+                    transaction_id = cursor.lastrowid
                     context.user_data["withdraw_number"] = withdraw_number
 
                     message =("تم استلام طلبك وسيتم إعلامك عند معالجته\n"
@@ -51,7 +54,7 @@ async def get_value(update: Update, context: CallbackContext) -> int:
                     
                     await update.message.reply_text(message , parse_mode="HTML")
                
-                    await context.bot.send_message(** withdraw_message(telegram_id=telegram_id,transfeer_id=transfeer_id,provider_type=provider_type,telegram_username=telegram_username,value=value ,transfeer_date=transfeer_date , transaction_id = transaction_id , TAX = TAX,withdraw_number=withdraw_number , transfeer_num = transfeer_num , text = message))  
+                    await context.bot.send_message(** withdraw_message( transaction_id = transaction_id , TAX = TAX ,text = message , chat_id=chat_id))  
                else:
                     await update.message.reply_text("ليس لديك رصيد كافٍ")
           else:

@@ -12,7 +12,7 @@ async def button_handler(update: Update, context: CallbackContext) -> int:
     query = update.callback_query
     await query.answer()
 
-    if query.data == 'crypto_deposit':
+    if query.data == 'crypto_withdraw':
         text , reply_markup = crypto_entry_point_message(DAMUSDT= config.crypto.SYP_for_unit['USDT'] )
         await query.edit_message_text(text=text , reply_markup=reply_markup)
         return WALLET_TYPE

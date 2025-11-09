@@ -13,8 +13,8 @@ def handler():
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
   logger = getLogger()
-
-
+  print("#"*40)
+  print(update.effective_user)
   if update.effective_user.id:
      context.application.drop_user_data(update.effective_user.id)
 

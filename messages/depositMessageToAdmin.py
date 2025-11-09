@@ -1,16 +1,16 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from config.telegram import ADMIN_ID
-def deposit_message(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date ,transaction_id , transfeer_num , text ,currency = 'SYP'):
-    return {'text':reply_text(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date , transfeer_num ,text),'parse_mode':parse_mode(), 'reply_markup':reply_markup(transaction_id ,currency,value),'chat_id':chat_id()}
+def deposit_message(value ,transaction_id , text , chat_id ,currency = 'SYP' ):
+    return {'text':reply_text(text),'parse_mode':parse_mode(), 'reply_markup':reply_markup(transaction_id ,currency,value , chat_id),'chat_id':chat__id(chat_id)}
 
-def getKeyboard(transaction_id , currency , value):
+def getKeyboard(transaction_id , currency , value , chat_id):
         keyboard = [
             [
-                InlineKeyboardButton("تعديل القيمة" , callback_data=f"edit_deposit {transaction_id} {currency} {value}")
+                InlineKeyboardButton("تعديل القيمة" , callback_data=f"edit_deposit {transaction_id} {currency} {value} {chat_id}")
             ],
             [
-                InlineKeyboardButton("تأكيد", callback_data=f"approve_deposit {transaction_id} {currency}  {value}"),
-                InlineKeyboardButton("رفض", callback_data=f"reject {transaction_id} {currency}  {value}"),
+                InlineKeyboardButton("تأكيد", callback_data=f"approve_deposit {transaction_id} {currency}  {value} {chat_id}"),
+                InlineKeyboardButton("رفض", callback_data=f"reject {transaction_id} {currency}  {value} {chat_id}"),
             ]
                 ]
 
@@ -18,14 +18,16 @@ def getKeyboard(transaction_id , currency , value):
 def parse_mode():
       return 'HTML'   
 
-def chat_id():
-      return ADMIN_ID
-def reply_markup(transaction_id , currency , value):
-     keyboard = getKeyboard(transaction_id , currency , value)
+def chat__id(chat_id):
+      return chat_id
+
+
+def reply_markup(transaction_id , currency , value ,  chat_id):
+     keyboard = getKeyboard(transaction_id , currency , value ,  chat_id)
      reply_markup = InlineKeyboardMarkup(keyboard)
      return reply_markup
 
-def reply_text(transfeer_id ,provider_type ,telegram_id , telegram_username ,value , transfeer_date , transfeer_num , text):
+def reply_text(text):
 
     #   text =  f"""
     #     🆕 :طلب شحن جديد

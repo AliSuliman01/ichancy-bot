@@ -26,6 +26,6 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     button = await execute.get_execute(data)
     # context.bot.edit_message_text()
     if button:
-        await button.execute(query=query, username=username , user_id=user_id , context = context)
+        await button.execute(query=query, username=username , user_id=user_id , context = context ,update = update)
 
-    
+    # context.bot.delete_message()

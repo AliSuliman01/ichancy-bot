@@ -23,13 +23,16 @@ def getKeyboard():
             InlineKeyboardButton("Sham Cash (SYP) 🇸🇾", callback_data='sham_cash_withdrawal')
         ],
         [
-            InlineKeyboardButton("Coinex", callback_data='coinex_withdrawal'),
-            InlineKeyboardButton("Cwallet", callback_data='cwallet_withdrawal')
+                InlineKeyboardButton("عملات ومحافظ رقمية (USDT)", callback_data='crypto_withdraw')
         ],
-        [
-            InlineKeyboardButton("USDT Bep 20", callback_data='usdt_bep_20_withdrawal'),
-            InlineKeyboardButton("USDT trc 20", callback_data='usdt_trc_20_withdrawal')
-        ],
+        # [
+        #     InlineKeyboardButton("Coinex", callback_data='coinex_withdrawal'),
+        #     InlineKeyboardButton("Cwallet", callback_data='cwallet_withdrawal')
+        # ],
+        # [
+        #     InlineKeyboardButton("USDT Bep 20", callback_data='usdt_bep_20_withdrawal'),
+        #     InlineKeyboardButton("USDT trc 20", callback_data='usdt_trc_20_withdrawal')
+        # ],
         [InlineKeyboardButton("القائمة الرئيسية", callback_data='back_to_menu')],
     ]
 

@@ -30,6 +30,7 @@ async def get_edit_ammount(update: Update, context: CallbackContext) -> int:
         currency = context.user_data["currency"]
         realValue = context.user_data["realValue"]
         transaction_id = int(context.user_data["transaction_id"])
+        chat_id = context.user_data["chat_id"]
         transaction = Transaction(cursor).getById(transaction_id)
         provider_type , provider_id = getDataFromTransaction(transaction)
     
@@ -42,8 +43,8 @@ async def get_edit_ammount(update: Update, context: CallbackContext) -> int:
         updateTransactionsTables(provider_model , provider_id ,edit_ammount ,transaction_id , cursor ,currency)
         
         
-        await context.bot.edit_message_text(message_id=context.user_data["message_id"],chat_id=ADMIN_ID ,text = edited_message, reply_markup = context.user_data["reply_markup"],parse_mode = 'HTML')
-        await removeMessages(update , context)
+        await context.bot.edit_message_text(message_id=context.user_data["message_id"],chat_id=chat_id ,text = edited_message, reply_markup = context.user_data["reply_markup"],parse_mode = 'HTML')
+        await removeMessages(update , context , chat_id)
         db.commit()
         return ConversationHandler.END
    except Exception as e:
@@ -55,11 +56,11 @@ async def get_edit_ammount(update: Update, context: CallbackContext) -> int:
 
 
 
-async def removeMessages(update , context):
+async def removeMessages(update , context , chat_id):
     
     time.sleep(0.5)
-    await context.bot.delete_message(message_id = update.message.id , chat_id = ADMIN_ID)
-    await context.bot.delete_message(message_id = update.message.id-1 , chat_id = ADMIN_ID)
+    await context.bot.delete_message(message_id = update.message.id , chat_id = chat_id)
+    await context.bot.delete_message(message_id = update.message.id-1 , chat_id = chat_id)
 
 
 
@@ -80,7 +81,7 @@ def getProviderModel(provider_type , cursor):
                 provider_model = SyriatelTransaction(cursor)
             case "bemo" :
                 provider_model = BemoTransaction(cursor)
-            case "shamCash":
+            case "sham cash":
                 provider_model = ShamCashTransaction(cursor)
             case "crypto":
                 provider_model = CryptoTransaction(cursor)

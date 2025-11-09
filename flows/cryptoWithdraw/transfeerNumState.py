@@ -1,0 +1,13 @@
+from telegram import  Update
+from telegram.ext import CallbackContext
+import Logger
+logger = Logger.getLogger()
+VALUE = 3
+
+async def get_transfeer_num(update: Update, context: CallbackContext) -> int:
+    transfeer_num = update.message.text
+    context.user_data["transfeer_num"] = transfeer_num
+    
+    await update.message.reply_text('ادخل المبلغ الذي تريد سحبه من عملة USDT')
+    
+    return VALUE

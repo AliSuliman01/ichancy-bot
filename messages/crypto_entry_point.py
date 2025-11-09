@@ -5,7 +5,7 @@ logger = Logger.getLogger()
 
 
 
-def crypro_deposit_entry_point_message(DAMUSDT):
+def crypto_entry_point_message(DAMUSDT):
     return reply_text(DAMUSDT), reply_markup()
 
 

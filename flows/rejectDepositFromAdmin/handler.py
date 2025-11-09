@@ -16,7 +16,7 @@ async def handler(query ,context ):
         transaction = Transaction(cursor).getById(transaction_id)
         provider_type = transaction.get('provider_type')
         provider_id = int(transaction.get('provider_id'))
-        user_id =  query.message.entities[0].user.id
+        user_id =  query.message.entities[len(query.message.entities)-1].user.id
 
         Transaction(cursor).update({'provider_id':('=' , provider_id ) ,'provider_type': ('=',provider_type)},{'status':'rejected'})
         if provider_type.find('Syriatel') != -1 :

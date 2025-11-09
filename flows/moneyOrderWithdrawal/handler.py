@@ -13,6 +13,7 @@ from flows.moneyOrderWithdrawal.valueState import get_value
 from flows.moneyOrderWithdrawal.nameState import get_name
 from flows.moneyOrderWithdrawal.cityNameState import get_city_name
 from flows.moneyOrderWithdrawal.phoneNumberState import get_phone_number
+from flows.backToMenu.handler import handler
 # WITHDRAW_CITY_NAME ,VALUE = [1,2]
 COMPANY_NAME,NAME,CITY_NAME,PHONE_NUMBER,VALUE =  [1,2,3,4,5]
 def conversationHandler():
@@ -26,6 +27,6 @@ def conversationHandler():
             PHONE_NUMBER:[MessageHandler(filters.TEXT & ~filters.COMMAND, get_phone_number)],
             VALUE:[MessageHandler(filters.TEXT & ~filters.COMMAND, get_value)],
         },
-        fallbacks=[CommandHandler('start',start)],
+        fallbacks=[CommandHandler('start',start) , CallbackQueryHandler(handler, pattern='^back_to_menu$')],
     )
     return conv_handler

@@ -27,7 +27,7 @@ async def get_edit_ammount(update: Update, context: CallbackContext) -> int:
         transaction_id = int(context.user_data["transaction_id"])
         transaction = Transaction(cursor).getById(transaction_id)
         provider_type , provider_id = getDataFromTransaction(transaction)
-    
+        chat_id = context.user_data["chat_id"]
         
         message = context.user_data["message"]
         TAX = float(context.user_data["TAX"])
@@ -38,8 +38,8 @@ async def get_edit_ammount(update: Update, context: CallbackContext) -> int:
         updateTransactionsTables(provider_model , provider_id ,edit_ammount ,transaction_id , cursor)
         
         
-        await context.bot.edit_message_text(message_id=context.user_data["message_id"],chat_id=ADMIN_ID ,text = edited_message, reply_markup = context.user_data["reply_markup"],parse_mode = 'HTML')
-        await removeMessages(update , context)
+        await context.bot.edit_message_text(message_id=context.user_data["message_id"],chat_id=chat_id ,text = edited_message, reply_markup = context.user_data["reply_markup"],parse_mode = 'HTML')
+        await removeMessages(update , context , chat_id)
         db.commit()
         return ConversationHandler.END
    except Exception as e:
@@ -51,23 +51,27 @@ async def get_edit_ammount(update: Update, context: CallbackContext) -> int:
 
 
 
-async def removeMessages(update , context):
+async def removeMessages(update , context ,chat_id):
     
     time.sleep(0.5)
-    await context.bot.delete_message(message_id = update.message.id , chat_id = ADMIN_ID)
-    await context.bot.delete_message(message_id = update.message.id-1 , chat_id = ADMIN_ID)
+    await context.bot.delete_message(message_id = update.message.id , chat_id = chat_id)
+    await context.bot.delete_message(message_id = update.message.id-1 , chat_id = chat_id)
 
 
 
 def getEditedMessage(message ,transaction , user , edit_ammount , TAX):
     edited_message = message.replace("المبلغ: " + str(-transaction.get('value')),"المبلغ: " + str(edit_ammount))
+    print(edited_message)
+    print(-transaction.get('value'))
+    print("#"*10)
     edited_message = edited_message.replace("المبلغ المقتطع: " + str(TAX*float(-transaction.get('value'))), "المبلغ المقتطع: "+ str(float(edit_ammount)*TAX))
     edited_message = edited_message.replace("المبلغ المستحق بعد الاقتطاع: "+ str(-transaction.get('value')-float(-transaction.get('value'))*TAX), "المبلغ المستحق بعد الاقتطاع: "+ str(float(edit_ammount)- float(edit_ammount)*TAX))
     edited_message = edited_message.replace(user.get('telegram_username') , f"""<a href="tg://user?id={user.get('telegram_id')}">{user.get('telegram_username')}</a>""")
-
+    print(edited_message)
     if messageWasNotEditedYet.validate(edited_message):
         edited_message = "تم تعديل القيمة من قبل الأدمن !!\n\n" + edited_message
     print(edited_message)
+    print(edit_ammount)
     return edited_message
 
 

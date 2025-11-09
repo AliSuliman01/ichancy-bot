@@ -32,6 +32,8 @@ import flows.syriatelCashWithdrawal.handler
 import flows.shamCashWithdrawal.handler
 import flows.moneyOrderWithdrawal.handler
 import flows.cryptoDeposit.handler
+import flows.cryptoWithdraw.handler
+import flows.backToMenu.handler 
 from referalHandler import referalThread
 from refreshingCookie import RefreshingCookieThread
 from refreshingCookieFromFile import RefreshingCookieFromFileThread
@@ -45,7 +47,7 @@ except ValueError as e:
 
 async def cookieHandler(update:Update , context: ContextTypes.DEFAULT_TYPE):
     newCookieId = int(update.message.from_user.id)
-    print(update.message.text)
+    print(update.message)
     if newCookieId - int(config.telegram.ADMIN_ID)== 0 and update.message.text.find('PHPSESSID') !=-1:
         newCookieString = update.message.text.split("\n")[0].replace("ع","_")
         config.telegram.COOKIE_STRING = newCookieString
@@ -89,6 +91,7 @@ def main() -> None:
         application.add_handler(flows.editWithdrawFromAdmin.handler.conversationHandler())
         application.add_handler(flows.moneyOrderWithdrawal.handler.conversationHandler())
         application.add_handler(flows.cryptoDeposit.handler.conversationHandler())
+        application.add_handler(flows.cryptoWithdraw.handler.conversationHandler())
         application.add_handler(flows.messageToAdmin.handler.handler())
         application.add_handler(flows.startFlow.handler.handler())
         application.add_handler(flows.balanceCommand.handler.handler())

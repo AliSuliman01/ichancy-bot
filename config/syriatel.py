@@ -1,3 +1,9 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
 SYRIATEL_ACCOUNT = "0997957092"
 
 MINIMUM_DEPOSITE = 25000
@@ -5,3 +11,6 @@ MINIMUM_DEPOSITE = 25000
 MINIMUM_WITHDRAW = 100000
 
 TAX = 0.1
+
+SYRIATEL_DEPOSIT_GROUP  = os.getenv('SYRIATEL_DEPOSIT_GROUP').split(" ")[0]
+SYRIATEL_WITHDRAW_GROUP = os.getenv('SYRIATEL_WITHDRAW_GROUP').split(" ")[0]
