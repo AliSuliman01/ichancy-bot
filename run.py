@@ -134,25 +134,6 @@ class ProjectManager:
 
 def main():
     manager = ProjectManager()
-    
-    print("اختر خيار التشغيل:")
-    print("1. تشغيل جميع المشاريع (Django + البوت)")
-    print("2. تشغيل Django فقط")
-    print("3. تشغيل البوت فقط")
-    print("4. فحص المشاريع فقط")
-    
-    choice = input("ادخل رقم الخيار (1-4): ").strip()
-    
-    if choice == "1":
-        manager.run_all()
-    elif choice == "2":
-        manager.run_django()
-    elif choice == "3":
-        manager.run_telegram_bot()
-    elif choice == "4":
-        manager.check_projects()
-    else:
-        print("❌ خيار غير صحيح!")
-
+    manager.run_all()
 if __name__ == "__main__":
     main()

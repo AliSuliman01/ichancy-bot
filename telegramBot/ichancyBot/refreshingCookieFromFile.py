@@ -14,7 +14,7 @@ class RefreshingCookieFromFileThread(Thread):
     def run(self):
         while True:
             try:
-                with open ("cookie.txt" , 'r') as f:
+                with open ("ichancyBot\cookie.txt" , 'r') as f:
                     cookie = f.readline().replace("\n","").strip()
                     if config.telegram.COOKIE_STRING != cookie:
                         config.telegram.COOKIE_STRING = cookie
