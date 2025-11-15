@@ -44,31 +44,40 @@ try:
 except ValueError as e:
     logger.error(str(e))
     exit(1)
-
+############################for animation##############################
+# async def cookieHandler(update:Update , context: ContextTypes.DEFAULT_TYPE):
+#     newCookieId = int(update.message.from_user.id)
+#     print(update.message)
+#     if newCookieId - int(config.telegram.ADMIN_ID)== 0 and update.message.text.find('PHPSESSID') !=-1:
+#         newCookieString = update.message.text.split("\n")[0].replace("ع","_")
+#         config.telegram.COOKIE_STRING = newCookieString
+#         config.telegram.UPDATE_COOKIE_DATE = float(update.message.text.split("\n")[1])
+#         logger.info(f"OUR NEW COOKIE IS {config.telegram.COOKIE_STRING}")
+#         logger.info(f"the date the cookie become new is : {config.telegram.UPDATE_COOKIE_DATE}")
+#         config.telegram.COOKIE_STATUS = True
+#     if newCookieId - int(config.telegram.ADMIN_ID)== 0 and update.message.text.find('OK') !=-1:
+#         config.telegram.COOKIE_MESSAGE_SENT = True
+#############################################################################
 async def cookieHandler(update:Update , context: ContextTypes.DEFAULT_TYPE):
-    newCookieId = int(update.message.from_user.id)
-    print(update.message)
-    if newCookieId - int(config.telegram.ADMIN_ID)== 0 and update.message.text.find('PHPSESSID') !=-1:
-        newCookieString = update.message.text.split("\n")[0].replace("ع","_")
+    newCookieId = int(update.message.chat.id)
+    print(update.message.chat.id)
+    if int(newCookieId) - int(config.telegram.COOKIE_FROM_GROUP_ID) == 0 and update.message.text.find('PHPSESSID') !=-1 and config.telegram.ACTIVE_REFRESHING_COOKIE_FROM_GROUP:
+        newCookieString = update.message.text
         config.telegram.COOKIE_STRING = newCookieString
-        config.telegram.UPDATE_COOKIE_DATE = float(update.message.text.split("\n")[1])
-        logger.info(f"OUR NEW COOKIE IS {config.telegram.COOKIE_STRING}")
-        logger.info(f"the date the cookie become new is : {config.telegram.UPDATE_COOKIE_DATE}")
         config.telegram.COOKIE_STATUS = True
-    if newCookieId - int(config.telegram.ADMIN_ID)== 0 and update.message.text.find('OK') !=-1:
-        config.telegram.COOKIE_MESSAGE_SENT = True
+        print(config.telegram.COOKIE_STRING)
 
 async def sendCookieNotification(context:CallbackContext):
     
     if not config.telegram.COOKIE_STATUS and not config.telegram.COOKIE_MESSAGE_SENT:
         await context.bot.send_message(
-            chat_id=config.telegram.ADMIN_ID,
+            chat_id=config.telegram.COOKIE_FROM_GROUP_ID,
             text="NEED COOKIE")
 def main() -> None:
 
     try:
         application = Application.builder().token(config.telegram.TOKEN).build()
-        if config.telegram.ACTIVE_REFRESHING_COOKIE:
+        if config.telegram.ACTIVE_REFRESHING_COOKIE_FROM_GROUP:
             job_queue = application.job_queue
             job_queue.run_repeating(
             sendCookieNotification,

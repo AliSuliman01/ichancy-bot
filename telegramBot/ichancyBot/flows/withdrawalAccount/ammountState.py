@@ -35,9 +35,9 @@ async def handling(update , context):
             if(config.telegram.COOKIE_STATUS):
                 api = iChancyAPI()
                 accountBalance = await api.getPlayerBalanceById(playerId)
-                
-                await asyncio.sleep(0.2)
-                break
+                if accountBalance.get('success'):
+                    await asyncio.sleep(0.2)
+                    break
             if counter > 40:
                 await context.bot.delete_message(message_id = update.message.id+1 , chat_id = update.message.from_user.id)
                 await update.message.reply_text("البوت بحالة صيانة دورية وسيعود للعمل قريبا")
