@@ -41,7 +41,7 @@ class iChancyAPI:
     #     logger.info(f"Updated cookies: {}")
     
     def __init__(self):
-        socks.set_default_proxy(socks.SOCKS5, "135.181.74.44", 45363, username='yxk9FV6m8G', password='YqYKvNtpdNaPfBfT')
+        # socks.set_default_proxy(socks.SOCKS5, "135.181.74.44", 45363, username='yxk9FV6m8G', password='YqYKvNtpdNaPfBfT')
         socket.socket = socks.socksocket
         self.HEADERS = {
         'User-Agent': config.device.USER_AGENT,

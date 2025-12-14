@@ -1,10 +1,12 @@
 import mysql.connector
 import config.database
+import Logger
+
+logger = Logger.getLogger()
 
 class Database:
     _conter = 0
     _connection = None
-    print(_connection)
 
     @staticmethod
     # def getConnection():
@@ -30,7 +32,7 @@ class Database:
     def getConnection():
         
         try:
-            Database._conter+=1
+            Database._conter += 1
             Database._connection = mysql.connector.connect(
                 host = config.database.host,
                 port = config.database.port,
@@ -38,8 +40,9 @@ class Database:
                 password = config.database.password,
                 database = config.database.databaseName
             )
-            print(Database._conter)
+            logger.debug(f"Database connection established (connection #{Database._conter})")
             return Database._connection
         
         except(Exception, mysql.connector.Error) as error: 
-            print(f"Failed to connect to the database: {error}")
+            logger.error(f"Failed to connect to the database: {error}")
+            raise

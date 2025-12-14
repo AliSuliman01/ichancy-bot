@@ -14,6 +14,9 @@ def conversationHandler():
         states={
             AMMOUNT : [MessageHandler(filters.TEXT & ~filters.COMMAND , ammountState.get_withdraw_ammount) ]
         },
-        fallbacks=[CommandHandler('start',start)]
+        fallbacks=[CommandHandler('start',start)],
+        per_chat=True,
+        per_user=True,
+        per_message=False,
     )
     return conv_handler

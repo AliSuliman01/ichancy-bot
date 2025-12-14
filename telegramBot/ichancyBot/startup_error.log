@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\telegramBot\ichancyBot\bot.py", line 16, in <module>
+    import flows.startFlow.handler
+  File "C:\work\CICP\ichancy-bot\telegramBot\ichancyBot\flows\startFlow\handler.py", line 4, in <module>
+    from models.user import User
+  File "C:\work\CICP\ichancy-bot\telegramBot\ichancyBot\models\user.py", line 1, in <module>
+    from models.model import Model
+  File "C:\work\CICP\ichancy-bot\telegramBot\ichancyBot\models\model.py", line 3, in <module>
+    from database import Database
+  File "C:\work\CICP\ichancy-bot\telegramBot\ichancyBot\database.py", line 4, in <module>
+    class Database:
+    ...<40 lines>...
+                print(f"Failed to connect to the database: {error}")
+  File "C:\work\CICP\ichancy-bot\telegramBot\ichancyBot\database.py", line 7, in Database
+    print(_connection)
+    ~~~~~^^^^^^^^^^^^^
+OSError: [Errno 9] Bad file descriptor
+Exception ignored on flushing sys.stdout:
+OSError: [Errno 9] Bad file descriptor

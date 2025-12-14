@@ -14,7 +14,9 @@ def handler():
             MESSAGE :[MessageHandler(filters.PHOTO |filters.TEXT & ~filters.COMMAND, get_message)]
         },
         fallbacks=[CommandHandler('start',start)],
-        
+        per_chat=True,
+        per_user=True,
+        per_message=False,
     )
 
 

@@ -25,6 +25,9 @@ def conversationHandler():
         PASSWORD: [MessageHandler(filters.TEXT & ~filters.COMMAND, get_password)],
     },
     fallbacks=[CommandHandler('start',start)],
+    per_chat=True,
+    per_user=True,
+    per_message=False,
     )    
     return conv_handler
 

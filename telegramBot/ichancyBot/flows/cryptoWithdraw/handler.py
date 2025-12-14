@@ -24,5 +24,8 @@ def conversationHandler():
         },
         #cus we have a callback query that have backToMenu and Doesnt end the ConversationHandler
         fallbacks=[CommandHandler('start',start) , CallbackQueryHandler(handler, pattern='^back_to_menu$')],
+        per_chat=True,
+        per_user=True,
+        per_message=False,
     )
     return conv_handler

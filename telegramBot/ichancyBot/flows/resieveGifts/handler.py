@@ -13,5 +13,8 @@ def conversationHandler():
             CODE: [MessageHandler(filters.TEXT & ~filters.COMMAND , get_code)]
         },
      fallbacks=[CommandHandler('start',start)],
+     per_chat=True,
+     per_user=True,
+     per_message=False,
     )
     return conv_handler

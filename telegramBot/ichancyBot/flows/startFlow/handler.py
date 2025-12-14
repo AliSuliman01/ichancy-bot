@@ -30,7 +30,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                 text=f"عذرا عزيزي\n\nيجب عليك الاشتراك بالقناة التالية قبل استخدام البوت\n\n {CHANNEL_USERNAME}")
                 break
     except Exception as e:
-            logger.error(f"خطأ في التحقق من القناة: {e}")
+            logger.error(f"Error checking channel: {e}")
             break   
 
   if is_in_channel:
@@ -46,7 +46,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
                     text=f"عذرا عزيزي\n\nيجب عليك الاشتراك بالمجموعة التالية قبل استخدام البوت\n\n {GROUP_USERNAME}")
                     break
         except Exception as e:
-                logger.error(f"خطأ في التحقق من المجموعة: {e}")
+                logger.error(f"Error checking group: {e}")
                 break
   else:
         is_in_group = False
