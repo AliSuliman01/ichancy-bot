@@ -20,6 +20,26 @@ class ReadOnlyAdmin(admin.ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         return [field.name for field in self.model._meta.fields]
 
+
+class UpdateOnlyAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return True
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    def get_actions(self, request):
+        actions = super().get_actions(request)
+        if 'delete_selected' in actions:
+            del actions['delete_selected']
+        return actions
+
+    def get_readonly_fields(self, request, obj=None):
+        return self.read_only_fields or []
+
 @admin.register(Users)
 class UsersAdmin(ReadOnlyAdmin):
     list_display = ['id', 'telegram_id', 'telegram_username', 'player_id', 'name', 'email', 'balance', 'created_at']
@@ -43,23 +63,23 @@ class AccountTransactionsAdmin(ReadOnlyAdmin):
 
 @admin.register(BemoTransactions)
 class BemoTransactionsAdmin(ReadOnlyAdmin):
-    list_display = ['id', 'user', 'transfeer_num', 'action_type', 'value', 'status', 'created_at']
+    list_display = ['id', 'user', 'transfer_num', 'action_type', 'value', 'status', 'created_at']
     list_filter = ['action_type', 'status', 'created_at']
-    search_fields = ['user__telegram_id', 'transfeer_num']
+    search_fields = ['user__telegram_id', 'transfer_num']
     list_per_page = 20
 
 @admin.register(SyriatelTransactions)
 class SyriatelTransactionsAdmin(ReadOnlyAdmin):
-    list_display = ['id', 'user', 'transfeer_num', 'action_type', 'value', 'status', 'created_at']
+    list_display = ['id', 'user', 'transfer_num', 'action_type', 'value', 'status', 'created_at']
     list_filter = ['action_type', 'status', 'created_at']
-    search_fields = ['user__telegram_id', 'transfeer_num']
+    search_fields = ['user__telegram_id', 'transfer_num']
     list_per_page = 20
 
 @admin.register(ShamCashTransactions)
 class ShamCashTransactionsAdmin(ReadOnlyAdmin):
-    list_display = ['id', 'user', 'transfeer_num', 'action_type', 'value', 'status', 'created_at']
+    list_display = ['id', 'user', 'transfer_num', 'action_type', 'value', 'status', 'created_at']
     list_filter = ['action_type', 'status', 'created_at']
-    search_fields = ['user__telegram_id', 'transfeer_num']
+    search_fields = ['user__telegram_id', 'transfer_num']
     list_per_page = 20
 
 @admin.register(OrderMoneyTransactions)
@@ -73,7 +93,7 @@ class OrderMoneyTransactionsAdmin(ReadOnlyAdmin):
 class CryptoTransactionsAdmin(ReadOnlyAdmin):
     list_display = ['id', 'user', 'currency_name', 'network_name', 'action_type', 'value', 'status', 'created_at']
     list_filter = ['action_type', 'status', 'currency_name', 'created_at']
-    search_fields = ['user__telegram_id', 'currency_name', 'transfeer_num']
+    search_fields = ['user__telegram_id', 'currency_name', 'transfer_num']
     list_per_page = 20
 
 @admin.register(Gifts)
@@ -89,3 +109,9 @@ class MessagesToAdminAdmin(ReadOnlyAdmin):
     list_filter = ['created_at']
     search_fields = ['user__telegram_id', 'message']
     list_per_page = 20
+
+    
+@admin.register(Settings)
+class SettingsAdmin(UpdateOnlyAdmin):
+    list_display = ['id', 'admin_telegram_id', 'parent_id', 'exchange_rate', 'admin_chat_id', 'telegram_bot_token', 'transactions_telegram_bot_token', 'telegram_channels', 'telegram_groups', 'bot_name', 'cookie_from_group_id', 'crypto_deposit_group', 'crypto_withdraw_group', 'bemo_deposit_group', 'bemo_withdraw_group', 'syriatel_deposit_group', 'syriatel_withdraw_group', 'shamcash_deposit_group', 'shamcash_withdraw_group']
+    read_only_fields = ['user_agent', 'ichancy_cookie']

@@ -1,0 +1,186 @@
+INFO 2025-12-16 08:36:49,668 autoreload 2824 400 D:\work\work\CICP\ichancy-bot\mm\myapp\apps.py changed, reloading.
+INFO 2025-12-16 08:36:50,263 __init__ 15796 5892 package: mysql.connector.plugins
+INFO 2025-12-16 08:36:50,263 __init__ 15796 5892 plugin_name: mysql_native_password
+INFO 2025-12-16 08:36:50,264 __init__ 15796 5892 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:36:50,289 autoreload 15796 5892 Watching for file changes with StatReloader
+INFO 2025-12-16 08:38:31,811 autoreload 15796 5892 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:38:32,456 __init__ 14552 18724 package: mysql.connector.plugins
+INFO 2025-12-16 08:38:32,457 __init__ 14552 18724 plugin_name: mysql_native_password
+INFO 2025-12-16 08:38:32,458 __init__ 14552 18724 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:38:32,484 autoreload 14552 18724 Watching for file changes with StatReloader
+INFO 2025-12-16 08:38:33,941 autoreload 14552 18724 D:\work\work\CICP\ichancy-bot\mm\mm\settings.py changed, reloading.
+INFO 2025-12-16 08:38:34,641 __init__ 8564 12156 package: mysql.connector.plugins
+INFO 2025-12-16 08:38:34,642 __init__ 8564 12156 plugin_name: mysql_native_password
+INFO 2025-12-16 08:38:34,643 __init__ 8564 12156 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:38:34,670 autoreload 8564 12156 Watching for file changes with StatReloader
+INFO 2025-12-16 08:38:36,065 autoreload 8564 12156 D:\work\work\CICP\ichancy-bot\mm\mm\settings.py changed, reloading.
+INFO 2025-12-16 08:38:36,707 __init__ 20444 6348 package: mysql.connector.plugins
+INFO 2025-12-16 08:38:36,707 __init__ 20444 6348 plugin_name: mysql_native_password
+INFO 2025-12-16 08:38:36,708 __init__ 20444 6348 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:38:36,733 autoreload 20444 6348 Watching for file changes with StatReloader
+INFO 2025-12-16 08:38:52,356 autoreload 20444 6348 D:\work\work\CICP\ichancy-bot\mm\mm\settings.py changed, reloading.
+INFO 2025-12-16 08:38:52,924 __init__ 6168 18228 package: mysql.connector.plugins
+INFO 2025-12-16 08:38:52,925 __init__ 6168 18228 plugin_name: mysql_native_password
+INFO 2025-12-16 08:38:52,926 __init__ 6168 18228 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:38:52,948 autoreload 6168 18228 Watching for file changes with StatReloader
+INFO 2025-12-16 08:42:38,430 autoreload 6168 18228 D:\work\work\CICP\ichancy-bot\mm\mm\settings.py changed, reloading.
+INFO 2025-12-16 08:42:39,074 __init__ 16472 19824 package: mysql.connector.plugins
+INFO 2025-12-16 08:42:39,074 __init__ 16472 19824 plugin_name: mysql_native_password
+INFO 2025-12-16 08:42:39,075 __init__ 16472 19824 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:42:39,099 autoreload 16472 19824 Watching for file changes with StatReloader
+INFO 2025-12-16 08:42:45,646 autoreload 16472 19824 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:42:46,314 __init__ 10808 14572 package: mysql.connector.plugins
+INFO 2025-12-16 08:42:46,315 __init__ 10808 14572 plugin_name: mysql_native_password
+INFO 2025-12-16 08:42:46,316 __init__ 10808 14572 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:42:46,340 autoreload 10808 14572 Watching for file changes with StatReloader
+INFO 2025-12-16 08:42:50,808 autoreload 10808 14572 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:42:51,435 __init__ 14580 11300 package: mysql.connector.plugins
+INFO 2025-12-16 08:42:51,435 __init__ 14580 11300 plugin_name: mysql_native_password
+INFO 2025-12-16 08:42:51,436 __init__ 14580 11300 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:42:51,458 autoreload 14580 11300 Watching for file changes with StatReloader
+INFO 2025-12-16 08:43:27,851 __init__ 18808 16476 package: mysql.connector.plugins
+INFO 2025-12-16 08:43:27,852 __init__ 18808 16476 plugin_name: mysql_native_password
+INFO 2025-12-16 08:43:27,853 __init__ 18808 16476 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:43:28,364 __init__ 17556 20296 package: mysql.connector.plugins
+INFO 2025-12-16 08:43:28,364 __init__ 17556 20296 plugin_name: mysql_native_password
+INFO 2025-12-16 08:43:28,365 __init__ 17556 20296 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:43:28,388 autoreload 17556 20296 Watching for file changes with StatReloader
+INFO 2025-12-16 08:43:45,543 basehttp 17556 2040 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 19651
+INFO 2025-12-16 08:43:45,555 basehttp 17556 2040 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2025-12-16 08:43:47,737 signals 17556 2040 ************* refresh_telegram_bot_settings *************
+INFO 2025-12-16 08:43:47,744 basehttp 17556 2040 "POST /admin/myapp/settings/1/change/ HTTP/1.1" 302 0
+INFO 2025-12-16 08:43:47,783 basehttp 17556 2040 "GET /admin/myapp/settings/ HTTP/1.1" 200 12682
+INFO 2025-12-16 08:44:31,643 basehttp 17556 2040 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 19651
+INFO 2025-12-16 08:44:31,654 basehttp 17556 2040 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2025-12-16 08:44:33,950 signals 17556 2040 ************* refresh_telegram_bot_settings *************
+INFO 2025-12-16 08:44:33,956 basehttp 17556 2040 "POST /admin/myapp/settings/1/change/ HTTP/1.1" 302 0
+INFO 2025-12-16 08:44:33,984 basehttp 17556 2040 "GET /admin/myapp/settings/ HTTP/1.1" 200 12682
+INFO 2025-12-16 08:44:59,713 autoreload 17556 20296 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:45:00,428 __init__ 1468 19636 package: mysql.connector.plugins
+INFO 2025-12-16 08:45:00,429 __init__ 1468 19636 plugin_name: mysql_native_password
+INFO 2025-12-16 08:45:00,431 __init__ 1468 19636 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:45:00,471 autoreload 1468 19636 Watching for file changes with StatReloader
+INFO 2025-12-16 08:45:28,429 autoreload 1468 19636 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:45:28,969 autoreload 20144 18400 Watching for file changes with StatReloader
+INFO 2025-12-16 08:45:31,240 autoreload 20144 18400 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:45:31,796 __init__ 12456 1056 package: mysql.connector.plugins
+INFO 2025-12-16 08:45:31,797 __init__ 12456 1056 plugin_name: mysql_native_password
+INFO 2025-12-16 08:45:31,797 __init__ 12456 1056 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:45:31,820 autoreload 12456 1056 Watching for file changes with StatReloader
+INFO 2025-12-16 08:45:33,175 autoreload 12456 1056 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:45:33,741 __init__ 3696 8488 package: mysql.connector.plugins
+INFO 2025-12-16 08:45:33,742 __init__ 3696 8488 plugin_name: mysql_native_password
+INFO 2025-12-16 08:45:33,742 __init__ 3696 8488 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:45:33,764 autoreload 3696 8488 Watching for file changes with StatReloader
+INFO 2025-12-16 08:45:35,139 autoreload 3696 8488 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:45:35,761 __init__ 17452 9868 package: mysql.connector.plugins
+INFO 2025-12-16 08:45:35,762 __init__ 17452 9868 plugin_name: mysql_native_password
+INFO 2025-12-16 08:45:35,763 __init__ 17452 9868 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:45:35,785 autoreload 17452 9868 Watching for file changes with StatReloader
+INFO 2025-12-16 08:45:38,863 __init__ 1708 12336 package: mysql.connector.plugins
+INFO 2025-12-16 08:45:38,864 __init__ 1708 12336 plugin_name: mysql_native_password
+INFO 2025-12-16 08:45:38,865 __init__ 1708 12336 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:45:39,381 __init__ 8608 18628 package: mysql.connector.plugins
+INFO 2025-12-16 08:45:39,381 __init__ 8608 18628 plugin_name: mysql_native_password
+INFO 2025-12-16 08:45:39,382 __init__ 8608 18628 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:45:39,409 autoreload 8608 18628 Watching for file changes with StatReloader
+INFO 2025-12-16 08:45:43,903 basehttp 8608 18604 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 19651
+INFO 2025-12-16 08:45:43,916 basehttp 8608 18604 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2025-12-16 08:45:46,493 signals 8608 18604 ************* refresh_telegram_bot_settings *************
+INFO 2025-12-16 08:45:46,500 basehttp 8608 18604 "POST /admin/myapp/settings/1/change/ HTTP/1.1" 302 0
+INFO 2025-12-16 08:45:46,539 basehttp 8608 18604 "GET /admin/myapp/settings/ HTTP/1.1" 200 12682
+INFO 2025-12-16 08:54:04,503 autoreload 8608 18628 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:54:05,158 __init__ 1728 13176 package: mysql.connector.plugins
+INFO 2025-12-16 08:54:05,158 __init__ 1728 13176 plugin_name: mysql_native_password
+INFO 2025-12-16 08:54:05,159 __init__ 1728 13176 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:54:05,183 autoreload 1728 13176 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:07,580 autoreload 1728 13176 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:54:08,215 __init__ 16140 6988 package: mysql.connector.plugins
+INFO 2025-12-16 08:54:08,216 __init__ 16140 6988 plugin_name: mysql_native_password
+INFO 2025-12-16 08:54:08,217 __init__ 16140 6988 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:54:08,238 autoreload 16140 6988 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:14,708 autoreload 16140 6988 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:54:15,321 autoreload 19120 19328 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:17,623 autoreload 19120 19328 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:54:18,193 __init__ 14480 13672 package: mysql.connector.plugins
+INFO 2025-12-16 08:54:18,193 __init__ 14480 13672 plugin_name: mysql_native_password
+INFO 2025-12-16 08:54:18,194 __init__ 14480 13672 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:54:18,218 autoreload 14480 13672 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:20,659 autoreload 14480 13672 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:54:21,200 autoreload 19228 4116 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:23,510 autoreload 19228 4116 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:54:24,213 __init__ 15404 16688 package: mysql.connector.plugins
+INFO 2025-12-16 08:54:24,214 __init__ 15404 16688 plugin_name: mysql_native_password
+INFO 2025-12-16 08:54:24,214 __init__ 15404 16688 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:54:24,238 autoreload 15404 16688 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:31,716 autoreload 15404 16688 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:54:32,332 __init__ 7304 19684 package: mysql.connector.plugins
+INFO 2025-12-16 08:54:32,333 __init__ 7304 19684 plugin_name: mysql_native_password
+INFO 2025-12-16 08:54:32,333 __init__ 7304 19684 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:54:32,355 autoreload 7304 19684 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:35,753 autoreload 7304 19684 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:54:36,450 __init__ 6860 17552 package: mysql.connector.plugins
+INFO 2025-12-16 08:54:36,450 __init__ 6860 17552 plugin_name: mysql_native_password
+INFO 2025-12-16 08:54:36,451 __init__ 6860 17552 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:54:36,473 autoreload 6860 17552 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:51,585 __init__ 1872 3904 package: mysql.connector.plugins
+INFO 2025-12-16 08:54:51,585 __init__ 1872 3904 plugin_name: mysql_native_password
+INFO 2025-12-16 08:54:51,587 __init__ 1872 3904 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:54:52,196 __init__ 19184 10136 package: mysql.connector.plugins
+INFO 2025-12-16 08:54:52,196 __init__ 19184 10136 plugin_name: mysql_native_password
+INFO 2025-12-16 08:54:52,197 __init__ 19184 10136 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:54:52,219 autoreload 19184 10136 Watching for file changes with StatReloader
+INFO 2025-12-16 08:54:55,610 basehttp 19184 14580 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 19651
+INFO 2025-12-16 08:54:55,621 basehttp 19184 14580 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,621 basehttp 19184 11656 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,625 basehttp 19184 14580 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,628 basehttp 19184 14580 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,631 basehttp 19184 11656 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2025-12-16 08:54:55,632 basehttp 19184 14580 "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,635 basehttp 19184 11656 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,635 basehttp 19184 14580 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,638 basehttp 19184 11656 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,638 basehttp 19184 14580 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,642 basehttp 19184 11656 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,642 basehttp 19184 14580 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,646 basehttp 19184 11656 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,646 basehttp 19184 14580 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,657 basehttp 19184 14580 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,672 basehttp 19184 14580 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,672 basehttp 19184 11656 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,675 basehttp 19184 11656 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:55,675 basehttp 19184 14580 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+INFO 2025-12-16 08:54:58,025 signals 19184 11656 ************* refresh_telegram_bot_settings *************
+INFO 2025-12-16 08:54:58,026 settings 19184 11656 ************* _settings_cache refreshed *************
+INFO 2025-12-16 08:54:58,032 basehttp 19184 11656 "POST /admin/myapp/settings/1/change/ HTTP/1.1" 302 0
+INFO 2025-12-16 08:54:58,064 basehttp 19184 11656 "GET /admin/myapp/settings/ HTTP/1.1" 200 12682
+INFO 2025-12-16 08:55:08,138 autoreload 19184 10136 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:55:08,719 __init__ 17688 11316 package: mysql.connector.plugins
+INFO 2025-12-16 08:55:08,720 __init__ 17688 11316 plugin_name: mysql_native_password
+INFO 2025-12-16 08:55:08,721 __init__ 17688 11316 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:55:08,755 autoreload 17688 11316 Watching for file changes with StatReloader
+INFO 2025-12-16 08:55:10,111 autoreload 17688 11316 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:55:10,781 __init__ 20048 1852 package: mysql.connector.plugins
+INFO 2025-12-16 08:55:10,782 __init__ 20048 1852 plugin_name: mysql_native_password
+INFO 2025-12-16 08:55:10,783 __init__ 20048 1852 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:55:10,814 autoreload 20048 1852 Watching for file changes with StatReloader
+INFO 2025-12-16 08:55:12,208 autoreload 20048 1852 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:55:12,775 __init__ 15548 15524 package: mysql.connector.plugins
+INFO 2025-12-16 08:55:12,776 __init__ 15548 15524 plugin_name: mysql_native_password
+INFO 2025-12-16 08:55:12,777 __init__ 15548 15524 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:55:12,798 autoreload 15548 15524 Watching for file changes with StatReloader
+INFO 2025-12-16 08:55:14,138 autoreload 15548 15524 D:\work\work\CICP\ichancy-bot\telegramBot\ichancyBot\config\settings.py changed, reloading.
+INFO 2025-12-16 08:55:14,721 __init__ 17400 19080 package: mysql.connector.plugins
+INFO 2025-12-16 08:55:14,722 __init__ 17400 19080 plugin_name: mysql_native_password
+INFO 2025-12-16 08:55:14,723 __init__ 17400 19080 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:55:14,747 autoreload 17400 19080 Watching for file changes with StatReloader
+INFO 2025-12-16 08:55:21,237 autoreload 17400 19080 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:55:21,872 __init__ 20244 19000 package: mysql.connector.plugins
+INFO 2025-12-16 08:55:21,872 __init__ 20244 19000 plugin_name: mysql_native_password
+INFO 2025-12-16 08:55:21,873 __init__ 20244 19000 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:55:21,896 autoreload 20244 19000 Watching for file changes with StatReloader
+INFO 2025-12-16 08:55:27,354 autoreload 20244 19000 D:\work\work\CICP\ichancy-bot\mm\myapp\signals.py changed, reloading.
+INFO 2025-12-16 08:55:27,931 __init__ 17748 16848 package: mysql.connector.plugins
+INFO 2025-12-16 08:55:27,931 __init__ 17748 16848 plugin_name: mysql_native_password
+INFO 2025-12-16 08:55:27,932 __init__ 17748 16848 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+INFO 2025-12-16 08:55:27,953 autoreload 17748 16848 Watching for file changes with StatReloader

@@ -46,7 +46,7 @@ class AccountTransactions(models.Model):
 
 class BemoTransactions(models.Model):
     id = models.AutoField(primary_key=True)
-    transfeer_num = models.CharField(max_length=255, blank=True, null=True)
+    transfer_num = models.CharField(max_length=255, blank=True, null=True)
     user = models.ForeignKey(Users, on_delete=models.CASCADE, db_column='user_id')
     status = models.CharField(max_length=255)
     action_type = models.CharField(max_length=255)
@@ -59,7 +59,7 @@ class BemoTransactions(models.Model):
 
 class SyriatelTransactions(models.Model):
     id = models.AutoField(primary_key=True)
-    transfeer_num = models.CharField(max_length=255, blank=True, null=True)
+    transfer_num = models.CharField(max_length=255, blank=True, null=True)
     user = models.ForeignKey(Users, on_delete=models.CASCADE, db_column='user_id')
     status = models.CharField(max_length=255)
     action_type = models.CharField(max_length=255)
@@ -72,7 +72,7 @@ class SyriatelTransactions(models.Model):
 
 class ShamCashTransactions(models.Model):
     id = models.AutoField(primary_key=True)
-    transfeer_num = models.CharField(max_length=255, blank=True, null=True)
+    transfer_num = models.CharField(max_length=255, blank=True, null=True)
     user = models.ForeignKey(Users, on_delete=models.CASCADE, db_column='user_id')
     status = models.CharField(max_length=255)
     action_type = models.CharField(max_length=255)
@@ -101,7 +101,7 @@ class OrderMoneyTransactions(models.Model):
 
 class CryptoTransactions(models.Model):
     id = models.AutoField(primary_key=True)
-    transfeer_num = models.CharField(max_length=255, blank=True, null=True)
+    transfer_num = models.CharField(max_length=255, blank=True, null=True)
     currency_name = models.CharField(max_length=50, blank=True, null=True)
     network_name = models.CharField(max_length=50, blank=True, null=True)
     SYP_for_unit = models.CharField(max_length=150, blank=True, null=True)
@@ -139,3 +139,32 @@ class MessagesToAdmin(models.Model):
     class Meta:
         db_table = 'messages_to_admin'
         managed = False
+
+class Settings(models.Model):
+    id = models.AutoField(primary_key=True)
+    user_agent = models.CharField(max_length=500, blank=True, null=True)
+    ichancy_cookie = models.TextField(blank=True, null=True)
+    admin_telegram_id = models.CharField(max_length=255, blank=True, null=True)
+    parent_id = models.CharField(max_length=255, blank=True, null=True)
+    exchange_rate = models.DecimalField(max_digits=10, decimal_places=2, default=1.00, blank=True, null=True)
+    admin_chat_id = models.CharField(max_length=255, blank=True, null=True)
+    telegram_bot_token = models.CharField(max_length=255, blank=True, null=True)
+    transactions_telegram_bot_token = models.CharField(max_length=255, blank=True, null=True)
+    telegram_channels = models.CharField(max_length=255, blank=True, null=True)
+    telegram_groups = models.CharField(max_length=255, blank=True, null=True)
+    bot_name = models.CharField(max_length=255, blank=True, null=True)
+    cookie_from_group_id = models.CharField(max_length=255, blank=True, null=True)
+    crypto_deposit_group = models.CharField(max_length=255, blank=True, null=True)
+    crypto_withdraw_group = models.CharField(max_length=255, blank=True, null=True)
+    bemo_deposit_group = models.CharField(max_length=255, blank=True, null=True)
+    bemo_withdraw_group = models.CharField(max_length=255, blank=True, null=True)
+    syriatel_deposit_group = models.CharField(max_length=255, blank=True, null=True)
+    syriatel_withdraw_group = models.CharField(max_length=255, blank=True, null=True)
+    shamcash_deposit_group = models.CharField(max_length=255, blank=True, null=True)
+    shamcash_withdraw_group = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        db_table = 'settings'
+        managed = True
