@@ -7,21 +7,22 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import Settings
 
-# Add the telegramBot directory to the path to import settings
-workspace_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-telegram_bot_path = os.path.join(workspace_root, 'telegramBot')
-if telegram_bot_path not in sys.path:
-    sys.path.insert(0, telegram_bot_path)
+# Add the ichancyBot directory to the path to import settings
+# signals.py is in mm/myapp/, and ichancyBot is in mm/myapp/ichancyBot/
+current_dir = os.path.dirname(os.path.abspath(__file__))
+ichancy_bot_path = os.path.join(current_dir, 'ichancyBot')
+if ichancy_bot_path not in sys.path:
+    sys.path.insert(0, ichancy_bot_path)
 
-# try:
-    from ichancyBot.config.settings import refresh_settings
-# except ImportError as e:
-#     # If import fails, create a no-op function to prevent crashes
-#     def refresh_settings():
-#         pass
-#     import logging
-#     logger = logging.getLogger(__name__)
-#     logger.warning(f"Could not import refresh_settings from telegramBot: {e}")
+try:
+    from config.settings import refresh_settings
+except ImportError as e:
+    # If import fails, create a no-op function to prevent crashes
+    def refresh_settings(logger=None):
+        pass
+    import logging
+    logger = logging.getLogger(__name__)
+    logger.warning(f"Could not import refresh_settings from ichancyBot: {e}")
 
 
 @receiver(post_save, sender=Settings)

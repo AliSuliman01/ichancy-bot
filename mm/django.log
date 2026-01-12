@@ -184,3 +184,1610 @@ INFO 2025-12-16 08:55:27,931 __init__ 17748 16848 package: mysql.connector.plugi
 INFO 2025-12-16 08:55:27,931 __init__ 17748 16848 plugin_name: mysql_native_password
 INFO 2025-12-16 08:55:27,932 __init__ 17748 16848 AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
 INFO 2025-12-16 08:55:27,953 autoreload 17748 16848 Watching for file changes with StatReloader
+INFO 2026-01-10 00:41:33,640 autoreload 9728 11100 Watching for file changes with StatReloader
+WARNING 2026-01-12 03:16:44,368 signals 9396 7280 Could not import refresh_settings from ichancyBot: No module named 'colorlog'
+WARNING 2026-01-12 03:17:52,683 signals 6604 5024 Could not import refresh_settings from ichancyBot: No module named 'colorlog'
+ERROR 2026-01-12 03:22:02,346 settings 6100 8620 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+ERROR 2026-01-12 03:25:17,986 settings 10460 8448 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+ERROR 2026-01-12 03:25:38,835 settings 10712 9392 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+ERROR 2026-01-12 03:26:13,493 settings 4304 11664 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+ERROR 2026-01-12 03:26:42,619 settings 748 4084 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+ERROR 2026-01-12 03:27:21,297 settings 2652 5504 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+ERROR 2026-01-12 03:27:40,269 settings 5504 10716 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+ERROR 2026-01-12 03:27:53,789 settings 5320 9392 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+ERROR 2026-01-12 03:28:21,505 settings 6652 13920 Failed to load settings from database: 1146 (42S02): Table 'cicp_bot.settings' doesn't exist
+WARNING 2026-01-12 03:30:03,304 settings 7004 9480 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:30:36,476 settings 4112 9824 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:31:05,820 settings 6896 3408 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:32:14,611 settings 10972 5320 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:32:42,991 settings 4044 8080 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:33:16,282 settings 3308 1072 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:33:34,863 settings 7700 6348 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:33:54,440 settings 3896 7420 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:36:14,905 settings 10616 2964 No settings record found in database. Using defaults.
+WARNING 2026-01-12 03:36:18,820 settings 14004 6204 No settings record found in database. Using defaults.
+INFO 2026-01-12 03:36:19,030 autoreload 14004 6204 Watching for file changes with StatReloader
+INFO 2026-01-12 03:36:31,213 basehttp 7700 14200 "GET / HTTP/1.1" 200 10681
+INFO 2026-01-12 03:36:31,762 basehttp 7700 14200 "GET / HTTP/1.1" 200 10681
+INFO 2026-01-12 03:36:32,534 basehttp 7700 14200 - Broken pipe from ('127.0.0.1', 61148)
+INFO 2026-01-12 03:36:32,549 basehttp 7700 8044 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2026-01-12 03:36:32,697 basehttp 7700 8044 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+INFO 2026-01-12 03:36:32,866 basehttp 7700 11960 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2026-01-12 03:36:32,885 basehttp 7700 8848 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2026-01-12 03:36:44,823 basehttp 7700 4360 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-01-12 03:36:45,572 basehttp 7700 4360 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 2218
+WARNING 2026-01-12 03:36:46,380 log 7700 4360 Not Found: /favicon.ico
+WARNING 2026-01-12 03:36:46,381 basehttp 7700 4360 "GET /favicon.ico HTTP/1.1" 404 2106
+INFO 2026-01-12 03:36:49,172 basehttp 7700 4360 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-01-12 03:36:49,306 basehttp 7700 4360 "GET /admin/ HTTP/1.1" 200 11162
+INFO 2026-01-12 03:36:54,125 basehttp 7700 4360 "GET /admin/myapp/settings/ HTTP/1.1" 200 7767
+INFO 2026-01-12 03:36:57,059 basehttp 7700 4360 "GET /admin/myapp/ordermoneytransactions/ HTTP/1.1" 200 9604
+WARNING 2026-01-12 03:37:31,008 settings 4936 1412 No settings record found in database. Using defaults.
+ERROR 2026-01-12 03:37:36,697 bot 4936 1412 Please set telegram_bot_token in settings table
+WARNING 2026-01-12 03:38:46,441 settings 1784 4932 No settings record found in database. Using defaults.
+ERROR 2026-01-12 03:38:46,487 signals 1784 4932 Failed to refresh Telegram bot settings: refresh_settings() takes 0 positional arguments but 1 was given
+INFO 2026-01-12 03:39:29,546 basehttp 7700 4360 "GET /admin/myapp/settings/ HTTP/1.1" 200 12020
+INFO 2026-01-12 03:39:39,643 basehttp 7700 4360 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 18278
+INFO 2026-01-12 03:39:39,781 basehttp 7700 5140 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-01-12 03:39:39,850 basehttp 7700 4360 "GET /static/admin/css/forms.css HTTP/1.1" 200 8944
+INFO 2026-01-12 03:39:39,932 basehttp 7700 5140 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11297
+INFO 2026-01-12 03:39:39,962 basehttp 7700 4360 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-01-12 03:39:40,049 basehttp 7700 1464 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-01-12 03:39:41,030 basehttp 7700 10124 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-01-12 03:39:41,033 basehttp 7700 1436 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-01-12 03:39:41,034 basehttp 7700 13636 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+ERROR 2026-01-12 03:39:52,298 signals 10432 12292 Failed to refresh Telegram bot settings: refresh_settings() takes 0 positional arguments but 1 was given
+ERROR 2026-01-12 03:44:51,462 signals 7700 4496 Failed to refresh Telegram bot settings: refresh_settings() takes 0 positional arguments but 1 was given
+INFO 2026-01-12 03:44:51,486 basehttp 7700 4496 "POST /admin/myapp/settings/1/change/ HTTP/1.1" 302 0
+INFO 2026-01-12 03:44:51,563 basehttp 7700 4496 "GET /admin/myapp/settings/ HTTP/1.1" 200 12304
+INFO 2026-01-12 03:44:51,809 basehttp 7700 4496 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-01-12 03:44:54,482 basehttp 7700 4496 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 18349
+INFO 2026-01-12 03:44:54,605 basehttp 7700 4496 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-01-12 03:44:54,615 basehttp 7700 6648 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-01-12 03:44:54,625 basehttp 7700 4496 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-01-12 03:44:54,628 basehttp 7700 5492 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-01-12 03:44:54,643 basehttp 7700 5492 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-01-12 03:44:55,258 basehttp 7700 14516 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-01-12 03:44:55,267 basehttp 7700 14480 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-01-12 03:44:55,268 basehttp 7700 15020 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-01-12 03:46:18,961 basehttp 7700 5492 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 19127
+INFO 2026-01-12 03:46:19,050 basehttp 7700 5492 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-01-12 03:46:19,101 basehttp 7700 15020 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2026-01-12 03:46:59,010 bot 11704 14596 Please set admin_telegram_id or admin_chat_id in settings table
+ERROR 2026-01-12 03:49:48,281 signals 7700 5492 Failed to refresh Telegram bot settings: refresh_settings() takes 0 positional arguments but 1 was given
+INFO 2026-01-12 03:49:48,298 basehttp 7700 5492 "POST /admin/myapp/settings/1/change/ HTTP/1.1" 302 0
+INFO 2026-01-12 03:49:48,366 basehttp 7700 5492 "GET /admin/myapp/settings/ HTTP/1.1" 200 12313
+INFO 2026-01-12 03:49:48,601 basehttp 7700 5492 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+WARNING 2026-01-12 03:50:04,582 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179001
+WARNING 2026-01-12 03:50:05,117 bot 8632 12204 JobQueue is not available. Install python-telegram-bot[job-queue] to use scheduled jobs.
+INFO 2026-01-12 03:50:07,458 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:50:08,098 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:50:08,103 _application 8632 12204 Application started
+WARNING 2026-01-12 03:50:11,507 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179008
+WARNING 2026-01-12 03:50:18,291 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179015
+WARNING 2026-01-12 03:50:24,969 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179022
+WARNING 2026-01-12 03:50:31,570 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179028
+WARNING 2026-01-12 03:50:38,443 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179035
+INFO 2026-01-12 03:50:39,941 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 03:50:45,058 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179042
+INFO 2026-01-12 03:50:48,443 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:50:50,313 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+WARNING 2026-01-12 03:50:51,956 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179049
+INFO 2026-01-12 03:50:53,361 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:50:53,859 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:50:56,721 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:50:57,269 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+WARNING 2026-01-12 03:50:58,517 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179055
+INFO 2026-01-12 03:51:01,208 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:51:01,786 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:51:02,404 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+WARNING 2026-01-12 03:51:05,272 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179062
+INFO 2026-01-12 03:51:08,547 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:51:10,290 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+WARNING 2026-01-12 03:51:12,103 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179069
+INFO 2026-01-12 03:51:14,825 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:51:15,446 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+WARNING 2026-01-12 03:51:18,698 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179076
+WARNING 2026-01-12 03:51:25,510 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179082
+WARNING 2026-01-12 03:51:32,264 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179089
+WARNING 2026-01-12 03:51:38,940 cryptoPrices 8632 15184 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768179096
+INFO 2026-01-12 03:51:46,272 _client 8632 12204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:51:46,323 _application 8632 12204 Application is stopping. This might take a moment.
+INFO 2026-01-12 03:51:46,401 _application 8632 12204 Application.stop() complete
+INFO 2026-01-12 03:51:46,468 bot 8632 12204 Bot application shutdown complete
+ERROR 2026-01-12 03:51:46,907 base_events 8632 12204 Task was destroyed but it is pending!
+task: <Task pending name='Task-18' coro=<finishingHandler() done, defined at C:\work\CICP\ichancy-bot\mm\myapp\ichancyBot\flows\createAccount\handler.py:36> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[get_password.<locals>.<lambda>() at C:\work\CICP\ichancy-bot\mm\myapp\ichancyBot\flows\createAccount\passwordState.py:19]>
+WARNING 2026-01-12 03:54:41,482 bot 16044 16160 JobQueue is not available. Install python-telegram-bot[job-queue] to use scheduled jobs.
+INFO 2026-01-12 03:54:43,963 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:54:44,465 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:54:44,560 _application 16044 16160 Application started
+INFO 2026-01-12 03:55:05,167 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:07,243 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:09,275 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:09,748 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:10,921 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:11,414 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:13,330 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:14,945 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:15,730 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:18,129 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:18,642 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:20,906 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:21,362 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:55:53,418 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:56:25,838 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:56:58,301 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:57:30,675 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:03,033 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+ERROR 2026-01-12 03:58:14,887 handler 16044 16160 Update None caused error httpx.ReadError: 
+INFO 2026-01-12 03:58:19,303 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:22,310 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:29,345 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:30,215 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:30,556 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:31,368 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:34,499 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:34,759 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:35,100 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:37,839 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:38,098 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:40,081 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:40,347 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:43,378 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:58:43,641 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:59:12,420 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 03:59:44,638 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:00:17,017 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:00:49,284 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:01:21,549 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:01:53,803 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:02:01,258 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:02:01,460 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:02:26,067 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:02:34,015 _client 16044 16160 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 04:02:34,018 _application 16044 16160 Application is stopping. This might take a moment.
+INFO 2026-01-12 04:02:34,019 _application 16044 16160 Application.stop() complete
+INFO 2026-01-12 04:02:34,026 bot 16044 16160 Bot application shutdown complete
+ERROR 2026-01-12 08:51:56,608 database 2184 11816 Failed to connect to the database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+ERROR 2026-01-12 08:51:56,746 settings 2184 11816 Failed to load settings from database: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+WARNING 2026-01-12 08:53:09,929 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197187
+WARNING 2026-01-12 08:53:11,985 bot 4028 6980 JobQueue is not available. Install python-telegram-bot[job-queue] to use scheduled jobs.
+INFO 2026-01-12 08:53:13,078 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 08:53:13,323 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 08:53:13,331 _application 4028 6980 Application started
+WARNING 2026-01-12 08:53:15,681 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197193
+WARNING 2026-01-12 08:53:21,417 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197199
+WARNING 2026-01-12 08:53:27,043 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197205
+WARNING 2026-01-12 08:53:32,550 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197211
+WARNING 2026-01-12 08:53:38,280 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197216
+WARNING 2026-01-12 08:53:44,045 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197222
+INFO 2026-01-12 08:53:44,099 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:53:49,695 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197228
+WARNING 2026-01-12 08:53:55,450 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197233
+WARNING 2026-01-12 08:54:01,467 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197239
+WARNING 2026-01-12 08:54:07,336 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197245
+WARNING 2026-01-12 08:54:13,133 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197251
+INFO 2026-01-12 08:54:16,328 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:54:18,642 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197257
+WARNING 2026-01-12 08:54:27,387 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197262
+WARNING 2026-01-12 08:54:33,580 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197271
+WARNING 2026-01-12 08:54:39,321 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197277
+WARNING 2026-01-12 08:54:45,100 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197283
+INFO 2026-01-12 08:54:48,537 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:54:50,849 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197289
+WARNING 2026-01-12 08:54:56,489 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197294
+WARNING 2026-01-12 08:55:02,112 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197300
+WARNING 2026-01-12 08:55:07,912 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197306
+WARNING 2026-01-12 08:55:13,716 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197311
+WARNING 2026-01-12 08:55:19,352 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197317
+INFO 2026-01-12 08:55:20,796 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:55:25,091 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197323
+WARNING 2026-01-12 08:55:30,599 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197329
+WARNING 2026-01-12 08:55:36,343 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197334
+WARNING 2026-01-12 08:55:42,073 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197340
+WARNING 2026-01-12 08:55:47,864 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197346
+INFO 2026-01-12 08:55:53,051 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:55:53,474 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197351
+WARNING 2026-01-12 08:55:59,243 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197357
+WARNING 2026-01-12 08:56:04,981 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197363
+WARNING 2026-01-12 08:56:10,597 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197368
+WARNING 2026-01-12 08:56:16,206 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197374
+WARNING 2026-01-12 08:56:21,943 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197380
+INFO 2026-01-12 08:56:25,252 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:56:27,702 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197385
+WARNING 2026-01-12 08:56:33,312 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197391
+WARNING 2026-01-12 08:56:39,055 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197397
+WARNING 2026-01-12 08:56:44,580 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197403
+WARNING 2026-01-12 08:56:50,209 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197408
+WARNING 2026-01-12 08:56:55,977 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197414
+INFO 2026-01-12 08:56:57,295 autoreload 5840 11312 Watching for file changes with StatReloader
+INFO 2026-01-12 08:56:57,451 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:57:01,701 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197419
+WARNING 2026-01-12 08:57:07,650 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197425
+INFO 2026-01-12 08:57:09,290 basehttp 5840 11916 "GET /admin/myapp/settings/ HTTP/1.1" 200 12097
+INFO 2026-01-12 08:57:10,437 basehttp 5840 8588 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2619
+INFO 2026-01-12 08:57:10,566 basehttp 5840 5364 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6395
+INFO 2026-01-12 08:57:10,567 basehttp 5840 8612 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 796
+INFO 2026-01-12 08:57:10,603 basehttp 5840 1096 "GET /static/admin/css/base.css HTTP/1.1" 200 20344
+INFO 2026-01-12 08:57:10,611 basehttp 5840 1556 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-01-12 08:57:10,723 basehttp 5840 4800 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 288580
+INFO 2026-01-12 08:57:10,809 basehttp 5840 8588 "GET /static/admin/css/responsive.css HTTP/1.1" 200 18854
+INFO 2026-01-12 08:57:10,850 basehttp 5840 8612 "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+INFO 2026-01-12 08:57:10,920 basehttp 5840 5364 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2026-01-12 08:57:10,927 basehttp 5840 1096 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+INFO 2026-01-12 08:57:11,008 basehttp 5840 8588 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-01-12 08:57:11,128 basehttp 5840 1556 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8985
+INFO 2026-01-12 08:57:11,213 basehttp 5840 4800 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2026-01-12 08:57:11,404 basehttp 5840 3900 "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+INFO 2026-01-12 08:57:11,694 basehttp 5840 4128 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3763
+INFO 2026-01-12 08:57:11,850 basehttp 5840 3900 "GET /static/admin/js/filters.js HTTP/1.1" 200 966
+INFO 2026-01-12 08:57:11,878 basehttp 5840 3128 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 85876
+INFO 2026-01-12 08:57:12,015 basehttp 5840 9736 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-01-12 08:57:12,227 basehttp 5840 9620 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 85692
+INFO 2026-01-12 08:57:12,391 basehttp 5840 11076 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 86184
+WARNING 2026-01-12 08:57:13,625 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197431
+WARNING 2026-01-12 08:57:14,074 log 5840 11076 Not Found: /favicon.ico
+WARNING 2026-01-12 08:57:14,101 basehttp 5840 11076 "GET /favicon.ico HTTP/1.1" 404 2106
+INFO 2026-01-12 08:57:16,271 basehttp 5840 11076 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 19146
+INFO 2026-01-12 08:57:16,424 basehttp 5840 9620 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-01-12 08:57:16,441 basehttp 5840 11076 "GET /static/admin/css/forms.css HTTP/1.1" 200 8944
+INFO 2026-01-12 08:57:16,486 basehttp 5840 9736 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-01-12 08:57:16,655 basehttp 5840 9736 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11297
+INFO 2026-01-12 08:57:16,666 basehttp 5840 11076 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+WARNING 2026-01-12 08:57:19,602 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197437
+WARNING 2026-01-12 08:57:26,117 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197443
+INFO 2026-01-12 08:57:29,690 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:57:31,780 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197450
+WARNING 2026-01-12 08:57:39,705 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197455
+WARNING 2026-01-12 08:57:45,732 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197463
+WARNING 2026-01-12 08:57:51,550 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197469
+WARNING 2026-01-12 08:57:57,552 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197475
+INFO 2026-01-12 08:58:02,013 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:58:03,608 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197481
+WARNING 2026-01-12 08:58:09,911 cryptoPrices 4028 9508 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197487
+INFO 2026-01-12 08:58:15,836 _client 4028 6980 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 08:58:15,841 _application 4028 6980 Application is stopping. This might take a moment.
+INFO 2026-01-12 08:58:15,887 _application 4028 6980 Application.stop() complete
+INFO 2026-01-12 08:58:16,051 bot 4028 6980 Bot application shutdown complete
+WARNING 2026-01-12 08:58:28,907 cryptoPrices 912 13220 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197506
+WARNING 2026-01-12 08:58:30,951 bot 912 2044 JobQueue is not available. Install python-telegram-bot[job-queue] to use scheduled jobs.
+INFO 2026-01-12 08:58:31,762 _client 912 2044 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 08:58:32,002 _client 912 2044 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 08:58:32,008 _application 912 2044 Application started
+WARNING 2026-01-12 08:58:35,305 cryptoPrices 912 13220 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197512
+WARNING 2026-01-12 08:58:40,981 cryptoPrices 912 13220 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197519
+WARNING 2026-01-12 08:58:47,450 cryptoPrices 912 13220 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197525
+WARNING 2026-01-12 08:58:53,148 cryptoPrices 912 13220 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197531
+WARNING 2026-01-12 08:58:58,875 cryptoPrices 912 13220 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197537
+INFO 2026-01-12 08:59:02,678 _client 912 2044 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+WARNING 2026-01-12 08:59:04,695 cryptoPrices 912 13220 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197542
+WARNING 2026-01-12 08:59:10,429 cryptoPrices 912 13220 Network error in cryptoPrices: 404 Client Error: Not Found for url: https://sp-today.com/app_api/cur_damascus.json?1768197548
+INFO 2026-01-12 08:59:13,884 _client 912 2044 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 08:59:13,887 _application 912 2044 Application is stopping. This might take a moment.
+INFO 2026-01-12 08:59:13,889 _application 912 2044 Application.stop() complete
+INFO 2026-01-12 08:59:13,892 bot 912 2044 Bot application shutdown complete
+WARNING 2026-01-12 09:00:51,490 bot 988 5204 JobQueue is not available. Install python-telegram-bot[job-queue] to use scheduled jobs.
+INFO 2026-01-12 09:00:52,466 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:00:52,716 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:00:52,721 _application 988 5204 Application started
+INFO 2026-01-12 09:01:23,372 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:01:55,587 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:02:27,800 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:03:00,184 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:03:32,509 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:04:04,877 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:04:37,117 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:05:09,334 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:05:41,599 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:06:14,155 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:06:46,379 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:07:18,738 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:07:51,011 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:08:23,217 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:08:55,429 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:09:27,650 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:09:59,864 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:10:32,257 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:11:04,466 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:11:36,673 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:12:08,886 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:12:41,099 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:13:13,331 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:13:45,542 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:14:17,781 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:14:50,008 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:15:22,228 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:15:54,431 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:16:26,643 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:16:58,852 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:17:31,072 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:18:03,277 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:18:35,503 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:19:07,948 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:19:40,375 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:20:12,807 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:20:45,247 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:21:17,674 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:21:50,891 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:22:24,116 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:22:56,343 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:23:28,563 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:24:00,785 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:24:33,005 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:25:05,218 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:25:37,654 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:26:09,867 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:26:42,079 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:27:14,291 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:27:46,505 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:28:18,715 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:28:50,925 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:29:23,144 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:29:55,577 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:30:27,807 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:31:00,073 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:31:32,478 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:32:04,804 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:32:37,025 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:09,335 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:11,657 _client 988 5204 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:11,662 _application 988 5204 Application is stopping. This might take a moment.
+INFO 2026-01-12 09:33:11,666 _application 988 5204 Application.stop() complete
+INFO 2026-01-12 09:33:11,671 bot 988 5204 Bot application shutdown complete
+INFO 2026-01-12 09:33:23,322 base 3260 6468 Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 2026-01-12 09:33:24,790 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:25,099 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:25,103 base 3260 6468 Added job "sendCookieNotification" to job store "default"
+INFO 2026-01-12 09:33:25,105 base 3260 6468 Scheduler started
+INFO 2026-01-12 09:33:25,107 _application 3260 6468 Application started
+INFO 2026-01-12 09:33:28,330 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:34:28 UTC)" (scheduled at 2026-01-12 06:33:28.319083+00:00)
+INFO 2026-01-12 09:33:28,647 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:33:28,653 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:33:28,660 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:34:28 UTC)" executed successfully
+INFO 2026-01-12 09:33:51,745 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:52,750 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:54,687 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:54,947 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:55,572 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:55,850 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:58,562 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:58,813 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:33:59,086 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:34:04,450 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:34:05,411 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:34:08,090 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:34:08,377 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+ERROR 2026-01-12 09:34:08,554 iChancyAPI 3260 6468 Check Cookie Failed: Invalid leading whitespace, reserved character(s), or return character(s) in header value: '__cf_bm=rR2hUOdxZAnAGbUVeVRWW1Yn_5J2SbIO.VsmMr4mzeM-1768178537-1.0.1.1-jR2klKIgcb38AIPxMrw0wkupYFTpbk58t6H_x5RYeOVKvuJBsZp3JjbdYCV1J_.v0FC5Q36eZ8IaCHoUUTjRrndVt0jte_0B.LYMHsVSjp4; cf_clearance=TuZODc.bZSeR39zJNGquanyaf61owe.rCd1leLJspnA-1768178555-1.2.1.1-tXsxxhtHJuuuKU4a808X.MZ3CtCB684SYtCUrb8OUuKdKBLI827AXZnGOQcTwlbq6dFVo64AafZegSrUcctIixsXv6ptQYXsXB7lsBpawj7tciVjYfvWEEhWwNEFP.TP.HIGC9kRjgM3sr1dLeOBLpH8KqGc_Fu61GwHZTgXcM9gPxeLMjTxUm2bzmSwX4rJjzCaT6llBRXSdC_UXxKTQGV2dCH0_7SchHfmfa7PGxI; PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=5b72afea339dcec917d725e23d80313c; languageCode=en_GB; language=English%20%28UK%29\r\n'
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\mm\myapp\ichancyBot\iChancyAPI.py", line 439, in checkCookieIsWork
+    response = self.session.get(
+        check_url,
+        timeout=2
+    )
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_headers(headers)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\models.py", line 490, in prepare_headers
+    check_header_validity(header)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\utils.py", line 1032, in check_header_validity
+    _validate_header_part(header, value, 1)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\utils.py", line 1048, in _validate_header_part
+    raise InvalidHeader(
+    ...<2 lines>...
+    )
+requests.exceptions.InvalidHeader: Invalid leading whitespace, reserved character(s), or return character(s) in header value: '__cf_bm=rR2hUOdxZAnAGbUVeVRWW1Yn_5J2SbIO.VsmMr4mzeM-1768178537-1.0.1.1-jR2klKIgcb38AIPxMrw0wkupYFTpbk58t6H_x5RYeOVKvuJBsZp3JjbdYCV1J_.v0FC5Q36eZ8IaCHoUUTjRrndVt0jte_0B.LYMHsVSjp4; cf_clearance=TuZODc.bZSeR39zJNGquanyaf61owe.rCd1leLJspnA-1768178555-1.2.1.1-tXsxxhtHJuuuKU4a808X.MZ3CtCB684SYtCUrb8OUuKdKBLI827AXZnGOQcTwlbq6dFVo64AafZegSrUcctIixsXv6ptQYXsXB7lsBpawj7tciVjYfvWEEhWwNEFP.TP.HIGC9kRjgM3sr1dLeOBLpH8KqGc_Fu61GwHZTgXcM9gPxeLMjTxUm2bzmSwX4rJjzCaT6llBRXSdC_UXxKTQGV2dCH0_7SchHfmfa7PGxI; PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=5b72afea339dcec917d725e23d80313c; languageCode=en_GB; language=English%20%28UK%29\r\n'
+INFO 2026-01-12 09:34:08,887 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:34:09,124 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:34:28,333 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:35:28 UTC)" (scheduled at 2026-01-12 06:34:28.319083+00:00)
+INFO 2026-01-12 09:34:29,322 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:34:29,332 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:34:29,334 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:35:28 UTC)" executed successfully
+INFO 2026-01-12 09:34:40,304 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:02,722 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:03,217 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:05,016 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:05,132 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:05,249 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:05,421 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:07,197 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:07,392 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:07,592 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:09,367 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:09,539 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:11,514 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:11,653 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+ERROR 2026-01-12 09:35:11,679 iChancyAPI 3260 6468 Check Cookie Failed: Invalid leading whitespace, reserved character(s), or return character(s) in header value: '__cf_bm=rR2hUOdxZAnAGbUVeVRWW1Yn_5J2SbIO.VsmMr4mzeM-1768178537-1.0.1.1-jR2klKIgcb38AIPxMrw0wkupYFTpbk58t6H_x5RYeOVKvuJBsZp3JjbdYCV1J_.v0FC5Q36eZ8IaCHoUUTjRrndVt0jte_0B.LYMHsVSjp4; cf_clearance=TuZODc.bZSeR39zJNGquanyaf61owe.rCd1leLJspnA-1768178555-1.2.1.1-tXsxxhtHJuuuKU4a808X.MZ3CtCB684SYtCUrb8OUuKdKBLI827AXZnGOQcTwlbq6dFVo64AafZegSrUcctIixsXv6ptQYXsXB7lsBpawj7tciVjYfvWEEhWwNEFP.TP.HIGC9kRjgM3sr1dLeOBLpH8KqGc_Fu61GwHZTgXcM9gPxeLMjTxUm2bzmSwX4rJjzCaT6llBRXSdC_UXxKTQGV2dCH0_7SchHfmfa7PGxI; PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=5b72afea339dcec917d725e23d80313c; languageCode=en_GB; language=English%20%28UK%29\r\n'
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\mm\myapp\ichancyBot\iChancyAPI.py", line 439, in checkCookieIsWork
+    response = self.session.get(
+        check_url,
+        timeout=2
+    )
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_headers(headers)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\models.py", line 490, in prepare_headers
+    check_header_validity(header)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\utils.py", line 1032, in check_header_validity
+    _validate_header_part(header, value, 1)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\utils.py", line 1048, in _validate_header_part
+    raise InvalidHeader(
+    ...<2 lines>...
+    )
+requests.exceptions.InvalidHeader: Invalid leading whitespace, reserved character(s), or return character(s) in header value: '__cf_bm=rR2hUOdxZAnAGbUVeVRWW1Yn_5J2SbIO.VsmMr4mzeM-1768178537-1.0.1.1-jR2klKIgcb38AIPxMrw0wkupYFTpbk58t6H_x5RYeOVKvuJBsZp3JjbdYCV1J_.v0FC5Q36eZ8IaCHoUUTjRrndVt0jte_0B.LYMHsVSjp4; cf_clearance=TuZODc.bZSeR39zJNGquanyaf61owe.rCd1leLJspnA-1768178555-1.2.1.1-tXsxxhtHJuuuKU4a808X.MZ3CtCB684SYtCUrb8OUuKdKBLI827AXZnGOQcTwlbq6dFVo64AafZegSrUcctIixsXv6ptQYXsXB7lsBpawj7tciVjYfvWEEhWwNEFP.TP.HIGC9kRjgM3sr1dLeOBLpH8KqGc_Fu61GwHZTgXcM9gPxeLMjTxUm2bzmSwX4rJjzCaT6llBRXSdC_UXxKTQGV2dCH0_7SchHfmfa7PGxI; PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=5b72afea339dcec917d725e23d80313c; languageCode=en_GB; language=English%20%28UK%29\r\n'
+INFO 2026-01-12 09:35:11,899 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:12,028 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:35:28,324 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:36:28 UTC)" (scheduled at 2026-01-12 06:35:28.319083+00:00)
+INFO 2026-01-12 09:35:28,849 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:35:28,854 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:35:28,857 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:36:28 UTC)" executed successfully
+INFO 2026-01-12 09:35:43,632 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:36:15,943 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:36:28,328 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:37:28 UTC)" (scheduled at 2026-01-12 06:36:28.319083+00:00)
+INFO 2026-01-12 09:36:28,858 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:36:28,941 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:36:29,168 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:37:28 UTC)" executed successfully
+INFO 2026-01-12 09:36:48,104 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:36:58,498 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:36:59,125 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:01,058 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:01,178 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:01,305 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:01,445 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:03,195 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:03,308 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:03,437 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:05,922 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:06,063 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:08,067 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:08,220 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+ERROR 2026-01-12 09:37:08,241 iChancyAPI 3260 6468 Check Cookie Failed: Invalid leading whitespace, reserved character(s), or return character(s) in header value: '__cf_bm=rR2hUOdxZAnAGbUVeVRWW1Yn_5J2SbIO.VsmMr4mzeM-1768178537-1.0.1.1-jR2klKIgcb38AIPxMrw0wkupYFTpbk58t6H_x5RYeOVKvuJBsZp3JjbdYCV1J_.v0FC5Q36eZ8IaCHoUUTjRrndVt0jte_0B.LYMHsVSjp4; cf_clearance=TuZODc.bZSeR39zJNGquanyaf61owe.rCd1leLJspnA-1768178555-1.2.1.1-tXsxxhtHJuuuKU4a808X.MZ3CtCB684SYtCUrb8OUuKdKBLI827AXZnGOQcTwlbq6dFVo64AafZegSrUcctIixsXv6ptQYXsXB7lsBpawj7tciVjYfvWEEhWwNEFP.TP.HIGC9kRjgM3sr1dLeOBLpH8KqGc_Fu61GwHZTgXcM9gPxeLMjTxUm2bzmSwX4rJjzCaT6llBRXSdC_UXxKTQGV2dCH0_7SchHfmfa7PGxI; PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=5b72afea339dcec917d725e23d80313c; languageCode=en_GB; language=English%20%28UK%29\r\n'
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\mm\myapp\ichancyBot\iChancyAPI.py", line 439, in checkCookieIsWork
+    response = self.session.get(
+        check_url,
+        timeout=2
+    )
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_headers(headers)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\models.py", line 490, in prepare_headers
+    check_header_validity(header)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\utils.py", line 1032, in check_header_validity
+    _validate_header_part(header, value, 1)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\utils.py", line 1048, in _validate_header_part
+    raise InvalidHeader(
+    ...<2 lines>...
+    )
+requests.exceptions.InvalidHeader: Invalid leading whitespace, reserved character(s), or return character(s) in header value: '__cf_bm=rR2hUOdxZAnAGbUVeVRWW1Yn_5J2SbIO.VsmMr4mzeM-1768178537-1.0.1.1-jR2klKIgcb38AIPxMrw0wkupYFTpbk58t6H_x5RYeOVKvuJBsZp3JjbdYCV1J_.v0FC5Q36eZ8IaCHoUUTjRrndVt0jte_0B.LYMHsVSjp4; cf_clearance=TuZODc.bZSeR39zJNGquanyaf61owe.rCd1leLJspnA-1768178555-1.2.1.1-tXsxxhtHJuuuKU4a808X.MZ3CtCB684SYtCUrb8OUuKdKBLI827AXZnGOQcTwlbq6dFVo64AafZegSrUcctIixsXv6ptQYXsXB7lsBpawj7tciVjYfvWEEhWwNEFP.TP.HIGC9kRjgM3sr1dLeOBLpH8KqGc_Fu61GwHZTgXcM9gPxeLMjTxUm2bzmSwX4rJjzCaT6llBRXSdC_UXxKTQGV2dCH0_7SchHfmfa7PGxI; PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=5b72afea339dcec917d725e23d80313c; languageCode=en_GB; language=English%20%28UK%29\r\n'
+INFO 2026-01-12 09:37:08,506 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:08,661 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:37:28,321 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:38:28 UTC)" (scheduled at 2026-01-12 06:37:28.319083+00:00)
+INFO 2026-01-12 09:37:28,934 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:37:28,937 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:37:28,939 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:38:28 UTC)" executed successfully
+INFO 2026-01-12 09:37:40,264 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:38:12,442 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:38:28,335 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:39:28 UTC)" (scheduled at 2026-01-12 06:38:28.319083+00:00)
+INFO 2026-01-12 09:38:28,717 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:38:28,721 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:38:28,723 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:39:28 UTC)" executed successfully
+INFO 2026-01-12 09:38:44,562 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:39:16,672 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:39:28,327 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:40:28 UTC)" (scheduled at 2026-01-12 06:39:28.319083+00:00)
+INFO 2026-01-12 09:39:28,692 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:39:28,695 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:39:28,697 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:40:28 UTC)" executed successfully
+INFO 2026-01-12 09:39:48,830 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:40:20,943 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:40:28,330 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:41:28 UTC)" (scheduled at 2026-01-12 06:40:28.319083+00:00)
+INFO 2026-01-12 09:40:28,853 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:40:28,859 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:40:28,869 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:41:28 UTC)" executed successfully
+INFO 2026-01-12 09:40:53,060 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:41:25,177 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:41:28,328 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:42:28 UTC)" (scheduled at 2026-01-12 06:41:28.319083+00:00)
+INFO 2026-01-12 09:41:28,687 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:41:28,690 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:41:28,692 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:42:28 UTC)" executed successfully
+INFO 2026-01-12 09:41:57,301 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:42:28,329 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:43:28 UTC)" (scheduled at 2026-01-12 06:42:28.319083+00:00)
+INFO 2026-01-12 09:42:29,050 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:42:29,054 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:42:29,057 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:43:28 UTC)" executed successfully
+INFO 2026-01-12 09:42:29,580 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:42:57,986 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:42:58,578 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:09,644 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:10,274 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:10,444 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:10,604 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:11,966 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:12,091 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:12,223 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:14,331 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:14,478 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:16,452 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:16,600 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+ERROR 2026-01-12 09:43:16,626 iChancyAPI 3260 6468 Check Cookie Failed: Invalid leading whitespace, reserved character(s), or return character(s) in header value: '__cf_bm=rR2hUOdxZAnAGbUVeVRWW1Yn_5J2SbIO.VsmMr4mzeM-1768178537-1.0.1.1-jR2klKIgcb38AIPxMrw0wkupYFTpbk58t6H_x5RYeOVKvuJBsZp3JjbdYCV1J_.v0FC5Q36eZ8IaCHoUUTjRrndVt0jte_0B.LYMHsVSjp4; cf_clearance=TuZODc.bZSeR39zJNGquanyaf61owe.rCd1leLJspnA-1768178555-1.2.1.1-tXsxxhtHJuuuKU4a808X.MZ3CtCB684SYtCUrb8OUuKdKBLI827AXZnGOQcTwlbq6dFVo64AafZegSrUcctIixsXv6ptQYXsXB7lsBpawj7tciVjYfvWEEhWwNEFP.TP.HIGC9kRjgM3sr1dLeOBLpH8KqGc_Fu61GwHZTgXcM9gPxeLMjTxUm2bzmSwX4rJjzCaT6llBRXSdC_UXxKTQGV2dCH0_7SchHfmfa7PGxI; PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=5b72afea339dcec917d725e23d80313c; languageCode=en_GB; language=English%20%28UK%29\r\n'
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\mm\myapp\ichancyBot\iChancyAPI.py", line 439, in checkCookieIsWork
+    response = self.session.get(
+        check_url,
+        timeout=2
+    )
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\sessions.py", line 484, in prepare_request
+    p.prepare(
+    ~~~~~~~~~^
+        method=request.method.upper(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+        hooks=merge_hooks(request.hooks, self.hooks),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\models.py", line 368, in prepare
+    self.prepare_headers(headers)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\models.py", line 490, in prepare_headers
+    check_header_validity(header)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\utils.py", line 1032, in check_header_validity
+    _validate_header_part(header, value, 1)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\requests\utils.py", line 1048, in _validate_header_part
+    raise InvalidHeader(
+    ...<2 lines>...
+    )
+requests.exceptions.InvalidHeader: Invalid leading whitespace, reserved character(s), or return character(s) in header value: '__cf_bm=rR2hUOdxZAnAGbUVeVRWW1Yn_5J2SbIO.VsmMr4mzeM-1768178537-1.0.1.1-jR2klKIgcb38AIPxMrw0wkupYFTpbk58t6H_x5RYeOVKvuJBsZp3JjbdYCV1J_.v0FC5Q36eZ8IaCHoUUTjRrndVt0jte_0B.LYMHsVSjp4; cf_clearance=TuZODc.bZSeR39zJNGquanyaf61owe.rCd1leLJspnA-1768178555-1.2.1.1-tXsxxhtHJuuuKU4a808X.MZ3CtCB684SYtCUrb8OUuKdKBLI827AXZnGOQcTwlbq6dFVo64AafZegSrUcctIixsXv6ptQYXsXB7lsBpawj7tciVjYfvWEEhWwNEFP.TP.HIGC9kRjgM3sr1dLeOBLpH8KqGc_Fu61GwHZTgXcM9gPxeLMjTxUm2bzmSwX4rJjzCaT6llBRXSdC_UXxKTQGV2dCH0_7SchHfmfa7PGxI; PHPSESSID_3a07edcde6f57a008f3251235df79776a424dd7623e40d4250e37e4f1f15fadf=5b72afea339dcec917d725e23d80313c; languageCode=en_GB; language=English%20%28UK%29\r\n'
+INFO 2026-01-12 09:43:16,781 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:16,915 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:28,321 base 3260 6468 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:44:28 UTC)" (scheduled at 2026-01-12 06:43:28.319083+00:00)
+INFO 2026-01-12 09:43:29,041 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:43:29,061 handler 3260 6468 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:43:29,068 base 3260 6468 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:44:28 UTC)" executed successfully
+INFO 2026-01-12 09:43:48,660 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:55,531 _client 3260 6468 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:43:55,535 _application 3260 6468 Application is stopping. This might take a moment.
+INFO 2026-01-12 09:43:55,539 base 3260 6468 Scheduler has been shut down
+INFO 2026-01-12 09:43:55,552 _application 3260 6468 Application.stop() complete
+INFO 2026-01-12 09:43:55,562 bot 3260 6468 Bot application shutdown complete
+INFO 2026-01-12 09:44:31,807 base 5092 11472 Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 2026-01-12 09:44:32,189 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:32,325 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:32,331 base 5092 11472 Added job "sendCookieNotification" to job store "default"
+INFO 2026-01-12 09:44:32,337 base 5092 11472 Scheduler started
+INFO 2026-01-12 09:44:32,342 _application 5092 11472 Application started
+INFO 2026-01-12 09:44:34,494 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:34,647 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:36,625 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:36,736 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:37,011 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:45:36 UTC)" (scheduled at 2026-01-12 06:44:36.804678+00:00)
+INFO 2026-01-12 09:44:37,115 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:37,262 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:37,370 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 09:44:37,373 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 09:44:37,375 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:45:36 UTC)" executed successfully
+INFO 2026-01-12 09:44:39,087 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:39,266 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:39,466 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:41,202 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:41,347 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:43,318 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:43,484 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:51,907 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:44:52,041 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:45:15,549 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:45:36,813 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:46:36 UTC)" (scheduled at 2026-01-12 06:45:36.804678+00:00)
+INFO 2026-01-12 09:45:36,815 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:46:36 UTC)" executed successfully
+INFO 2026-01-12 09:45:47,668 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:46:19,777 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:46:36,815 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:47:36 UTC)" (scheduled at 2026-01-12 06:46:36.804678+00:00)
+INFO 2026-01-12 09:46:36,819 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:47:36 UTC)" executed successfully
+INFO 2026-01-12 09:46:51,875 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:47:24,015 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:47:36,815 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:48:36 UTC)" (scheduled at 2026-01-12 06:47:36.804678+00:00)
+INFO 2026-01-12 09:47:36,818 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:48:36 UTC)" executed successfully
+INFO 2026-01-12 09:47:56,127 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:48:28,246 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:48:36,806 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:49:36 UTC)" (scheduled at 2026-01-12 06:48:36.804678+00:00)
+INFO 2026-01-12 09:48:36,810 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:49:36 UTC)" executed successfully
+INFO 2026-01-12 09:49:00,375 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:49:17,881 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:49:18,305 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:49:36,809 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:50:36 UTC)" (scheduled at 2026-01-12 06:49:36.804678+00:00)
+INFO 2026-01-12 09:49:36,813 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:50:36 UTC)" executed successfully
+INFO 2026-01-12 09:49:49,999 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:50:22,105 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:50:36,815 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:51:36 UTC)" (scheduled at 2026-01-12 06:50:36.804678+00:00)
+INFO 2026-01-12 09:50:36,828 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:51:36 UTC)" executed successfully
+INFO 2026-01-12 09:50:54,217 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:51:16,104 basehttp 5840 2444 "GET /admin/myapp/users/ HTTP/1.1" 200 10737
+INFO 2026-01-12 09:51:16,206 basehttp 5840 2444 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,207 basehttp 5840 2504 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,218 basehttp 5840 2444 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,235 basehttp 5840 2504 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,244 basehttp 5840 2444 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,248 basehttp 5840 14104 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,253 basehttp 5840 2504 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,267 basehttp 5840 2444 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,278 basehttp 5840 14104 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,289 basehttp 5840 2504 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,291 basehttp 5840 4492 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,327 basehttp 5840 13844 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,328 basehttp 5840 13104 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,338 basehttp 5840 13844 "GET /static/admin/css/fonts.css HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,394 basehttp 5840 13844 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2026-01-12 09:51:16,398 basehttp 5840 13104 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,408 basehttp 5840 13844 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,425 basehttp 5840 13844 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,472 basehttp 5840 4492 "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,481 basehttp 5840 13844 "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:16,497 basehttp 5840 13104 "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 304 0
+INFO 2026-01-12 09:51:26,324 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:51:36,815 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:52:36 UTC)" (scheduled at 2026-01-12 06:51:36.804678+00:00)
+INFO 2026-01-12 09:51:36,818 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:52:36 UTC)" executed successfully
+INFO 2026-01-12 09:51:58,639 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:52:30,757 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:52:36,812 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:53:36 UTC)" (scheduled at 2026-01-12 06:52:36.804678+00:00)
+INFO 2026-01-12 09:52:36,815 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:53:36 UTC)" executed successfully
+INFO 2026-01-12 09:53:02,869 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:53:35,124 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:53:36,814 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:54:36 UTC)" (scheduled at 2026-01-12 06:53:36.804678+00:00)
+INFO 2026-01-12 09:53:36,825 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:54:36 UTC)" executed successfully
+INFO 2026-01-12 09:53:48,934 basehttp 5840 13104 "GET /admin/myapp/users/1/change/ HTTP/1.1" 200 12866
+INFO 2026-01-12 09:53:49,026 basehttp 5840 13104 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-01-12 09:53:49,034 basehttp 5840 4492 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-01-12 09:53:49,050 basehttp 5840 13104 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:53:49,087 basehttp 5840 13104 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-01-12 09:53:49,111 basehttp 5840 13104 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-01-12 09:53:49,336 basehttp 5840 12668 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-01-12 09:53:49,344 basehttp 5840 2052 "GET /static/admin/js/core.js HTTP/1.1" 200 5698
+INFO 2026-01-12 09:53:49,346 basehttp 5840 13652 "GET /static/admin/js/actions.js HTTP/1.1" 200 7872
+INFO 2026-01-12 09:53:49,348 basehttp 5840 7252 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 8985
+INFO 2026-01-12 09:53:49,363 basehttp 5840 13652 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7902
+INFO 2026-01-12 09:53:49,368 basehttp 5840 7252 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-01-12 09:53:49,390 basehttp 5840 7252 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-01-12 09:53:49,399 basehttp 5840 13652 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 288580
+INFO 2026-01-12 09:53:49,417 basehttp 5840 13652 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-01-12 09:53:49,423 basehttp 5840 7252 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 232381
+INFO 2026-01-12 09:53:53,511 basehttp 5840 13104 "GET /admin/myapp/settings/ HTTP/1.1" 200 12097
+INFO 2026-01-12 09:53:55,469 basehttp 5840 13104 "GET /admin/myapp/settings/1/change/ HTTP/1.1" 200 19142
+INFO 2026-01-12 09:53:55,555 basehttp 5840 13104 "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2026-01-12 09:54:05,376 signals 5840 13104 Failed to refresh Telegram bot settings: refresh_settings() takes 0 positional arguments but 1 was given
+INFO 2026-01-12 09:54:05,428 basehttp 5840 13104 "POST /admin/myapp/settings/1/change/ HTTP/1.1" 302 0
+INFO 2026-01-12 09:54:05,480 basehttp 5840 13104 "GET /admin/myapp/settings/ HTTP/1.1" 200 12323
+INFO 2026-01-12 09:54:05,621 basehttp 5840 13104 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-01-12 09:54:07,470 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:54:36,818 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:55:36 UTC)" (scheduled at 2026-01-12 06:54:36.804678+00:00)
+INFO 2026-01-12 09:54:36,821 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:55:36 UTC)" executed successfully
+INFO 2026-01-12 09:54:39,717 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:55:11,867 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:55:36,807 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:56:36 UTC)" (scheduled at 2026-01-12 06:55:36.804678+00:00)
+INFO 2026-01-12 09:55:36,813 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:56:36 UTC)" executed successfully
+INFO 2026-01-12 09:55:44,102 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:56:16,439 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:56:36,815 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:57:36 UTC)" (scheduled at 2026-01-12 06:56:36.804678+00:00)
+INFO 2026-01-12 09:56:36,819 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:57:36 UTC)" executed successfully
+INFO 2026-01-12 09:56:48,775 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:56:51,102 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:56:52,567 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:56:56,082 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:56:56,412 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:56:56,743 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:56:57,163 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:57:16,213 basehttp 5840 13104 "GET /admin/myapp/users/ HTTP/1.1" 200 10737
+INFO 2026-01-12 09:57:28,199 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:57:36,814 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:58:36 UTC)" (scheduled at 2026-01-12 06:57:36.804678+00:00)
+INFO 2026-01-12 09:57:36,821 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:58:36 UTC)" executed successfully
+INFO 2026-01-12 09:58:00,312 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:02,492 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:03,248 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:05,059 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:05,372 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:05,573 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:05,816 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:07,804 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:08,038 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:08,207 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:10,814 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:11,133 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:13,173 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:13,597 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:15,906 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:16,185 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:58:36,812 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:59:36 UTC)" (scheduled at 2026-01-12 06:58:36.804678+00:00)
+INFO 2026-01-12 09:58:36,816 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 06:59:36 UTC)" executed successfully
+INFO 2026-01-12 09:58:45,355 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:59:17,526 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 09:59:36,810 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:00:36 UTC)" (scheduled at 2026-01-12 06:59:36.804678+00:00)
+INFO 2026-01-12 09:59:36,814 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:00:36 UTC)" executed successfully
+INFO 2026-01-12 09:59:49,640 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:00:21,753 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:00:36,819 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:01:36 UTC)" (scheduled at 2026-01-12 07:00:36.804678+00:00)
+INFO 2026-01-12 10:00:36,822 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:01:36 UTC)" executed successfully
+INFO 2026-01-12 10:00:53,958 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:01:26,075 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:01:36,808 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:02:36 UTC)" (scheduled at 2026-01-12 07:01:36.804678+00:00)
+INFO 2026-01-12 10:01:36,810 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:02:36 UTC)" executed successfully
+INFO 2026-01-12 10:01:58,188 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:02:30,415 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:02:36,808 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:03:36 UTC)" (scheduled at 2026-01-12 07:02:36.804678+00:00)
+INFO 2026-01-12 10:02:36,814 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:03:36 UTC)" executed successfully
+INFO 2026-01-12 10:03:02,539 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:03:34,692 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:03:36,806 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:04:36 UTC)" (scheduled at 2026-01-12 07:03:36.804678+00:00)
+INFO 2026-01-12 10:03:36,809 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:04:36 UTC)" executed successfully
+INFO 2026-01-12 10:04:07,126 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:04:36,814 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:05:36 UTC)" (scheduled at 2026-01-12 07:04:36.804678+00:00)
+INFO 2026-01-12 10:04:36,820 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:05:36 UTC)" executed successfully
+INFO 2026-01-12 10:04:39,312 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:05:11,453 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:05:36,818 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:06:36 UTC)" (scheduled at 2026-01-12 07:05:36.804678+00:00)
+INFO 2026-01-12 10:05:36,822 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:06:36 UTC)" executed successfully
+INFO 2026-01-12 10:05:43,579 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:06:15,712 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:06:36,807 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:07:36 UTC)" (scheduled at 2026-01-12 07:06:36.804678+00:00)
+INFO 2026-01-12 10:06:36,809 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:07:36 UTC)" executed successfully
+INFO 2026-01-12 10:06:47,818 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:07:19,928 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:07:36,816 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:08:36 UTC)" (scheduled at 2026-01-12 07:07:36.804678+00:00)
+INFO 2026-01-12 10:07:36,822 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:08:36 UTC)" executed successfully
+INFO 2026-01-12 10:07:52,200 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:08:24,318 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:08:36,805 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:09:36 UTC)" (scheduled at 2026-01-12 07:08:36.804678+00:00)
+INFO 2026-01-12 10:08:36,811 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:09:36 UTC)" executed successfully
+INFO 2026-01-12 10:08:56,514 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:09:28,791 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:09:36,819 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:10:36 UTC)" (scheduled at 2026-01-12 07:09:36.804678+00:00)
+INFO 2026-01-12 10:09:36,825 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:10:36 UTC)" executed successfully
+INFO 2026-01-12 10:10:01,107 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:10:33,222 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:10:36,807 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:11:36 UTC)" (scheduled at 2026-01-12 07:10:36.804678+00:00)
+INFO 2026-01-12 10:10:36,814 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:11:36 UTC)" executed successfully
+INFO 2026-01-12 10:11:05,341 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:11:36,844 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:12:36 UTC)" (scheduled at 2026-01-12 07:11:36.804678+00:00)
+INFO 2026-01-12 10:11:36,944 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:12:36 UTC)" executed successfully
+INFO 2026-01-12 10:11:37,449 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:09,631 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:26,851 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:27,253 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:29,188 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:29,345 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:29,683 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:30,033 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:31,580 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:31,836 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:32,105 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:33,708 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:33,978 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:35,875 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:12:36,104 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+WARNING 2026-01-12 10:12:36,594 iChancyAPI 5092 11472 ************* COOKIE_STATUS updated to FALSE *************
+INFO 2026-01-12 10:12:36,817 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:13:36 UTC)" (scheduled at 2026-01-12 07:12:36.804678+00:00)
+INFO 2026-01-12 10:12:37,030 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:12:37,033 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:12:37,035 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:13:36 UTC)" executed successfully
+INFO 2026-01-12 10:13:07,995 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:13:17,232 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:13:17,365 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:13:36,814 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:14:36 UTC)" (scheduled at 2026-01-12 07:13:36.804678+00:00)
+INFO 2026-01-12 10:13:37,224 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:13:37,227 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:13:37,229 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:14:36 UTC)" executed successfully
+INFO 2026-01-12 10:13:40,107 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:14:12,219 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:14:36,806 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:15:36 UTC)" (scheduled at 2026-01-12 07:14:36.804678+00:00)
+INFO 2026-01-12 10:14:37,157 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:14:37,161 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:14:37,164 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:15:36 UTC)" executed successfully
+INFO 2026-01-12 10:14:44,327 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:15:16,543 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:15:36,812 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:16:36 UTC)" (scheduled at 2026-01-12 07:15:36.804678+00:00)
+INFO 2026-01-12 10:15:37,573 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:15:37,580 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:15:37,584 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:16:36 UTC)" executed successfully
+INFO 2026-01-12 10:15:48,812 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:16:21,089 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:16:36,819 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:17:36 UTC)" (scheduled at 2026-01-12 07:16:36.804678+00:00)
+INFO 2026-01-12 10:16:37,319 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:16:37,322 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:16:37,324 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:17:36 UTC)" executed successfully
+INFO 2026-01-12 10:16:53,197 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:17:25,314 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:17:36,817 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:18:36 UTC)" (scheduled at 2026-01-12 07:17:36.804678+00:00)
+INFO 2026-01-12 10:17:37,272 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:17:37,278 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:17:37,287 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:18:36 UTC)" executed successfully
+INFO 2026-01-12 10:17:57,425 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:18:29,538 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:18:36,806 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:19:36 UTC)" (scheduled at 2026-01-12 07:18:36.804678+00:00)
+INFO 2026-01-12 10:18:37,133 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:18:37,136 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:18:37,138 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:19:36 UTC)" executed successfully
+INFO 2026-01-12 10:19:01,647 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:19:33,756 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:19:36,816 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:20:36 UTC)" (scheduled at 2026-01-12 07:19:36.804678+00:00)
+INFO 2026-01-12 10:19:37,144 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:19:37,147 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:19:37,149 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:20:36 UTC)" executed successfully
+INFO 2026-01-12 10:20:05,883 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:20:36,813 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:21:36 UTC)" (scheduled at 2026-01-12 07:20:36.804678+00:00)
+INFO 2026-01-12 10:20:37,176 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:20:37,263 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:20:37,311 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:21:36 UTC)" executed successfully
+INFO 2026-01-12 10:20:38,003 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:21:10,113 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:21:36,811 base 5092 11472 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:22:36 UTC)" (scheduled at 2026-01-12 07:21:36.804678+00:00)
+INFO 2026-01-12 10:21:37,161 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:21:37,164 handler 5092 11472 Update None caused error Chat_id is empty
+INFO 2026-01-12 10:21:37,165 base 5092 11472 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:22:36 UTC)" executed successfully
+INFO 2026-01-12 10:21:42,226 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:22:14,347 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:22:23,681 _client 5092 11472 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:22:23,685 _application 5092 11472 Application is stopping. This might take a moment.
+INFO 2026-01-12 10:22:23,691 base 5092 11472 Scheduler has been shut down
+INFO 2026-01-12 10:22:23,715 _application 5092 11472 Application.stop() complete
+INFO 2026-01-12 10:22:23,722 bot 5092 11472 Bot application shutdown complete
+INFO 2026-01-12 10:24:29,946 base 2948 3324 Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 2026-01-12 10:24:30,615 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:24:30,834 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:24:30,838 base 2948 3324 Added job "sendCookieNotification" to job store "default"
+INFO 2026-01-12 10:24:30,840 base 2948 3324 Scheduler started
+INFO 2026-01-12 10:24:30,843 _application 2948 3324 Application started
+INFO 2026-01-12 10:24:34,954 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:25:34 UTC)" (scheduled at 2026-01-12 07:24:34.943506+00:00)
+INFO 2026-01-12 10:24:35,109 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:24:35,112 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:24:35,114 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:25:34 UTC)" executed successfully
+INFO 2026-01-12 10:25:01,187 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:25:33,326 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:25:34,947 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:26:34 UTC)" (scheduled at 2026-01-12 07:25:34.943506+00:00)
+INFO 2026-01-12 10:25:35,296 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:25:35,310 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:25:35,318 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:26:34 UTC)" executed successfully
+INFO 2026-01-12 10:26:05,566 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:26:34,957 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:27:34 UTC)" (scheduled at 2026-01-12 07:26:34.943506+00:00)
+INFO 2026-01-12 10:26:35,527 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:26:35,534 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:26:35,540 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:27:34 UTC)" executed successfully
+INFO 2026-01-12 10:26:37,766 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:27:09,904 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:27:34,945 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:28:34 UTC)" (scheduled at 2026-01-12 07:27:34.943506+00:00)
+INFO 2026-01-12 10:27:35,339 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:27:35,343 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:27:35,345 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:28:34 UTC)" executed successfully
+INFO 2026-01-12 10:27:42,064 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:14,354 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:34,944 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:29:34 UTC)" (scheduled at 2026-01-12 07:28:34.943506+00:00)
+INFO 2026-01-12 10:28:35,295 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:28:35,299 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:28:35,301 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:29:34 UTC)" executed successfully
+INFO 2026-01-12 10:28:41,887 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:42,281 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:44,713 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:44,880 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:45,338 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:45,501 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:47,615 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:47,726 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:47,849 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:49,901 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:50,046 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:52,023 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:52,157 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+WARNING 2026-01-12 10:28:52,492 iChancyAPI 2948 3324 ************* COOKIE_STATUS updated to FALSE *************
+INFO 2026-01-12 10:28:52,619 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:28:52,753 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:29:24,158 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:29:34,957 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:30:34 UTC)" (scheduled at 2026-01-12 07:29:34.943506+00:00)
+INFO 2026-01-12 10:29:35,306 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:29:35,310 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:29:35,312 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:30:34 UTC)" executed successfully
+INFO 2026-01-12 10:29:56,302 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:30:28,425 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:30:34,955 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:31:34 UTC)" (scheduled at 2026-01-12 07:30:34.943506+00:00)
+INFO 2026-01-12 10:30:35,334 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:30:35,339 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:30:35,341 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:31:34 UTC)" executed successfully
+INFO 2026-01-12 10:31:00,548 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:31:32,669 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:31:34,955 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:32:34 UTC)" (scheduled at 2026-01-12 07:31:34.943506+00:00)
+INFO 2026-01-12 10:31:35,383 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:31:35,386 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:31:35,389 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:32:34 UTC)" executed successfully
+INFO 2026-01-12 10:32:04,818 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:32:34,956 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:33:34 UTC)" (scheduled at 2026-01-12 07:32:34.943506+00:00)
+INFO 2026-01-12 10:32:35,825 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:32:35,828 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:32:35,830 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:33:34 UTC)" executed successfully
+INFO 2026-01-12 10:32:37,100 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:33:09,217 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:33:34,959 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:34:34 UTC)" (scheduled at 2026-01-12 07:33:34.943506+00:00)
+INFO 2026-01-12 10:33:35,347 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:33:35,351 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:33:35,353 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:34:34 UTC)" executed successfully
+INFO 2026-01-12 10:33:41,330 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:34:13,501 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:34:34,953 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:35:34 UTC)" (scheduled at 2026-01-12 07:34:34.943506+00:00)
+INFO 2026-01-12 10:34:35,537 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:34:35,543 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:34:35,550 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:35:34 UTC)" executed successfully
+INFO 2026-01-12 10:34:45,617 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:35:17,737 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:35:34,969 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:36:34 UTC)" (scheduled at 2026-01-12 07:35:34.943506+00:00)
+INFO 2026-01-12 10:35:35,703 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:35:35,718 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:35:35,726 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:36:34 UTC)" executed successfully
+INFO 2026-01-12 10:35:50,065 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:36:22,312 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:36:34,945 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:37:34 UTC)" (scheduled at 2026-01-12 07:36:34.943506+00:00)
+INFO 2026-01-12 10:36:35,316 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:36:35,319 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:36:35,321 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:37:34 UTC)" executed successfully
+INFO 2026-01-12 10:36:54,441 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:37:26,596 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:37:34,944 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:38:34 UTC)" (scheduled at 2026-01-12 07:37:34.943506+00:00)
+INFO 2026-01-12 10:37:35,268 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:37:35,276 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:37:35,286 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:38:34 UTC)" executed successfully
+INFO 2026-01-12 10:37:58,714 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:38:30,827 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:38:34,961 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:39:34 UTC)" (scheduled at 2026-01-12 07:38:34.943506+00:00)
+INFO 2026-01-12 10:38:35,311 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:38:35,315 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:38:35,319 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:39:34 UTC)" executed successfully
+INFO 2026-01-12 10:39:02,959 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:39:13,170 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:39:19,404 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 409 Conflict"
+ERROR 2026-01-12 10:39:19,407 handler 2948 3324 Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+INFO 2026-01-12 10:39:34,958 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:40:34 UTC)" (scheduled at 2026-01-12 07:39:34.943506+00:00)
+INFO 2026-01-12 10:39:35,415 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:39:35,420 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:39:35,422 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:40:34 UTC)" executed successfully
+INFO 2026-01-12 10:39:52,518 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:40:24,638 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:40:34,955 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:41:34 UTC)" (scheduled at 2026-01-12 07:40:34.943506+00:00)
+INFO 2026-01-12 10:40:35,280 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:40:35,287 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:40:35,292 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:41:34 UTC)" executed successfully
+INFO 2026-01-12 10:40:56,761 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:41:23,531 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:41:23,934 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:41:34,951 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:42:34 UTC)" (scheduled at 2026-01-12 07:41:34.943506+00:00)
+INFO 2026-01-12 10:41:35,524 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:41:35,528 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:41:35,530 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:42:34 UTC)" executed successfully
+INFO 2026-01-12 10:41:47,024 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:41:49,140 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:42:00,165 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:42:02,289 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:42:12,199 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:42:21,068 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:42:26,187 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 409 Conflict"
+ERROR 2026-01-12 10:42:26,190 handler 2948 3324 Update None caused error Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+INFO 2026-01-12 10:42:34,951 base 2948 3324 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:43:34 UTC)" (scheduled at 2026-01-12 07:42:34.943506+00:00)
+INFO 2026-01-12 10:42:35,307 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 400 Bad Request"
+ERROR 2026-01-12 10:42:35,309 handler 2948 3324 Update None caused error Chat not found
+INFO 2026-01-12 10:42:35,312 base 2948 3324 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:43:34 UTC)" executed successfully
+INFO 2026-01-12 10:42:38,177 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:43:10,291 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:43:16,071 _client 2948 3324 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:43:16,078 _application 2948 3324 Application is stopping. This might take a moment.
+INFO 2026-01-12 10:43:16,083 base 2948 3324 Scheduler has been shut down
+INFO 2026-01-12 10:43:16,098 _application 2948 3324 Application.stop() complete
+INFO 2026-01-12 10:43:16,108 bot 2948 3324 Bot application shutdown complete
+INFO 2026-01-12 10:44:46,708 base 11708 4168 Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 2026-01-12 10:44:47,355 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:44:47,544 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:44:47,549 base 11708 4168 Added job "sendCookieNotification" to job store "default"
+INFO 2026-01-12 10:44:47,552 base 11708 4168 Scheduler started
+INFO 2026-01-12 10:44:47,554 _application 11708 4168 Application started
+INFO 2026-01-12 10:44:51,719 base 11708 4168 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:45:51 UTC)" (scheduled at 2026-01-12 07:44:51.705968+00:00)
+INFO 2026-01-12 10:44:51,981 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:44:51,985 base 11708 4168 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:45:51 UTC)" executed successfully
+INFO 2026-01-12 10:45:17,989 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:45:50,111 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:45:51,710 base 11708 4168 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:46:51 UTC)" (scheduled at 2026-01-12 07:45:51.705968+00:00)
+INFO 2026-01-12 10:45:52,159 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:45:52,163 base 11708 4168 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 07:46:51 UTC)" executed successfully
+INFO 2026-01-12 10:45:56,190 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:06,918 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:07,296 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:09,059 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:09,315 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:09,774 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:09,916 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:11,900 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:12,015 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:12,156 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:15,186 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:15,326 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:17,313 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:17,475 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:19,355 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:19,543 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+ERROR 2026-01-12 10:46:42,705 handler 11708 4168 Update None caused error httpx.ReadError: 
+INFO 2026-01-12 10:46:46,437 _client 11708 4168 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 10:46:46,442 _application 11708 4168 Application is stopping. This might take a moment.
+INFO 2026-01-12 10:46:46,460 base 11708 4168 Scheduler has been shut down
+INFO 2026-01-12 10:46:46,472 _application 11708 4168 Application.stop() complete
+INFO 2026-01-12 10:46:46,523 bot 11708 4168 Bot application shutdown complete
+INFO 2026-01-12 10:54:40,389 base 7124 4904 Adding job tentatively -- it will be properly scheduled when the scheduler starts
+ERROR 2026-01-12 10:55:07,260 networkloop 7124 4904 Network Retry Loop (Bootstrap delete Webhook): Failed run number 2 of 0. Aborting.
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 134, in network_retry_loop
+    await do_action()
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 109, in do_action
+    await action_cb()
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_updater.py", line 686, in bootstrap_del_webhook
+    await self.bot.delete_webhook(drop_pending_updates=drop_pending_updates)
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_extbot.py", line 1492, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 4952, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_extbot.py", line 372, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_httpxrequest.py", line 303, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: 
+ERROR 2026-01-12 10:55:07,804 bot 7124 4904 Error in main: httpx.ConnectError: 
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\mm\myapp\ichancyBot\bot.py", line 153, in main
+    application.run_polling(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        poll_interval=2.0,
+        ^^^^^^^^^^^^^^^^^^
+        timeout=30,
+        ^^^^^^^^^^^
+        drop_pending_updates=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_application.py", line 839, in run_polling
+    return self.__run(
+           ~~~~~~~~~~^
+        updater_coroutine=self.updater.start_polling(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        close_loop=close_loop,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_application.py", line 1060, in __run
+    loop.run_until_complete(updater_coroutine)  # one of updater.start_webhook/polling
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\base_events.py", line 720, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_updater.py", line 296, in start_polling
+    await self._start_polling(
+    ...<7 lines>...
+    )
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_updater.py", line 329, in _start_polling
+    await self._bootstrap(
+    ...<4 lines>...
+    )
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_updater.py", line 707, in _bootstrap
+    await network_retry_loop(
+    ...<5 lines>...
+    )
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 134, in network_retry_loop
+    await do_action()
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_utils\networkloop.py", line 109, in do_action
+    await action_cb()
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_updater.py", line 686, in bootstrap_del_webhook
+    await self.bot.delete_webhook(drop_pending_updates=drop_pending_updates)
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_extbot.py", line 1492, in delete_webhook
+    return await super().delete_webhook(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 4952, in delete_webhook
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_extbot.py", line 372, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_httpxrequest.py", line 303, in do_request
+    raise NetworkError(f"httpx.{err.__class__.__name__}: {err}") from err
+telegram.error.NetworkError: httpx.ConnectError: 
+INFO 2026-01-12 10:55:08,168 bot 7124 4904 Bot application shutdown complete
+INFO 2026-01-12 11:04:22,999 base 7588 15228 Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 2026-01-12 11:05:30,110 _client 7588 15228 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:05:30,114 base 7588 15228 Added job "sendCookieNotification" to job store "default"
+INFO 2026-01-12 11:05:30,117 base 7588 15228 Scheduler started
+ERROR 2026-01-12 11:05:39,982 _updater 7588 15228 Error while calling `get_updates` one more time to mark all fetched updates as read: %s. Suppressing error to ensure graceful shutdown. When polling for updates is restarted, updates may be fetched again. Please adjust timeouts via `ApplicationBuilder` or the parameter `get_updates_request` of `Bot`.
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection_pool.py", line 236, in handle_async_request
+    response = await connection.handle_async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        pool_request.request
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 101, in handle_async_request
+    raise exc
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 78, in handle_async_request
+    stream = await self._connect(request)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_async\connection.py", line 156, in _connect
+    stream = await stream.start_tls(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_backends\anyio.py", line 67, in start_tls
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_httpxrequest.py", line 279, in do_request
+    res = await self._client.request(
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 393, in handle_async_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_updater.py", line 400, in _get_updates_cleanup
+    await self.bot.get_updates(
+    ...<4 lines>...
+    )
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_extbot.py", line 676, in get_updates
+    updates = await super().get_updates(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 4780, in get_updates
+    await self._post(
+    ^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    ),
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 703, in _post
+    return await self._do_post(
+           ^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_extbot.py", line 372, in _do_post
+    return await super()._do_post(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 732, in _do_post
+    result = await request.post(
+             ^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_baserequest.py", line 198, in post
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_baserequest.py", line 305, in _request_wrapper
+    code, payload = await self.do_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\request\_httpxrequest.py", line 296, in do_request
+    raise TimedOut from err
+telegram.error.TimedOut: Timed out
+ERROR 2026-01-12 11:05:40,175 bot 7588 15228 Error in main: ExtBot is not properly initialized. Call `ExtBot.initialize` before accessing this property.
+Traceback (most recent call last):
+  File "C:\work\CICP\ichancy-bot\mm\myapp\ichancyBot\bot.py", line 153, in main
+    application.run_polling(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        poll_interval=2.0,
+        ^^^^^^^^^^^^^^^^^^
+        timeout=30,
+        ^^^^^^^^^^^
+        drop_pending_updates=True
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_application.py", line 839, in run_polling
+    return self.__run(
+           ~~~~~~~~~~^
+        updater_coroutine=self.updater.start_polling(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<9 lines>...
+        close_loop=close_loop,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_application.py", line 1061, in __run
+    loop.run_until_complete(self.start())
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\base_events.py", line 720, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\ext\_application.py", line 631, in start
+    self._update_fetcher(), name=f"Application:{self.bot.id}:update_fetcher"
+                                                ^^^^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 553, in id
+    return self.bot.id
+           ^^^^^^^^
+  File "C:\work\CICP\ichancy-bot\ichancy-env\Lib\site-packages\telegram\_bot.py", line 542, in bot
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: ExtBot is not properly initialized. Call `ExtBot.initialize` before accessing this property.
+INFO 2026-01-12 11:05:40,224 bot 7588 15228 Bot application shutdown complete
+INFO 2026-01-12 11:23:20,498 base 15476 12912 Adding job tentatively -- it will be properly scheduled when the scheduler starts
+INFO 2026-01-12 11:23:26,065 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getMe "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:23:26,851 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteWebhook "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:23:26,858 base 15476 12912 Added job "sendCookieNotification" to job store "default"
+INFO 2026-01-12 11:23:26,862 base 15476 12912 Scheduler started
+INFO 2026-01-12 11:23:26,870 _application 15476 12912 Application started
+INFO 2026-01-12 11:24:03,695 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:24:25,498 base 15476 12912 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:25:25 UTC)" (scheduled at 2026-01-12 08:24:25.496207+00:00)
+INFO 2026-01-12 11:24:25,876 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:24:25,888 base 15476 12912 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:25:25 UTC)" executed successfully
+INFO 2026-01-12 11:24:35,925 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:25:09,205 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:25:25,502 base 15476 12912 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:26:25 UTC)" (scheduled at 2026-01-12 08:25:25.496207+00:00)
+INFO 2026-01-12 11:25:26,234 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:25:26,254 base 15476 12912 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:26:25 UTC)" executed successfully
+INFO 2026-01-12 11:25:41,445 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:26:14,007 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:26:25,497 base 15476 12912 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:27:25 UTC)" (scheduled at 2026-01-12 08:26:25.496207+00:00)
+INFO 2026-01-12 11:26:26,341 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:26:26,370 base 15476 12912 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:27:25 UTC)" executed successfully
+INFO 2026-01-12 11:26:46,133 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:27:18,243 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:27:25,516 base 15476 12912 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:28:25 UTC)" (scheduled at 2026-01-12 08:27:25.496207+00:00)
+INFO 2026-01-12 11:27:25,985 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:27:25,989 base 15476 12912 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:28:25 UTC)" executed successfully
+INFO 2026-01-12 11:27:50,605 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:27:57,953 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:27:58,404 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:05,709 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:06,088 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:07,834 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:07,954 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:09,250 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:09,401 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:11,240 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:11,350 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/answerCallbackQuery "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:11,480 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/editMessageText "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:13,375 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:13,642 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:15,480 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:15,661 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:17,818 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/deleteMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:17,982 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/sendMessage "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:28:25,498 base 15476 12912 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:29:25 UTC)" (scheduled at 2026-01-12 08:28:25.496207+00:00)
+INFO 2026-01-12 11:28:25,502 base 15476 12912 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:29:25 UTC)" executed successfully
+INFO 2026-01-12 11:28:47,857 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:29:19,973 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:29:25,502 base 15476 12912 Running job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:30:25 UTC)" (scheduled at 2026-01-12 08:29:25.496207+00:00)
+INFO 2026-01-12 11:29:25,526 base 15476 12912 Job "sendCookieNotification (trigger: interval[0:01:00], next run at: 2026-01-12 08:30:25 UTC)" executed successfully
+INFO 2026-01-12 11:29:26,368 _client 15476 12912 HTTP Request: POST https://api.telegram.org/bot7985162765:AAEg_aQ-cLRMxLVzAeTwu7_EIgn81THL_BM/getUpdates "HTTP/1.1 200 OK"
+INFO 2026-01-12 11:29:26,539 _application 15476 12912 Application is stopping. This might take a moment.
+INFO 2026-01-12 11:29:26,752 base 15476 12912 Scheduler has been shut down
+INFO 2026-01-12 11:29:26,973 _application 15476 12912 Application.stop() complete
+INFO 2026-01-12 11:29:27,088 bot 15476 12912 Bot application shutdown complete
+INFO 2026-01-12 11:32:16,086 autoreload 5840 11312 C:\work\CICP\ichancy-bot\mm\mm\settings.py changed, reloading.

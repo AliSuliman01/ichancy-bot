@@ -14,6 +14,9 @@ class  AdminRouter:
         # جميع نماذج Django الأساسية تكتب في SQLite
         if model._meta.app_label in ['auth', 'contenttypes', 'admin', 'sessions']:
             return 'admin_db'
+        # السماح بالكتابة في Settings في MySQL
+        if model._meta.app_label == 'myapp' and model._meta.model_name == 'settings':
+            return 'default'
         # منع الكتابة في MySQL
         return None
 
@@ -28,5 +31,8 @@ class  AdminRouter:
         # تهجير تطبيقات Django إلى SQLite فقط
         if app_label in ['auth', 'contenttypes', 'admin', 'sessions']:
             return db == 'admin_db'
+        # السماح بتهجير Settings إلى MySQL
+        if app_label == 'myapp' and model_name == 'Settings':
+            return db == 'default'
         # منع تهجير النماذج الأخرى
         return False

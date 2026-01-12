@@ -1,1 +1,77 @@
+# Environment variables
 .env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+ichancy-env/
+
+# Django
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+admin_db.sqlite3
+/media
+/staticfiles
+/static
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+mm/logs/
+mm/django.log
+mm/admin_db.sqlite3
+
+# Session files
+*.session
+mm/myapp/ichancyBot/session_name.session
+
+# Temporary files
+*.tmp
+*.temp
+req_temp.txt
+requirements_temp.txt
+startup_error.log
+
+# Database backups
+*.sql
+*.sqlite
+*.db

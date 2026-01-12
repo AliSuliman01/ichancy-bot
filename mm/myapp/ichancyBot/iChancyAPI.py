@@ -6,7 +6,9 @@ import requests
 import asyncio
 import socks
 import socket
+import json as json_lib
 logger = Logger.getLogger()
+api_logger = Logger.getAPILogger()
 class iChancyAPI:
     BASE_URL = 'https://www.ichancy.com'
     # Static headers - update these as needed
@@ -366,73 +368,112 @@ class iChancyAPI:
                 return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
         
     async def WirhdrawMoney(self , player_id = "321405978" , currencyCode = "NSP" , ammount = 1 , comment = None , moneyStatus = 5):
+        method_name = "WirhdrawMoney"
+        getWithdrawUrl = "https://agents.ichancy.com/global/api/Player/withdrawFromPlayer"
+        
         try:
-            
-            
-            # API endpoint
-            getWithdrawUrl = "https://agents.ichancy.com/global/api/Player/withdrawFromPlayer"
-
-            # Prepare JSON payload
             payload = {'amount': -ammount,
-                      'comment': None,
+                      'comment': comment,
                       'playerId': player_id, 
                       'currencyCode': currencyCode,
                       'moneyStatus': moneyStatus}
            
-            # Log the request details for debugging
-            # logger.info(f"Making request to: {getWithdrawUrl}")
+            api_logger.info(f"[{method_name}] Starting - URL: {getWithdrawUrl}, PlayerID: {player_id}, Amount: {ammount}, Currency: {currencyCode}")
         
-            # Submit registration
-            # logger.info("Submitting Transfeering money to API")
             try:
                 response = self.session.post(
                     getWithdrawUrl, 
                     json=payload, 
                     timeout=30
                 )
-                # logger.info(f"Response status: {response.status_code}")
-                # logger.info(f"Response headers: {dict(response.headers)}")
-                # logger.info(f"Response text: {response.text[:500]}...")  # First 500 chars
+                
                 if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
                     config.telegram.COOKIE_STATUS = False
+                    api_logger.error(f"[{method_name}] FAILED - Cloudflare challenge | URL: {getWithdrawUrl} | Status: {response.status_code} | PlayerID: {player_id}, Amount: {ammount}")
                     logger.warning(f"************* COOKIE_STATUS updated to FALSE *************")
                     return {'success': False, 'error': 'Cloudflare challenge detected - cookies may be expired or invalid. Please get fresh cookies from your browser and update the COOKIE_STRING variable.'}
+                
                 if response.status_code == 200:
-                    return {'success':True}
+                    api_logger.info(f"[{method_name}] SUCCESS - PlayerID: {player_id}, Amount: {ammount}, Currency: {currencyCode}")
+                    return {'success': True}
+                else:
+                    response_text = response.text[:500] if response.text else "Empty response"
+                    api_logger.error(f"[{method_name}] FAILED - Non-200 status | URL: {getWithdrawUrl} | Status: {response.status_code} | PlayerID: {player_id}, Amount: {ammount} | Response: {response_text}")
+                    return {'success': False, 'error': f'Withdrawal failed with status {response.status_code}'}
+                    
             except requests.exceptions.HTTPError as e:
-                 logger.error(f"HTTP Error: {e}")
-                 logger.error(f"Response status: {e.response.status_code}")
-                 return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
+                response_text = "Unable to decode response"
+                status_code = "Unknown"
+                try:
+                    status_code = e.response.status_code
+                    response_text = e.response.text[:500] if e.response.text else "Empty response"
+                except:
+                    pass
+                api_logger.error(f"[{method_name}] FAILED - HTTP Error | URL: {getWithdrawUrl} | Status: {status_code} | PlayerID: {player_id}, Amount: {ammount} | Error: {str(e)} | Response: {response_text}")
+                logger.error(f"HTTP Error: {e}")
+                return {'success': False, 'error': f'HTTP Error {status_code}: {response_text[:200]}'}
+                
+            except requests.exceptions.Timeout as e:
+                api_logger.error(f"[{method_name}] FAILED - Timeout | URL: {getWithdrawUrl} | PlayerID: {player_id}, Amount: {ammount} | Timeout: 30s | Error: {str(e)}")
+                return {'success': False, 'error': f'Request timeout: {str(e)}'}
+                
+            except Exception as e:
+                api_logger.error(f"[{method_name}] FAILED - Exception | URL: {getWithdrawUrl} | PlayerID: {player_id}, Amount: {ammount} | Error: {str(e)}", exc_info=True)
+                logger.error(f"Withdraw Money Failed: {e}", exc_info=True)
+                return {'success': False, 'error': f'Withdraw Money failed: {str(e)}'}
+                
         except Exception as e:
-                logger.error(f"Transfeer Money Failed: {e}",exc_info=True)
-                return {'success': False, 'error': f'Transfeer Money failed: {str(e)}'}
+            api_logger.error(f"[{method_name}] FAILED - Unexpected error | URL: {getWithdrawUrl} | PlayerID: {player_id}, Amount: {ammount} | Error: {str(e)}", exc_info=True)
+            logger.error(f"Withdraw Money Failed: {e}", exc_info=True)
+            return {'success': False, 'error': f'Withdraw Money failed: {str(e)}'}
         
 
     def checkCookieIsWork(self):
+        method_name = "checkCookieIsWork"
+        check_url = "https://agents.ichancy.com/"
+        
         try:
-            check = "https://agents.ichancy.com/"
+            api_logger.info(f"[{method_name}] Starting - URL: {check_url}")
+            
             try:
                 response = self.session.get(
-                    check, 
+                    check_url, 
                     timeout=2
                 )
-                # logger.info(f"Response status: {response.status_code}")
-                # logger.info(f"Response headers: {dict(response.headers)}")
-                # logger.info(f"Response text: {response.text[:500]}...")
+                
                 if 'cf-mitigated' in response.headers and response.headers['cf-mitigated'] == 'challenge':
                     config.telegram.COOKIE_STATUS = False
+                    api_logger.error(f"[{method_name}] FAILED - Cloudflare challenge detected | URL: {check_url} | Status: {response.status_code}")
                     logger.warning(f"************* COOKIE_STATUS updated to FALSE *************")
                     return {'success': False, 'error': 'Cloudflare challenge detected - cookies may be expired or invalid. Please get fresh cookies from your browser and update the COOKIE_STRING variable.'}
                 else:
-                   return{'success' : True , 'error' : 'No error'}
+                    api_logger.info(f"[{method_name}] SUCCESS - Cookie is valid | URL: {check_url} | Status: {response.status_code}")
+                    return {'success': True, 'error': 'No error'}
+                    
             except requests.exceptions.HTTPError as e:
-                    logger.error(f"HTTP Error: {e}")
-                    logger.error(f"Response status: {e.response.status_code}")
-                    return {'success': False, 'error': f'Check Cookie failed: {str(e)}'}
-        
+                response_text = "Unable to decode response"
+                status_code = "Unknown"
+                try:
+                    status_code = e.response.status_code
+                    response_text = e.response.text[:200] if e.response.text else "Empty response"
+                except:
+                    pass
+                api_logger.error(f"[{method_name}] FAILED - HTTP Error | URL: {check_url} | Status: {status_code} | Error: {str(e)} | Response: {response_text}")
+                logger.error(f"HTTP Error: {e}")
+                return {'success': False, 'error': f'Check Cookie failed: {str(e)}'}
+                
+            except requests.exceptions.Timeout as e:
+                api_logger.error(f"[{method_name}] FAILED - Timeout | URL: {check_url} | Timeout: 2s | Error: {str(e)}")
+                return {'success': False, 'error': f'Check Cookie timeout: {str(e)}'}
+                
+            except Exception as e:
+                api_logger.error(f"[{method_name}] FAILED - Exception | URL: {check_url} | Error: {str(e)}", exc_info=True)
+                logger.error(f"Check Cookie Failed: {e}", exc_info=True)
+                return {'success': False, 'error': f'Check Cookie failed: {str(e)}'}
 
         except Exception as e:
-                logger.error(f"Check Cookie Failed: {e}",exc_info=True)
-                return {'success': False, 'error': f'Check Cookie failed: {str(e)}'}
+            api_logger.error(f"[{method_name}] FAILED - Unexpected error | URL: {check_url} | Error: {str(e)}", exc_info=True)
+            logger.error(f"Check Cookie Failed: {e}", exc_info=True)
+            return {'success': False, 'error': f'Check Cookie failed: {str(e)}'}
     
 

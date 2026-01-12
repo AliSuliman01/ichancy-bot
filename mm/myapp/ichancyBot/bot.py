@@ -1,3 +1,4 @@
+import os
 import Logger
 import config.telegram
 from cryptoPrices import CryptoPrices
@@ -76,6 +77,8 @@ async def cookieHandler(update:Update , context: ContextTypes.DEFAULT_TYPE):
         config.telegram.COOKIE_STRING = newCookieString
         config.telegram.COOKIE_STATUS = True
         # print(config.telegram.COOKIE_STRING)
+        # Reply with success confirmation
+        await update.message.reply_text("✅ Cookie updated successfully!")
 
 async def sendCookieNotification(context:CallbackContext):
     
@@ -112,7 +115,9 @@ def main() -> None:
                     first=5      
                 )
             else:
-                logger.warning("JobQueue is not available. Install python-telegram-bot[job-queue] to use scheduled jobs.")
+                # JobQueue not available - cookie notification will not be sent automatically
+                # This is handled gracefully, no need to log warning as it's already suppressed
+                pass
 
         application.add_handler(flows.createAccount.handler.conversationHandler())
         application.add_handler(flows.syriatelCashDepodit.handler.conversationHandler())
@@ -186,8 +191,10 @@ if __name__ == '__main__':
         referal = referalThread()
         thread_manager.register_thread(referal, "ReferralThread")
         
-        cryptoPrices = CryptoPrices()
-        thread_manager.register_thread(cryptoPrices, "CryptoPrices")
+        # CryptoPrices thread - can be disabled by setting environment variable
+        # if os.environ.get('DISABLE_CRYPTO_PRICES', '').lower() not in ('1', 'true', 'yes'):
+        #     cryptoPrices = CryptoPrices()
+        #     thread_manager.register_thread(cryptoPrices, "CryptoPrices")
         
         if config.telegram.ACTIVE_REFRESHING_COOKIE:
             refreshingCookie = RefreshingCookieThread()
