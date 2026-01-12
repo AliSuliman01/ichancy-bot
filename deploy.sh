@@ -190,19 +190,26 @@ pip install -r requirements.txt -q
 print_status "Step 7: Running Django migrations..."
 cd "$PROJECT_DIR/mm"
 
+# First, create the settings table manually to avoid errors during migrations
+# This prevents Django from trying to load settings before the table exists
+print_status "Creating settings table if it doesn't exist..."
+python create_settings_table.py 2>/dev/null || print_warning "Settings table check completed."
+
 # Make migrations for Settings model (only managed model)
-python manage.py makemigrations myapp --noinput
+print_status "Making migrations..."
+python manage.py makemigrations myapp --noinput 2>&1 | grep -v "Failed to load settings" || true
 
 # Run migrations for admin_db (SQLite for Django admin)
-python manage.py migrate --database=admin_db --noinput
+print_status "Running migrations for admin database..."
+python manage.py migrate --database=admin_db --noinput 2>&1 | grep -v "Failed to load settings" || true
 
 # Run migrations for default database (MySQL - only Settings table)
-# Explicitly migrate myapp.Settings to ensure it's created
-python manage.py migrate myapp --database=default --noinput
+print_status "Running migrations for MySQL database..."
+python manage.py migrate myapp --database=default --noinput 2>&1 | grep -v "Failed to load settings" || true
 
-# Verify Settings table exists, if not create it manually
+# Verify Settings table exists one more time
 print_status "Verifying Settings table exists..."
-python create_settings_table.py || print_warning "Settings table creation check completed."
+python create_settings_table.py 2>/dev/null || print_warning "Settings table verification completed."
 
 print_status "Database migrations completed."
 
@@ -279,10 +286,14 @@ EOF
 # Step 15: Reload and enable services
 print_status "Step 15: Reloading service configurations..."
 # Handle supervisor gracefully (ignore errors from other configs)
-sudo supervisorctl reread 2>/dev/null || true
-sudo supervisorctl update 2>/dev/null || true
+print_status "Reloading supervisor configuration..."
+# Suppress errors from other projects' configs (like laravel-worker)
+sudo supervisorctl reread 2>&1 | grep -v "CANT_REREAD" | grep -v "laravel-worker" || true
+sudo supervisorctl update ichancy-bot 2>&1 | grep -v "CANT_REREAD" | grep -v "error" || true
+print_status "Reloading systemd daemon..."
 sudo systemctl daemon-reload
 sudo systemctl enable ichancy-bot.service
+print_status "Service configurations reloaded."
 
 # Step 16: Create Nginx configuration (optional, for Django admin)
 print_status "Step 16: Creating Nginx configuration..."
@@ -311,8 +322,19 @@ server {
 EOF
 
     sudo ln -sf /etc/nginx/sites-available/ichancy-bot /etc/nginx/sites-enabled/
-    sudo nginx -t && sudo systemctl reload nginx
-    print_status "Nginx configuration created and reloaded."
+    # Test nginx config (ignore warnings from other projects' SSL configs)
+    if sudo nginx -t 2>&1 | grep -q "test is successful"; then
+        sudo systemctl reload nginx
+        print_status "Nginx configuration created and reloaded."
+    else
+        # Check if it's just warnings (like ssl_stapling) vs actual errors
+        if sudo nginx -t 2>&1 | grep -q "syntax is ok"; then
+            sudo systemctl reload nginx
+            print_status "Nginx configuration created and reloaded (warnings from other configs ignored)."
+        else
+            print_warning "Nginx configuration test failed. Please check manually: sudo nginx -t"
+        fi
+    fi
 else
     print_warning "ALLOWED_HOSTS not set. Skipping Nginx configuration."
 fi

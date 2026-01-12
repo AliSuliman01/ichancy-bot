@@ -18,7 +18,7 @@ try:
     from config.settings import refresh_settings
 except ImportError as e:
     # If import fails, create a no-op function to prevent crashes
-    def refresh_settings(logger=None):
+    def refresh_settings():
         pass
     import logging
     logger = logging.getLogger(__name__)
@@ -32,11 +32,10 @@ def refresh_telegram_bot_settings(sender, instance, **kwargs):
     whenever the Settings model is saved in Django.
     """
     try:
-        import logging
-        logger = logging.getLogger(__name__)
-        refresh_settings(logger)
+        # refresh_settings() takes no arguments
+        refresh_settings()
     except Exception as e:
         import logging
         logger = logging.getLogger(__name__)
-        logger.error(f"Failed to refresh Telegram bot settings: {e}")
+        logger.error(f"Failed to refresh Telegram bot settings: {e}", exc_info=True)
 
