@@ -15,7 +15,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
 # Configuration
-PROJECT_DIR="/opt/ichancy-bot"
+PROJECT_DIR="/var/www/ichancy-bot"
 VENV_DIR="$PROJECT_DIR/venv"
 DB_NAME="${DB_NAME:-cicp_bot}"
 DB_USER="${DB_USERNAME:-root}"
