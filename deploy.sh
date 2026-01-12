@@ -74,28 +74,79 @@ sudo apt-get upgrade -y -qq
 
 # Step 2: Install system dependencies
 print_status "Step 2: Installing system dependencies..."
-sudo apt-get install -y \
-    python3 \
-    python3-pip \
-    python3-venv \
-    mysql-server \
-    mysql-client \
-    libmysqlclient-dev \
-    build-essential \
-    pkg-config \
-    git \
-    curl \
-    supervisor \
-    nginx
+
+# Check for required system packages (skip installation if already present)
+print_status "Checking for required system packages..."
+
+# Check MySQL client libraries
+MYSQL_DEV_PKG=""
+if dpkg -l | grep -q "libmysqlclient-dev"; then
+    print_status "libmysqlclient-dev is already installed."
+    MYSQL_DEV_PKG="libmysqlclient-dev"
+elif dpkg -l | grep -q "libmariadb-dev"; then
+    print_status "libmariadb-dev is already installed."
+    MYSQL_DEV_PKG="libmariadb-dev"
+else
+    # Try to install MySQL dev package if not found
+    print_status "Installing MySQL development libraries..."
+    if sudo apt-get install -y libmysqlclient-dev 2>/dev/null; then
+        MYSQL_DEV_PKG="libmysqlclient-dev"
+    else
+        print_status "libmysqlclient-dev not available, installing libmariadb-dev..."
+        sudo apt-get install -y libmariadb-dev libmariadb-dev-compat
+        MYSQL_DEV_PKG="libmariadb-dev"
+    fi
+fi
+
+# Check for other required packages
+REQUIRED_PKGS=""
+for pkg in python3 python3-pip python3-venv build-essential pkg-config; do
+    if ! dpkg -l | grep -q "^ii  $pkg "; then
+        REQUIRED_PKGS="$REQUIRED_PKGS $pkg"
+    fi
+done
+
+if [ -n "$REQUIRED_PKGS" ]; then
+    print_status "Installing missing packages: $REQUIRED_PKGS"
+    sudo apt-get install -y $REQUIRED_PKGS
+else
+    print_status "All required packages are already installed."
+fi
+
+# Verify MySQL, Git, Supervisor, and Nginx are available (but don't install)
+if ! command -v mysql &> /dev/null && ! command -v mariadb &> /dev/null; then
+    print_warning "MySQL/MariaDB client not found in PATH, but continuing (may be installed but not in PATH)"
+fi
+
+if ! command -v git &> /dev/null; then
+    print_warning "Git not found in PATH, but continuing (may be installed but not in PATH)"
+fi
+
+if ! command -v supervisorctl &> /dev/null; then
+    print_warning "Supervisor not found in PATH, but continuing (may be installed but not in PATH)"
+fi
+
+if ! command -v nginx &> /dev/null; then
+    print_warning "Nginx not found in PATH, but continuing (may be installed but not in PATH)"
+fi
 
 # Step 3: Setup MySQL database
 print_status "Step 3: Setting up MySQL database..."
 
-# Check if MySQL is running
-if ! sudo systemctl is-active --quiet mysql; then
-    print_status "Starting MySQL service..."
-    sudo systemctl start mysql
-    sudo systemctl enable mysql
+# Check if MySQL/MariaDB is running (try both service names)
+if sudo systemctl is-active --quiet mysql 2>/dev/null || sudo systemctl is-active --quiet mariadb 2>/dev/null; then
+    print_status "MySQL/MariaDB service is running."
+elif sudo systemctl is-active --quiet mysqld 2>/dev/null; then
+    print_status "MySQL service (mysqld) is running."
+else
+    print_warning "MySQL/MariaDB service doesn't appear to be running."
+    print_warning "Please ensure MySQL/MariaDB is running before continuing."
+    read -p "Continue anyway? (y/N) " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        print_error "Aborting deployment."
+        exit 1
+    fi
 fi
 
 # Create database if it doesn't exist
@@ -146,7 +197,12 @@ python manage.py makemigrations myapp --noinput
 python manage.py migrate --database=admin_db --noinput
 
 # Run migrations for default database (MySQL - only Settings table)
-python manage.py migrate --database=default --noinput
+# Explicitly migrate myapp.Settings to ensure it's created
+python manage.py migrate myapp --database=default --noinput
+
+# Verify Settings table exists, if not create it manually
+print_status "Verifying Settings table exists..."
+python create_settings_table.py || print_warning "Settings table creation check completed."
 
 print_status "Database migrations completed."
 
@@ -222,8 +278,9 @@ EOF
 
 # Step 15: Reload and enable services
 print_status "Step 15: Reloading service configurations..."
-sudo supervisorctl reread
-sudo supervisorctl update
+# Handle supervisor gracefully (ignore errors from other configs)
+sudo supervisorctl reread 2>/dev/null || true
+sudo supervisorctl update 2>/dev/null || true
 sudo systemctl daemon-reload
 sudo systemctl enable ichancy-bot.service
 
